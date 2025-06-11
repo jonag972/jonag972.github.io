@@ -1,0 +1,8 @@
+{
+    "projects": [
+        {
+            "id": "medicsearch",
+            "path": "medicsearch/medicsearch.json"
+        }
+    ]
+}

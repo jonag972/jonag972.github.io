@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<?php
+// Inclure les fichiers de statistiques et de consentement RGPD
+include_once 'includes/stats-collector.php';
+include_once 'includes/consent-manager.php';
+?>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="lang-content" data-fr="Mon Portfolio" data-en="My Portfolio">Mon Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo" id="logo-container">
+            <h1>JG</h1>
+            <!-- Menu déroulant caché -->
+            <div class="admin-menu" id="admin-menu">
+                <a href="admin/stats.php">Administration</a>
+                <!-- Ajoutez d'autres liens ici si nécessaire -->
+            </div>
+        </div>
+        
+        <!-- Bouton menu burger -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="/" class="active">Accueil</a></li>
+                <li><a href="/#projects">Projets</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="toggle-container">
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </div>
+            <div class="lang-toggle">
+                <i class="fas fa-globe"></i>
+                <span class="current-lang">FR</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="tag">
+                    <span class="lang-fr">ÉTUDIANT EN BUT INFORMATIQUE - GESTION DES DONNÉES</span>
+                    <span class="lang-en">COMPUTER SCIENCE STUDENT - DATA MANAGEMENT</span>
+                </span>
+                <h2>
+                    <span class="lang-fr">Bonjour, je m'appelle <br><span class="name">Jonathan Gromat</span></span>
+                    <span class="lang-en">Hi, I'm <br><span class="name">Jonathan Gromat</span></span>
+                </h2>
+                <p>
+                    <span class="lang-fr">Étudiant en 3ème année de BUT Informatique parcours Administration, Gestion et Exploitation des Données, basé en France</span>
+                    <span class="lang-en">3rd year Computer Science student specializing in Data Administration, Management and Processing, based in France</span>
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary">
+                        <span class="lang-fr">Me contacter</span>
+                        <span class="lang-en">Contact Me</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                    <div class="cv-dropdown">
+                        <button class="btn secondary">
+                            <span class="lang-fr">Télécharger CV</span>
+                            <span class="lang-en">Download CV</span>
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <div class="cv-dropdown-content">
+                            <a href="assets/resume/CV_Jonathan_Gromat_EN.pdf" download>
+                                <i class="fas fa-file-pdf"></i>
+                                <span class="lang-fr">Anglais</span>
+                                <span class="lang-en">English</span>
+                            </a>
+                            <a href="assets/resume/CV_Jonathan_Gromat.pdf" download>
+                                <i class="fas fa-file-pdf"></i>
+                                <span class="lang-fr">Français</span>
+                                <span class="lang-en">French</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="profile-circle">
+                    <!-- L'image sera ajoutée via CSS -->
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-card" style="top: 10%; left: 0; transform: translateX(-30%);">
+                        <i class="fas fa-database"></i>
+                        <div class="stat-content">
+                            <span class="stat-label lang-fr"><strong>DATA</strong><br><small>SQL/NoSQL, analyse, traitement de données.</small></span>
+                            <span class="stat-label lang-en"><strong>DATA</strong><br><small>SQL/NoSQL, analysis, data processing.</small></span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" style="top: 20%; right: 0; transform: translateX(30%);">
+                        <i class="fas fa-code"></i>
+                        <div class="stat-content">
+                            <span class="stat-label lang-fr"><strong>Dev</strong><br><small>Python, Java, HTML, CSS, JS, PHP</small></span>
+                            <span class="stat-label lang-en"><strong>Dev</strong><br><small>Python, Java, HTML, CSS, JS, PHP</small></span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card" style="bottom: 25%; left: 10%;">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="stat-content">
+                            <span class="stat-label lang-fr"><strong>BUT3 Informatique</strong><br><small>Parcours Administration, Gestion et Exploitation des Données.</small></span>
+                            <span class="stat-label lang-en"><strong>BUT3 Computer Science</strong><br><small>Pathway in Administration, Management, and Data Exploitation.</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section bg-light">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-fr">Mes Projets</span>
+                    <span class="lang-en">My Projects</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-fr">Découvrez quelques-uns de mes travaux récents</span>
+                    <span class="lang-en">Discover some of my recent work</span>
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Les projets seront chargés dynamiquement ici -->
+                <div class="loading-projects">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span class="lang-fr">Chargement des projets...</span>
+                    <span class="lang-en">Loading projects...</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-fr">Mes Compétences</span>
+                    <span class="lang-en">My Skills</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-fr">Technologies et langages que j'utilise au quotidien</span>
+                    <span class="lang-en">Technologies and languages I use daily</span>
+                </p>
+            </div>
+            
+            <div class="skills-container">
+                <!-- Catégorie Frontend -->
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <span class="lang-fr">Frontend</span>
+                        <span class="lang-en">Frontend</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">HTML5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">CSS3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-js"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">JavaScript</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-react"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">React</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie Backend -->
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <span class="lang-fr">Backend</span>
+                        <span class="lang-en">Backend</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Python</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Java</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-php"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">PHP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie Bases de données -->
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <span class="lang-fr">Base de données & Visualisation</span>
+                        <span class="lang-en">Database & Visualization</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">PostgreSQL</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">MySQL</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-server"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">MongoDB</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Neo4j</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Power BI</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Tableau</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="contact" class="section bg-light">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="lang-fr">Contact</span>
+                <span class="lang-en">Contact</span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-fr">N'hésitez pas à me contacter pour discuter de vos projets</span>
+                <span class="lang-en">Feel free to contact me to discuss your projects</span>
+            </p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:jonathan.gromat@outlook.com">jonathan.gromat@outlook.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>
+                                <span class="lang-fr">Localisation</span>
+                                <span class="lang-en">Location</span>
+                            </h4>
+                            <p>Île-de-France</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/jonathan-gromat-1398402b7/" target="_blank">jonathan.gromat</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/jonag972" target="_blank">jonag972</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-section text-center mt-5 py-3">
+            <div class="container">
+                <p>
+                    <span class="lang-fr">&copy; 2025 Jonathan Gromat. Tous droits réservés. | Portfolio personnel - Développeur web et Data</span>
+                    <span class="lang-en">&copy; 2025 Jonathan Gromat. All rights reserved. | Personal portfolio - Web & Data Developer</span>
+                </p>
+                <p class="footer-links">
+                    <a href="/privacy-policy.php" class="footer-link">
+                        <span class="lang-fr">Politique de confidentialité</span>
+                        <span class="lang-en">Privacy Policy</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/projects-loader.js"></script>
+    
+    <!-- Bannière de consentement RGPD -->
+    <?php echo displayConsentBanner(); ?>
+</body>
+</html>
