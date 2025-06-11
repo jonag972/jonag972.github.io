@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php
-// Inclure les fichiers de statistiques et de consentement RGPD
-include_once 'includes/stats-collector.php';
-include_once 'includes/consent-manager.php';
-?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +14,7 @@ include_once 'includes/consent-manager.php';
             <h1>JG</h1>
             <!-- Menu déroulant caché -->
             <div class="admin-menu" id="admin-menu">
-                <a href="admin/stats.php">Administration</a>
+                <!-- <a href="admin/stats.php">Administration</a> -->
                 <!-- Ajoutez d'autres liens ici si nécessaire -->
             </div>
         </div>
@@ -33,9 +28,9 @@ include_once 'includes/consent-manager.php';
         
         <nav>
             <ul>
-                <li><a href="/" class="active">Accueil</a></li>
-                <li><a href="/#projects">Projets</a></li>
-                <li><a href="/#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
         
@@ -350,7 +345,7 @@ include_once 'includes/consent-manager.php';
                     <span class="lang-en">&copy; 2025 Jonathan Gromat. All rights reserved. | Personal portfolio - Web & Data Developer</span>
                 </p>
                 <p class="footer-links">
-                    <a href="/privacy-policy.php" class="footer-link">
+                    <a href="privacy-policy.html" class="footer-link">
                         <span class="lang-fr">Politique de confidentialité</span>
                         <span class="lang-en">Privacy Policy</span>
                     </a>
@@ -365,8 +360,6 @@ include_once 'includes/consent-manager.php';
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/projects-loader.js"></script>
-    
-    <!-- Bannière de consentement RGPD -->
-    <?php echo displayConsentBanner(); ?>
+    <script src="assets/js/consent.js"></script>
 </body>
 </html>

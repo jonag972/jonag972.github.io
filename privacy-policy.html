@@ -1,10 +1,3 @@
-<?php
-// Démarrer la session tout au début, avant tout autre code
-session_start();
-
-// Inclure le gestionnaire de consentement
-include_once __DIR__ . '/includes/consent-manager.php';
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -60,15 +53,15 @@ include_once __DIR__ . '/includes/consent-manager.php';
             <h1>JG</h1>
             <!-- Menu déroulant caché -->
             <div class="admin-menu" id="admin-menu">
-                <a href="admin/stats.php">Administration</a>
+                <!-- <a href="admin/stats.php">Administration</a> -->
                 <!-- Ajoutez d'autres liens ici si nécessaire -->
             </div>
         </div>
         <nav>
             <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/#projects">Projets</a></li>
-                <li><a href="/#contact">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="toggle-container">
@@ -242,8 +235,6 @@ include_once __DIR__ . '/includes/consent-manager.php';
     </section>
 
     <script src="assets/js/script.js"></script>
-    
-    <!-- Bannière de consentement RGPD -->
-    <?php echo displayConsentBanner(); ?>
+    <script src="assets/js/consent.js"></script>
 </body>
 </html>
