@@ -12,23 +12,12 @@
     <header>
         <div class="logo" id="logo-container">
             <h1>JG</h1>
-            <!-- Menu déroulant caché -->
-            <div class="admin-menu" id="admin-menu">
-                <!-- <a href="admin/stats.php">Administration</a> -->
-                <!-- Ajoutez d'autres liens ici si nécessaire -->
-            </div>
         </div>
-        
-        <!-- Bouton menu burger -->
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
+
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="index.html#parcours"><span class="lang-fr">Parcours</span><span class="lang-en" style="display:none;">Journey</span></a></li>
                 <li><a href="index.html#projects">Projets</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
@@ -49,16 +38,16 @@
         <section class="hero">
             <div class="hero-content">
                 <span class="tag">
-                    <span class="lang-fr">ÉTUDIANT EN BUT INFORMATIQUE - GESTION DES DONNÉES</span>
-                    <span class="lang-en">COMPUTER SCIENCE STUDENT - DATA MANAGEMENT</span>
+                    <span class="lang-fr">FIN D'ÉTUDES BUT INFORMATIQUE | FUTUR MSC EPITECH (ALTERNANCE) | STAGIAIRE CEA</span>
+                    <span class="lang-en">GRADUATING COMPUTER SCIENCE (BUT) | FUTURE MSC EPITECH (APPRENTICESHIP) | CEA INTERN</span>
                 </span>
                 <h2>
                     <span class="lang-fr">Bonjour, je m'appelle <br><span class="name">Jonathan Gromat</span></span>
                     <span class="lang-en">Hi, I'm <br><span class="name">Jonathan Gromat</span></span>
                 </h2>
                 <p>
-                    <span class="lang-fr">Étudiant en 3ème année de BUT Informatique parcours Administration, Gestion et Exploitation des Données, basé en France</span>
-                    <span class="lang-en">3rd year Computer Science student specializing in Data Administration, Management and Processing, based in France</span>
+                    <span class="lang-fr">Actuellement en fin de cursus BUT Informatique (parcours Administration, Gestion et Exploitation des Données) et stagiaire au CEA, je suis admis en Master of Science à Epitech pour la rentrée 2025. Je recherche activement une alternance pour mettre en pratique et approfondir mes compétences.</span>
+                    <span class="lang-en">Currently completing my BUT in Computer Science (Data Administration, Management and Processing track) and interning at CEA, I have been accepted into the Master of Science program at Epitech for Fall 2025. I am actively seeking an apprenticeship to apply and further develop my skills.</span>
                 </p>
                 
                 <div class="cta-buttons">
@@ -114,8 +103,8 @@
                     <div class="stat-card" style="bottom: 25%; left: 10%;">
                         <i class="fas fa-graduation-cap"></i>
                         <div class="stat-content">
-                            <span class="stat-label lang-fr"><strong>BUT3 Informatique</strong><br><small>Parcours Administration, Gestion et Exploitation des Données.</small></span>
-                            <span class="stat-label lang-en"><strong>BUT3 Computer Science</strong><br><small>Pathway in Administration, Management, and Data Exploitation.</small></span>
+                            <span class="stat-label lang-fr"><strong>BUT Informatique (En cours) / MSc Epitech (Rentrée 2025)</strong><br><small>Stagiaire CEA | Recherche Alternance MSc.</small></span>
+                            <span class="stat-label lang-en"><strong>Computer Science BUT (Current) / MSc Epitech (Fall 2025)</strong><br><small>CEA Intern | Seeking MSc Apprenticeship.</small></span>
                         </div>
                     </div>
                 </div>
@@ -134,12 +123,89 @@
             </div>
             
             <div class="projects-grid">
-                <!-- Les projets seront chargés dynamiquement ici -->
-                <div class="loading-projects">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <span class="lang-fr">Chargement des projets...</span>
-                    <span class="lang-en">Loading projects...</span>
+                <!-- Projet MedicSearch -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C?text=MedicSearch+Dashboard" alt="MedicSearch Dashboard" class="project-image" onerror="this.src='assets/img/default_project_image.png'; this.onerror=null;">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Mistral AI</span>
+                            <span class="project-tag">Web Scraping</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">MedicSearch</span>
+                            <span class="lang-en" style="display:none;">MedicSearch</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Application d'agrégation et recherche de médicaments avec IA. Centralisation et simplification de l'accès aux données pharmaceutiques.</span>
+                            <span class="lang-en" style="display:none;">AI-powered drug aggregation and search application. Centralizing and simplifying access to pharmaceutical data.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/medicsearch.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> 
+                                <span class="lang-fr">Voir le projet</span>
+                                <span class="lang-en" style="display:none;">View project</span>
+                            </a>
+                            <!-- Si vous avez un lien GitHub spécifique pour ce projet -->
+                            <!-- <a href="URL_GITHUB_MEDICSEARCH" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> 
+                                <span class="lang-fr">Code source</span>
+                                <span class="lang-en" style="display:none;">Source code</span>
+                            </a> -->
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Les autres projets seront ajoutés ici manuellement ou via un script simple si vous en avez beaucoup -->
+                <!-- Exemple d'un autre projet (à adapter) -->
+                <!--
+                <div class="project-card">
+                    <img src="assets/img/autre-projet.jpg" alt="Autre Projet" class="project-image">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Techno1</span>
+                            <span class="project-tag">Techno2</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">Nom Autre Projet</span>
+                            <span class="lang-en" style="display:none;">Other Project Name</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Résumé de l'autre projet.</span>
+                            <span class="lang-en" style="display:none;">Summary of the other project.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/autre-projet.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> 
+                                <span class="lang-fr">Voir le projet</span>
+                                <span class="lang-en" style="display:none;">View project</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+        
+        <section id="parcours" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-fr">Mon Parcours</span>
+                    <span class="lang-en">My Journey</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-fr">Un aperçu de mon cheminement éducatif et professionnel.</span>
+                    <span class="lang-en">An overview of my educational and professional path.</span>
+                </p>
+            </div>
+            <div class="parcours-container">
+                <!-- Le contenu du parcours (timeline/liste) sera ajouté ici -->
+                <p>
+                    <span class="lang-fr">[Contenu du parcours à venir...]</span>
+                    <span class="lang-en">[Journey content to be added...]</span>
+                </p>
             </div>
         </section>
         
@@ -342,14 +408,9 @@
             <div class="container">
                 <p>
                     <span class="lang-fr">&copy; 2025 Jonathan Gromat. Tous droits réservés. | Portfolio personnel - Développeur web et Data</span>
-                    <span class="lang-en">&copy; 2025 Jonathan Gromat. All rights reserved. | Personal portfolio - Web & Data Developer</span>
+                    <span class="lang-en" style="display:none;">&copy; 2025 Jonathan Gromat. All rights reserved. | Personal Portfolio - Web and Data Developer</span>
                 </p>
-                <p class="footer-links">
-                    <a href="privacy-policy.html" class="footer-link">
-                        <span class="lang-fr">Politique de confidentialité</span>
-                        <span class="lang-en">Privacy Policy</span>
-                    </a>
-                </p>
+                <!-- Suppression du lien vers la politique de confidentialité -->
             </div>
         </div>
     </section>
@@ -359,7 +420,6 @@
     </div>
 
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/projects-loader.js"></script>
-    <script src="assets/js/consent.js"></script>
+    <!-- <script src="assets/js/projects-loader.js"></script> -->
 </body>
 </html>

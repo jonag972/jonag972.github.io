@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet MedicSearch - Mon Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/project-detail.css"> {/* Vous pouvez réutiliser ou adapter ce CSS */}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques pour la galerie d'images simple si besoin */
+        .simple-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .simple-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .simple-gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Ajustement pour les images dans le carrousel de project-detail.css si vous le réutilisez */
+        .project-carousel .swiper-slide img {
+            max-height: 400px; /* Ou la hauteur que vous souhaitez */
+            object-fit: contain; /* ou 'cover' selon le rendu souhaité */
+        }
+
+        /* Styles pour le contenu Markdown converti */
+        .markdown-content-static {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-top: 20px;
+        }
+        .markdown-content-static h1,
+        .markdown-content-static h2,
+        .markdown-content-static h3,
+        .markdown-content-static h4,
+        .markdown-content-static h5,
+        .markdown-content-static h6 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .markdown-content-static h1 { font-size: 2.2em; }
+        .markdown-content-static h2 { font-size: 1.8em; }
+        .markdown-content-static h3 { font-size: 1.5em; }
+        .markdown-content-static p {
+            line-height: 1.7;
+            margin-bottom: 1em;
+            color: var(--text-color);
+        }
+        .markdown-content-static ul,
+        .markdown-content-static ol {
+            margin-left: 20px;
+            margin-bottom: 1em;
+            color: var(--text-color);
+        }
+        .markdown-content-static li {
+            margin-bottom: 0.5em;
+        }
+        .markdown-content-static a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .markdown-content-static a:hover {
+            text-decoration: underline;
+        }
+        .markdown-content-static pre {
+            background-color: var(--code-bg);
+            color: var(--code-text-color);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .markdown-content-static code {
+            background-color: var(--code-bg-inline);
+            color: var(--code-text-color-inline);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .markdown-content-static blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-left: 0;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+        .markdown-content-static table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        .markdown-content-static th,
+        .markdown-content-static td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: left;
+        }
+        .markdown-content-static th {
+            background-color: var(--table-header-bg);
+        }
+
+        /* Styles pour le carrousel d'images */
+        .project-carousel .swiper-wrapper {
+            display: flex;
+            overflow-x: auto; /* Permet le défilement horizontal */
+            gap: 15px; /* Espace entre les images */
+            padding-bottom: 15px; /* Espace pour la barre de défilement si visible */
+            align-items: flex-start; /* Aligner les slides en haut */
+        }
+
+        /* Styles pour les .swiper-slide pour qu'ils ne rétrécissent pas */
+        .project-carousel .swiper-slide {
+            flex-shrink: 0; /* Empêche les slides de rétrécir */
+            /* La largeur est déjà définie à 280px !important dans project-detail.css */
+            /* La hauteur est déjà définie à 220px dans project-detail.css */
+        }
+
+        /* Styles pour centrer les tags */
+        .project-tags-detail {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" id="logo-container">
+            <h1>JG</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../index.html#projects">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-container">
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </div>
+            <div class="lang-toggle">
+                <i class="fas fa-globe"></i>
+                <span class="current-lang">FR</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="detail-container">
+            <section class="project-detail section">
+                <div class="project-detail-header">
+                    <h2 class="section-title">
+                        <span class="lang-fr">MedicSearch</span>
+                        <span class="lang-en" style="display:none;">MedicSearch</span>
+                    </h2>
+                    <div class="project-description-header">
+                        <span class="lang-fr">Application d'agrégation et recherche de médicaments avec IA</span>
+                        <span class="lang-en" style="display:none;">Drug aggregation and search application with AI</span>
+                    </div>
+                </div>
+
+                <!-- Galerie d'images -->
+                <div class="project-carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://placehold.co/600x400/EEE/31343C?text=MedicSearch+Dashboard" alt="MedicSearch Dashboard"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/600x400/DDD/31343C?text=MedicSearch+Search" alt="MedicSearch Recherche"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/600x400/CCC/31343C?text=MedicSearch+Admin" alt="MedicSearch Admin Panel"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/600x400/BBB/31343C?text=MedicSearch+Scraper" alt="MedicSearch Scraper"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/600x400/AAA/31343C?text=MedicSearch+API" alt="MedicSearch API"></div>
+                    </div>
+                </div>
+                
+                <div class="project-metadata">
+                    <div class="project-details-grid">
+                        <div class="project-detail-item">
+                            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
+                            <div class="detail-content">
+                                <h4><span class="lang-fr">Période</span><span class="lang-en" style="display:none;">Period</span></h4>
+                                <p>
+                                    <span class="lang-fr">Janvier 2025 - Mars 2025</span>
+                                    <span class="lang-en" style="display:none;">January 2025 - March 2025</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="detail-icon"><i class="fas fa-clock"></i></span>
+                            <div class="detail-content">
+                                <h4><span class="lang-fr">Durée</span><span class="lang-en" style="display:none;">Duration</span></h4>
+                                <p>
+                                    <span class="lang-fr">3 mois</span>
+                                    <span class="lang-en" style="display:none;">3 months</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project-detail-item">
+                            <span class="detail-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <div class="detail-content">
+                                <h4><span class="lang-fr">Lieu</span><span class="lang-en" style="display:none;">Location</span></h4>
+                                <p>
+                                    <span class="lang-fr">IUT Créteil-Vitry, Ile-de-France, France</span>
+                                    <span class="lang-en" style="display:none;">IUT Créteil-Vitry, Ile-de-France, France</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-tags-detail">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Flask</span>
+                    <span class="project-tag">MongoDB</span>
+                    <span class="project-tag">Mistral AI</span>
+                    <span class="project-tag">Web Scraping</span>
+                </div>
+
+                <div class="markdown-content-static">
+                    <!-- Contenu de medicsearchfr.md converti en HTML ici -->
+                    <h2>1. Synthèse Exécutive</h2>
+                    <p>MedicSearch est une plateforme web complète, fruit d'un travail d'équipe, conçue pour centraliser, traiter et diffuser des informations relatives aux médicaments et à leurs effets indésirables. Ce projet ambitieux vise à simplifier l'accès à des données pharmaceutiques souvent complexes et dispersées. Le système intègre un module robuste d'acquisition de données par scraping web et PDF, une base de données NoSQL flexible (MongoDB) choisie pour sa capacité à gérer des données semi-structurées, et une application web interactive développée avec le framework Python Flask. Une caractéristique distinctive de MedicSearch est l'intégration d'un service d'intelligence artificielle, utilisant l'API de Mistral AI, pour générer automatiquement des résumés clairs et concis des informations médicamenteuses, améliorant ainsi l'accessibilité pour tous les utilisateurs. La plateforme offre une expérience utilisateur riche avec des fonctionnalités de recherche avancée, de gestion de profils personnalisés (incluant favoris et commentaires), ainsi qu'une interface d'administration dédiée permettant une supervision efficace du système et du processus essentiel d'acquisition de données. La conception du projet inclut une stratégie de déploiement moderne, basée sur des services cloud conteneurisés, visant à garantir la scalabilité, la fiabilité et la maintenabilité de l'application.</p>
+                    
+                    <h2>2. Objectifs et Périmètre du Projet</h2>
+                    <p>Le développement de MedicSearch a été guidé par plusieurs objectifs fondamentaux, visant à créer une ressource informationnelle de valeur dans le domaine pharmaceutique. L'objectif premier est l'<strong>agrégation automatisée de données</strong>, consistant à collecter des informations pertinentes sur les médicaments à partir de sources publiques diversifiées, incluant des sites web gouvernementaux, des documents PDF (tels que les Résumés des Caractéristiques du Produit - RCP), et potentiellement des fichiers structurés.</p>
+                    <p>Une fois collectées, ces données brutes nécessitent un <strong>traitement rigoureux et une structuration</strong> afin de les rendre cohérentes et facilement exploitables. Cet objectif implique des étapes de nettoyage, d'analyse et d'organisation des informations dans un format standardisé au sein de la base de données. Pour le stockage, le projet vise une <strong>persistance efficace et flexible</strong> grâce à l'utilisation de MongoDB, permettant de gérer la variété et le volume des données pharmaceutiques.</p>
+                    <p>Au cœur du projet se trouve la création d'une <strong>interface utilisateur intuitive et accessible</strong>. L'application web doit permettre à différents profils d'utilisateurs (patients, professionnels de santé, chercheurs, étudiants) de <strong>rechercher</strong>, <strong>consulter</strong> et <strong>interagir</strong> avec les données de manière simple et efficace. Pour aller au-delà de la simple présentation de données, le projet intègre une <strong>analyse intelligente</strong> via l'IA. L'objectif est de <strong>synthétiser</strong> les informations techniques complexes en résumés compréhensibles, facilitant ainsi la prise de connaissance rapide.</p>
+                    <p>Enfin, le projet inclut un volet d'<strong>administration et de maintenance</strong>, fournissant aux administrateurs les outils nécessaires pour gérer les comptes utilisateurs, configurer les rôles et permissions, et surtout, pour superviser et contrôler le processus critique d'acquisition et de mise à jour des données.</p>
+                    <p>Le périmètre actuel du projet englobe le développement complet du module de scraping pour des sources spécifiques (notamment la base de données publique des médicaments française), l'implémentation de la base de données MongoDB, la création de l'application web Flask avec l'ensemble des fonctionnalités utilisateur et administrateur décrites, ainsi que l'intégration fonctionnelle du service Mistral AI pour la génération de résumés.</p>
+                    
+                    <h2>3. Architecture Technique</h2>
+                    <p>L'architecture de MedicSearch a été conçue pour être modulaire, scalable et maintenable, en s'appuyant sur un ensemble de technologies modernes et éprouvées, principalement dans l'écosystème Python.</p>
+                    <p>Le <strong>socle backend</strong> repose sur <strong>Flask</strong>, un microframework web Python choisi pour sa simplicité et sa flexibilité. Flask gère le routage des requêtes HTTP, l'exécution de la logique métier dans les contrôleurs, et la communication avec la base de données. Sa nature modulaire est exploitée à travers l'utilisation de Blueprints pour organiser les différentes sections fonctionnelles de l'application (principale, authentification, administration).</p>
+                    <p>La <strong>persistance des données</strong> est assurée par <strong>MongoDB</strong>, une base de données NoSQL orientée document. Ce choix technologique est justifié par la nécessité de stocker des informations médicamenteuses dont la structure peut varier d'une source à l'autre. MongoDB offre la flexibilité requise pour gérer ces données semi-structurées tout en permettant des requêtes performantes grâce à un système d'indexation approprié. L'interaction avec MongoDB depuis l'application Flask est réalisée via la bibliothèque <code>pymongo</code>.</p>
+                    <p>Le <strong>frontend</strong> est principalement rendu côté serveur par Flask à l'aide du moteur de template <strong>Jinja2</strong>, qui permet l'intégration dynamique des données dans les pages HTML. La mise en forme visuelle est assurée par des feuilles de style <strong>CSS3</strong>, organisées de manière à utiliser des variables pour une thématisation et une maintenance facilitées. Pour améliorer l'interactivité et l'expérience utilisateur, du <strong>JavaScript (Vanilla JS)</strong> est utilisé côté client pour des fonctionnalités telles que les mises à jour partielles de page (AJAX/Fetch), la validation de formulaires, et le contrôle dynamique des interfaces, notamment dans le panneau d'administration.</p>
+                    <p>L'<strong>acquisition de données</strong> est gérée par un module de <strong>scraping</strong> développé en Python. Ce module utilise des bibliothèques standards comme <code>requests</code> pour le téléchargement des pages, <code>BeautifulSoup4</code> pour l'analyse syntaxique du HTML, et des outils spécifiques comme <code>PyMuPDF (fitz)</code> et <code>pdfplumber</code> pour l'extraction d'informations à partir de documents PDF. La bibliothèque <code>pandas</code> est également utilisée pour lire les sources de données initiales (fichiers Excel listant les URL). La conception de ce module intègre des mécanismes de détection de changement pour optimiser les mises à jour.</p>
+                    <p>L'intégration de l'<strong>intelligence artificielle</strong> se fait via une communication avec l'API externe de <strong>Mistral AI</strong>. Un service dédié au sein de l'application gère l'authentification (via clé API chargée depuis l'environnement), la construction des prompts, l'envoi des requêtes, et le traitement des réponses pour générer les résumés de médicaments.</p>
+                    <p>La gestion des dépendances Python est assurée par <code>pip</code> et un fichier <code>requirements.txt</code>, garantissant la reproductibilité de l'environnement. La configuration de l'application, y compris les informations sensibles, est gérée à l'aide de variables d'environnement, chargées via <code>python-dotenv</code> en développement.</p>
+                    <p>Cette architecture globale vise une séparation claire des responsabilités entre la présentation, la logique métier, l'accès aux données, l'acquisition de données et les services externes (comme l'IA), favorisant ainsi la robustesse et l'évolutivité du système.</p>
+
+                    <h2>4. Description des Composants</h2>
+                    <p>MedicSearch est composé de plusieurs modules fonctionnels qui interagissent pour fournir une plateforme complète.</p>
+                    <h3>4.1 Application Web Backend (Flask)</h3>
+                    <p>Le backend Flask est le cœur logique de l'application. Il est responsable de la réception des requêtes HTTP, de leur traitement et de la génération des réponses. Organisé en Blueprints pour une meilleure modularité, il contient des contrôleurs dédiés à la gestion des médicaments (<code>MedicineController</code>), des utilisateurs (<code>UserController</code>) et des tâches d'administration (<code>AdminController</code>). Ces contrôleurs implémentent la logique métier, interagissant avec la couche de modèles pour accéder et manipuler les données stockées dans MongoDB. Le backend gère également l'authentification des utilisateurs, la gestion des sessions via des cookies sécurisés, et l'application des règles d'autorisation basées sur les rôles. Il sert les pages HTML rendues par Jinja2 et expose plusieurs endpoints API pour permettre les interactions dynamiques avec le frontend (recherche, favoris, résumé IA, statut du scraper). La configuration de l'application, gérée via un fichier dédié, permet d'adapter le comportement du backend aux différents environnements de déploiement (développement, production, test).</p>
+                    <h3>4.2 Interface Utilisateur Frontend</h3>
+                    <p>L'interface utilisateur vise à être claire, moderne et facile à naviguer. Elle est construite avec HTML5, CSS3 et JavaScript, les pages étant générées côté serveur par Jinja2. Le CSS utilise des variables pour une cohérence stylistique et une maintenance aisée. Le JavaScript est utilisé pour créer une expérience utilisateur plus fluide et réactive. Cela inclut le chargement asynchrone des résultats de recherche et la pagination sans rechargement complet de la page, la possibilité d'ajouter ou de retirer des médicaments des favoris instantanément, et l'affichage dynamique du statut et des logs du scraper dans le panneau d'administration. Des éléments interactifs comme les filtres de recherche avancée ou les formulaires d'édition sont également gérés côté client pour une meilleure ergonomie. L'utilisation d'icônes (via Font Awesome) contribue à la clarté visuelle de l'interface.</p>
+                    <h3>4.3 Module de Scraping et Acquisition de Données</h3>
+                    <p>Ce module est fondamental pour l'alimentation de MedicSearch en données fraîches et pertinentes. Il est principalement constitué d'un script Python (<code>scripts/scraper.py</code>) conçu pour être robuste et contrôlable. Ce script prend en entrée une liste d'URL (typiquement depuis un fichier Excel) pointant vers des pages web contenant des informations sur les médicaments. Il utilise <code>requests</code> pour télécharger le contenu HTML et <code>BeautifulSoup4</code> pour l'analyser et en extraire les données pertinentes (titre, détails, date de mise à jour, structure des sections, tableaux, formatage). Une caractéristique clé est sa capacité à générer un hash du contenu extrait, permettant de comparer avec la version précédemment stockée en base et de ne procéder à une mise à jour que si le contenu a réellement changé. Ce script est également capable de traiter des documents PDF en utilisant des bibliothèques spécialisées (<code>PyMuPDF</code>, <code>pdfplumber</code>). Pour éviter de bloquer l'application web, le scraper est lancé dans un thread séparé et son état (progression, logs) est communiqué à l'interface d'administration via des API dédiées, permettant un suivi et un contrôle en temps réel (lancement, arrêt). La gestion des erreurs de base (exceptions réseau, erreurs de parsing) est intégrée, bien que des mécanismes plus avancés (retries, gestion des blocages) pourraient être ajoutés.</p>
+                    <h3>4.4 Persistance des Données (MongoDB)</h3>
+                    <p>MongoDB sert de système de stockage principal. Sa flexibilité en fait un choix approprié pour les données issues du scraping, dont la structure peut varier. Les informations sont organisées en plusieurs collections : <code>medicines</code> (données principales des médicaments, incluant le contenu structuré et le résumé IA mis en cache), <code>users</code> (informations des comptes utilisateurs et mots de passe hachés), <code>roles</code> (définition des rôles et de leurs permissions associées), <code>comments</code> (commentaires et notes des utilisateurs sur les médicaments), <code>interactions</code> (suivi des favoris et potentiellement d'autres interactions), <code>logs</code> (historique des actions importantes), et <code>metadata</code> (informations sur l'état et les résultats des processus de scraping). Les relations entre les données sont gérées par des références (ObjectId), et des index sont définis sur les champs clés pour optimiser les performances des requêtes, en particulier pour la recherche, le filtrage et l'authentification.</p>
+                    <h3>4.5 Service d'Intelligence Artificielle (Mistral AI)</h3>
+                    <p>Ce composant utilise l'API de Mistral AI pour enrichir les données brutes. Sa fonction principale est de générer des résumés concis et vulgarisés des informations techniques présentes dans les fiches médicamenteuses. Le service, encapsulé dans une classe Python (<code>AIService</code>), gère l'authentification auprès de l'API Mistral, construit des prompts spécifiques au domaine pharmaceutique pour guider le modèle (<code>mistral-small-latest</code>), et traite la réponse pour la formater en HTML simple. Pour optimiser les performances et maîtriser les coûts liés à l'API, un système de cache est implémenté : les résumés générés sont stockés dans la collection <code>medicines</code> de MongoDB avec un timestamp. Avant de générer un nouveau résumé, le service vérifie si un résumé récent existe en cache ; si c'est le cas, il est réutilisé, sinon un nouvel appel API est effectué et le résultat est mis en cache.</p>
+
+                    <h2>5. Fonctionnalités Détaillées</h2>
+                    <p>La plateforme MedicSearch met à disposition un ensemble riche de fonctionnalités, adaptées aux besoins des différents types d'utilisateurs.</p>
+                    <h3>5.1 Fonctionnalités Utilisateur</h3>
+                    <p>L'expérience utilisateur standard est centrée sur l'accès à l'information. Les utilisateurs peuvent effectuer des <strong>recherches</strong> dans la base de données via une barre de recherche simple ou utiliser des <strong>filtres avancés</strong> (substance active, forme, laboratoire, dosage) pour affiner leurs requêtes. Les résultats sont présentés de manière claire, <strong>paginée</strong>, et peuvent être <strong>triés</strong> selon différents critères comme la pertinence (calculée en fonction de la présence des termes recherchés dans les différentes sections), la date de mise à jour ou le nom du médicament.</p>
+                    <p>La page de <strong>détail d'un médicament</strong> offre une vue complète des informations extraites, structurées en sections distinctes (détails généraux, composition, indications, effets secondaires, etc.) avec une navigation latérale permettant d'accéder rapidement à la section souhaitée. Une fonctionnalité clé est l'affichage d'un <strong>résumé généré par intelligence artificielle</strong>, offrant une synthèse rapide des points essentiels.</p>
+                    <p>Les utilisateurs enregistrés bénéficient de fonctionnalités de <strong>personnalisation</strong>. Ils peuvent <strong>s'inscrire</strong> et <strong>se connecter</strong> à leur compte, gérer leur <strong>profil</strong> (modifier leurs informations personnelles, changer leur mot de passe), et marquer des médicaments comme <strong>favoris</strong> pour les retrouver facilement dans une section dédiée. Ils peuvent également contribuer à la plateforme en ajoutant des <strong>commentaires</strong> et des <strong>notes</strong> (de 1 à 5 étoiles) sur les fiches médicaments, partageant ainsi leur expérience ou leurs connaissances. La visibilité des commentaires peut être conditionnée par le rôle de l'utilisateur consultant la page. Les utilisateurs peuvent également modifier ou supprimer leurs propres commentaires.</p>
+                    <h3>5.2 Fonctionnalités Administrateur</h3>
+                    <p>Une section d'administration sécurisée est réservée aux utilisateurs disposant des droits appropriés (rôle Administrateur). Cette interface offre des outils de gestion et de supervision essentiels. Les administrateurs peuvent <strong>lister l'ensemble des utilisateurs</strong> enregistrés, les filtrer par rôle ou statut, et <strong>modifier</strong> les informations d'un compte spécifique, notamment en changeant son rôle ou en suspendant son accès. Une gestion fine des <strong>rôles et permissions</strong> est possible, permettant de définir précisément les capacités de chaque type d'utilisateur via une interface dédiée.</p>
+                    <p>Un tableau de bord fournit une vue d'ensemble de l'état de la <strong>base de données</strong>, affichant des statistiques clés comme le nombre total de médicaments, de laboratoires ou de substances uniques, ainsi que les résultats du dernier cycle de scraping.</p>
+                    <p>La fonctionnalité d'administration la plus avancée concerne le <strong>contrôle du processus de scraping</strong>. Depuis cette interface, un administrateur peut <strong>lancer manuellement un scraping complet</strong> des sources de données. Pendant l'exécution, il peut <strong>suivre la progression en temps réel</strong> grâce à une barre de progression et des compteurs (URLs traitées, nouveaux médicaments ajoutés, mis à jour, inchangés, erreurs). Une <strong>console de logs dynamique</strong> affiche les messages générés par le scraper au fur et à mesure, offrant une visibilité détaillée sur le déroulement du processus. De manière cruciale, l'administrateur a également la possibilité d'<strong>arrêter un scraping en cours</strong> d'exécution.</p>
+
+                    <h2>6. Qualité du Développement et Bonnes Pratiques</h2>
+                    <p>Le développement de MedicSearch a cherché à intégrer des principes de qualité logicielle et des bonnes pratiques reconnues. L'architecture modulaire du backend, basée sur Flask et ses Blueprints, ainsi que la séparation claire entre contrôleurs, modèles et services, contribue positivement à la <strong>maintenabilité</strong> et à l'<strong>évolutivité</strong> du code. La gestion centralisée de la configuration, adaptable à différents environnements, est également une force.</p>
+                    <p>En termes de <strong>sécurité</strong>, des mesures fondamentales sont en place : le hachage robuste des mots de passe (<code>pbkdf2:sha256</code>) et la configuration sécurisée des cookies de session (HttpOnly, SameSite=Lax). Le système d'autorisation basé sur les rôles et les permissions définies en base de données offre une base solide pour le contrôle d'accès. Des améliorations pourraient toutefois être apportées par l'intégration systématique de la protection contre les attaques CSRF (par exemple, via Flask-WTF) et par une validation plus exhaustive des données soumises par les utilisateurs côté serveur.</p>
+                    <p>La <strong>qualité du code</strong> Python est globalement bonne, avec une structure logique et une lisibilité correcte. L'utilisation de classes pour les modèles de données fournit une abstraction utile sur les opérations MongoDB. Le code du frontend, bien que fonctionnel, pourrait bénéficier d'une meilleure organisation en externalisant le JavaScript complexe dans des fichiers dédiés. Le script de scraping principal montre une conception réfléchie pour la gestion d'état et le contrôle asynchrone, bien que sa robustesse puisse encore être améliorée face aux aléas du scraping web (changements de structure des sites cibles, erreurs réseau). L'intégration du service d'IA est bien encapsulée et optimisée par un système de cache.</p>
+                    <p>Cependant, deux axes majeurs d'amélioration concernent la <strong>documentation</strong> et les <strong>tests</strong>. L'ajout de docstrings détaillées et de commentaires dans les sections de code les plus complexes faciliterait grandement la compréhension et la maintenance future par l'équipe ou d'autres développeurs. Plus important encore, la mise en place d'une <strong>suite de tests automatisés</strong> (unitaires et d'intégration) est essentielle pour garantir la fiabilité du code, sécuriser les modifications futures et détecter rapidement les régressions. La présence d'une configuration de test suggère que cet aspect a été envisagé. Enfin, une <strong>rationalisation de la structure du projet</strong>, en éliminant les artefacts potentiellement obsolètes, contribuerait à une meilleure clarté.</p>
+
+                    <h2>7. Stratégie de Déploiement</h2>
+                    <p>La vision pour le déploiement de MedicSearch s'inscrit dans les pratiques modernes du cloud computing, privilégiant l'efficacité opérationnelle et la scalabilité. L'approche recommandée consiste à utiliser des <strong>plateformes cloud managées</strong>, telles qu'<strong>Azure App Service</strong> ou <strong>AWS Elastic Beanstalk</strong>, pour héberger l'application web Flask. Ces services simplifient considérablement la gestion de l'infrastructure sous-jacente (serveurs, patching, réseau).</p>
+                    <p>Pour garantir la cohérence entre les environnements de développement, de test et de production, ainsi que pour faciliter les déploiements, la <strong>conteneurisation avec Docker</strong> est une étape clé de la stratégie. Les conteneurs Docker encapsulant l'application et ses dépendances peuvent ensuite être déployés sur diverses plateformes, allant de services simples comme Azure Container Instances ou AWS Fargate pour des charges modérées, jusqu'à des orchestrateurs comme Azure Kubernetes Service (AKS) ou AWS Elastic Kubernetes Service (EKS) si une scalabilité et une gestion plus avancées sont requises.</p>
+                    <p>Concernant la persistance des données, la stratégie privilégie également les <strong>solutions de bases de données managées</strong>. Pour MongoDB, <strong>MongoDB Atlas</strong> est le choix naturel aligné avec cette approche. Si d'autres bases de données comme PostgreSQL ou Neo4j devaient être intégrées pour des analyses futures (comme suggéré dans la documentation initiale), des services managés équivalents (Azure Database for PostgreSQL, Amazon RDS, ou des solutions managées pour Neo4j si disponibles/budgétisées) seraient préférés à l'auto-hébergement sur des machines virtuelles, afin de bénéficier de la gestion automatisée des sauvegardes, de la haute disponibilité et de la mise à l'échelle.</p>
+                    <p>La stratégie prend également en compte les contraintes <strong>budgétaires</strong>, notamment dans un contexte académique, en suggérant d'exploiter les crédits et offres spécifiques proposés par les fournisseurs cloud. Enfin, les aspects fondamentaux de <strong>sécurité</strong> (configuration de certificats SSL pour HTTPS) et de <strong>scalabilité</strong> (utilisation des capacités d'auto-scaling intégrées aux services managés) sont intégrés dès la conception du déploiement.</p>
+
+                    <h2>8. Évolutions Futures et Feuille de Route</h2>
+                    <p>MedicSearch, bien que fonctionnel et riche, offre de nombreuses pistes pour des développements futurs visant à accroître sa valeur et sa sophistication.</p>
+                    <p>Une amélioration majeure consisterait à transformer la <strong>recherche</strong> actuelle, basée sur les mots-clés, en une <strong>recherche sémantique</strong>. Cela impliquerait la génération d'<strong>embeddings vectoriels</strong> (représentations numériques du sens) pour le contenu textuel des médicaments, stockés dans une <strong>base de données vectorielle</strong> dédiée (comme Qdrant). Les utilisateurs pourraient ainsi formuler des requêtes en langage naturel ou rechercher des médicaments aux effets ou indications similaires, même sans utiliser les termes exacts.</p>
+                    <p>L'analyse des relations complexes entre les entités pharmaceutiques (médicaments, substances, effets, indications, laboratoires) pourrait être considérablement enrichie par l'utilisation d'une <strong>base de données graphe</strong> telle que <strong>Neo4j</strong>. La migration ou la synchronisation d'une partie des données vers ce type de base permettrait de visualiser et d'interroger ces connexions, offrant des insights précieux pour la recherche ou la compréhension des interactions médicamenteuses.</p>
+                    <p>Le <strong>module de scraping</strong>, bien que fonctionnel, peut toujours être rendu plus <strong>robuste</strong>. Des améliorations pourraient inclure une meilleure gestion des erreurs réseau (avec des stratégies de retry), l'ajout de délais configurables entre les requêtes pour éviter les blocages, la rotation des User-Agents, et potentiellement l'utilisation de frameworks plus spécialisés comme Scrapy pour gérer des scénarios de scraping complexes ou à grande échelle.</p>
+                    <p>Sur le plan de la qualité logicielle, la priorité absolue est la mise en place d'une <strong>suite de tests automatisés</strong> complète, couvrant à la fois les unités de code (modèles, services) et les flux d'intégration (routes, interactions entre composants). Cela est indispensable pour assurer la stabilité de l'application lors des futures évolutions.</p>
+                    <p>L'<strong>expérience utilisateur</strong> pourrait être affinée par des améliorations de l'interface, l'optimisation des performances de chargement, et l'ajout de nouvelles fonctionnalités comme un outil de <strong>comparaison</strong> entre plusieurs médicaments, des <strong>alertes</strong> personnalisées sur les interactions potentielles (si des données fiables peuvent être intégrées), ou un historique de consultation pour l'utilisateur.</p>
+                    <p>Enfin, un travail de <strong>consolidation</strong> de la base de code (nettoyage des éléments obsolètes) et d'enrichissement de la <strong>documentation</strong> (docstrings, mise à jour du README) faciliterait la maintenance et la collaboration future sur le projet.</p>
+
+                    <h2>9. Conclusion</h2>
+                    <p>MedicSearch représente une réalisation technique significative, aboutissement d'un travail d'équipe visant à créer une ressource centralisée et intelligente pour l'information médicamenteuse. Le projet intègre avec succès un éventail de technologies pertinentes, allant du développement web full-stack avec Python/Flask et MongoDB, à l'acquisition automatisée de données via scraping web/PDF, jusqu'à l'application de l'intelligence artificielle générative pour la synthèse d'informations.</p>
+                    <p>La plateforme se distingue par son architecture modulaire, la richesse de ses fonctionnalités (notamment une recherche avancée et une interface d'administration complète pour le contrôle du scraping), et son approche innovante de l'intégration de l'IA avec un système de cache performant. Elle constitue une base solide et fonctionnelle.</p>
+                    <p>Pour assurer sa pérennité et réaliser pleinement son potentiel, les prochaines étapes devront se concentrer sur le renforcement de la qualité logicielle par l'ajout de tests automatisés, la consolidation de la structure du projet, l'amélioration continue de la robustesse du scraping, et l'exploration des évolutions fonctionnelles envisagées, particulièrement dans le domaine de la recherche sémantique et de l'analyse de données via des technologies vectorielles et graphes. En l'état, MedicSearch est un projet démonstrateur puissant, illustrant des compétences techniques variées et pertinentes, et constitue un excellent élément pour un portfolio ou un rendu académique.</p>
+                </div>
+
+                <div class="project-links-detail" style="margin-top:30px;">
+                    <h3>
+                        <span class="lang-fr">Liens</span>
+                        <span class="lang-en" style="display:none;">Links</span>
+                    </h3>
+                    <div>
+                        <!-- <a href="#" target="_blank" class="project-link-btn">
+                            <i class="fas fa-external-link-alt"></i> 
+                            <span class="lang-fr">Voir la démo</span>
+                            <span class="lang-en" style="display:none;">View Demo</span>
+                        </a> -->
+                        <!-- <a href="#" target="_blank" class="project-link-btn github">
+                            <i class="fab fa-github"></i> 
+                            <span class="lang-fr">Code Source</span>
+                            <span class="lang-en" style="display:none;">Source Code</span>
+                        </a> -->
+                         <p class="text-muted">
+                            <span class="lang-fr">Liens non disponibles pour ce projet.</span>
+                            <span class="lang-en" style="display:none;">Links not available for this project.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="../index.html#projects" class="btn primary">
+                        <i class="fas fa-arrow-left"></i> 
+                        <span class="lang-fr">Retour aux projets</span>
+                        <span class="lang-en" style="display:none;">Back to projects</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-section text-center mt-5 py-3">
+        <div class="container">
+            <p>
+                <span class="lang-fr">&copy; 2025 Jonathan Gromat. Tous droits réservés. | Portfolio personnel - Développeur web et Data</span>
+                <span class="lang-en" style="display:none;">&copy; 2025 Jonathan Gromat. All rights reserved. | Personal portfolio - Web & Data Developer</span>
+            </p>
+            <p class="footer-links">
+                <a href="../privacy-policy.html" class="footer-link">
+                    <span class="lang-fr">Politique de confidentialité</span>
+                    <span class="lang-en" style="display:none;">Privacy Policy</span>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script> {/* Pour le theme toggle et le menu burger */}
+    <script>
+        // Petit script pour gérer l'affichage FR/EN simple sur cette page statique
+        // Vous pourrez l'améliorer ou l'intégrer à votre script.js global plus tard
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.querySelector('.lang-toggle');
+            const currentLangSpan = document.querySelector('.current-lang');
+            let currentLanguage = localStorage.getItem('language') || 'fr';
+
+            function updateDisplay(lang) {
+                document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
+                document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+                if (currentLangSpan) currentLangSpan.textContent = lang.toUpperCase();
+                document.documentElement.lang = lang;
+            }
+
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+                    localStorage.setItem('language', currentLanguage);
+                    updateDisplay(currentLanguage);
+                });
+            }
+            // Init
+            updateDisplay(currentLanguage);
+        });
+    </script>
+</body>
+</html>

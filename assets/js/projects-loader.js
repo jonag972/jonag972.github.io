@@ -164,7 +164,7 @@ async function generateProjectCards(projectsData) {
                     <span class="lang-en">${project.shortDescriptionEn || project.shortDescription || ''}</span>
                 </p>
                 <div class="project-links">
-                    <a href="project-detail.php?project=${projectId}" class="project-link">
+                    <a href="project-detail.html?project=${projectId}" class="project-link">
                         <i class="fas fa-external-link-alt"></i> 
                         <span class="lang-fr">Voir le projet</span>
                         <span class="lang-en">View project</span>
