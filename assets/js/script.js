@@ -48,15 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
         
         // Mettre à jour le titre de la page
-        document.title = "Mon Portfolio";
-        
-        // Navigation
+        document.title = "Mon Portfolio";        // Navigation
         const navLink1 = document.querySelector('nav ul li:nth-child(1) a');
         if (navLink1) navLink1.textContent = 'Accueil';
         const navLink2 = document.querySelector('nav ul li:nth-child(2) a');
         if (navLink2) navLink2.textContent = 'Projets';
         const navLink3 = document.querySelector('nav ul li:nth-child(3) a');
-        if (navLink3) navLink3.textContent = 'Contact';
+        if (navLink3) navLink3.textContent = 'Parcours';
+        const navLink4 = document.querySelector('nav ul li:nth-child(4) a');
+        if (navLink4) navLink4.textContent = 'Contact';
         
         // Boutons CTA
         const ctaPrimary = document.querySelector('.cta-buttons .btn.primary');
@@ -79,15 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
         
         // Mettre à jour le titre de la page
-        document.title = "My Portfolio";
-        
-        // Navigation
+        document.title = "My Portfolio";        // Navigation
         const navLink1 = document.querySelector('nav ul li:nth-child(1) a');
         if (navLink1) navLink1.textContent = 'Home';
         const navLink2 = document.querySelector('nav ul li:nth-child(2) a');
         if (navLink2) navLink2.textContent = 'Projects';
         const navLink3 = document.querySelector('nav ul li:nth-child(3) a');
-        if (navLink3) navLink3.textContent = 'Contact';
+        if (navLink3) navLink3.textContent = 'Journey';
+        const navLink4 = document.querySelector('nav ul li:nth-child(4) a');
+        if (navLink4) navLink4.textContent = 'Contact';
         
         // Boutons CTA
         const ctaPrimary = document.querySelector('.cta-buttons .btn.primary');

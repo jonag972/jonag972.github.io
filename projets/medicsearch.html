@@ -5,136 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet MedicSearch - Mon Portfolio</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/project-detail.css"> {/* Vous pouvez réutiliser ou adapter ce CSS */}
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- Ajout CSS Swiper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles spécifiques pour la galerie d'images simple si besoin */
-        .simple-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .simple-gallery img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .simple-gallery img:hover {
-            transform: scale(1.05);
-        }
-        /* Ajustement pour les images dans le carrousel de project-detail.css si vous le réutilisez */
-        .project-carousel .swiper-slide img {
-            max-height: 400px; /* Ou la hauteur que vous souhaitez */
-            object-fit: contain; /* ou 'cover' selon le rendu souhaité */
-        }
-
-        /* Styles pour le contenu Markdown converti */
-        .markdown-content-static {
-            padding: 20px;
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            margin-top: 20px;
-        }
-        .markdown-content-static h1,
-        .markdown-content-static h2,
-        .markdown-content-static h3,
-        .markdown-content-static h4,
-        .markdown-content-static h5,
-        .markdown-content-static h6 {
-            color: var(--primary-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .markdown-content-static h1 { font-size: 2.2em; }
-        .markdown-content-static h2 { font-size: 1.8em; }
-        .markdown-content-static h3 { font-size: 1.5em; }
-        .markdown-content-static p {
-            line-height: 1.7;
-            margin-bottom: 1em;
-            color: var(--text-color);
-        }
-        .markdown-content-static ul,
-        .markdown-content-static ol {
-            margin-left: 20px;
-            margin-bottom: 1em;
-            color: var(--text-color);
-        }
-        .markdown-content-static li {
-            margin-bottom: 0.5em;
-        }
-        .markdown-content-static a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        .markdown-content-static a:hover {
-            text-decoration: underline;
-        }
-        .markdown-content-static pre {
-            background-color: var(--code-bg);
-            color: var(--code-text-color);
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .markdown-content-static code {
-            background-color: var(--code-bg-inline);
-            color: var(--code-text-color-inline);
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .markdown-content-static blockquote {
-            border-left: 4px solid var(--accent-color);
-            padding-left: 15px;
-            margin-left: 0;
-            font-style: italic;
-            color: var(--text-muted);
-        }
-        .markdown-content-static table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1em;
-        }
-        .markdown-content-static th,
-        .markdown-content-static td {
-            border: 1px solid var(--border-color);
-            padding: 8px;
-            text-align: left;
-        }
-        .markdown-content-static th {
-            background-color: var(--table-header-bg);
-        }
-
-        /* Styles pour le carrousel d'images */
-        .project-carousel .swiper-wrapper {
-            display: flex;
-            overflow-x: auto; /* Permet le défilement horizontal */
-            gap: 15px; /* Espace entre les images */
-            padding-bottom: 15px; /* Espace pour la barre de défilement si visible */
-            align-items: flex-start; /* Aligner les slides en haut */
-        }
-
-        /* Styles pour les .swiper-slide pour qu'ils ne rétrécissent pas */
-        .project-carousel .swiper-slide {
-            flex-shrink: 0; /* Empêche les slides de rétrécir */
-            /* La largeur est déjà définie à 280px !important dans project-detail.css */
-            /* La hauteur est déjà définie à 220px dans project-detail.css */
-        }
-
-        /* Styles pour centrer les tags */
-        .project-tags-detail {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -182,6 +56,11 @@
                         <div class="swiper-slide"><img src="https://placehold.co/600x400/BBB/31343C?text=MedicSearch+Scraper" alt="MedicSearch Scraper"></div>
                         <div class="swiper-slide"><img src="https://placehold.co/600x400/AAA/31343C?text=MedicSearch+API" alt="MedicSearch API"></div>
                     </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
                 
                 <div class="project-metadata">
@@ -334,47 +213,16 @@
         </div>
     </main>
 
-    <footer class="footer-section text-center mt-5 py-3">
-        <div class="container">
-            <p>
-                <span class="lang-fr">&copy; 2025 Jonathan Gromat. Tous droits réservés. | Portfolio personnel - Développeur web et Data</span>
-                <span class="lang-en" style="display:none;">&copy; 2025 Jonathan Gromat. All rights reserved. | Personal portfolio - Web & Data Developer</span>
-            </p>
-            <p class="footer-links">
-                <a href="../privacy-policy.html" class="footer-link">
-                    <span class="lang-fr">Politique de confidentialité</span>
-                    <span class="lang-en" style="display:none;">Privacy Policy</span>
-                </a>
-            </p>
-        </div>
-    </footer>
+    <!-- Lightbox Modal HTML -->
+    <div id="lightbox" class="lightbox" style="display:none;">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-image" id="lightboxImage">
+      <a class="lightbox-prev lightbox-nav">&#10094;</a> <!-- Ajout de la classe lightbox-nav -->
+      <a class="lightbox-next lightbox-nav">&#10095;</a> <!-- Ajout de la classe lightbox-nav -->
+    </div>
 
-    <script src="../assets/js/script.js"></script> {/* Pour le theme toggle et le menu burger */}
-    <script>
-        // Petit script pour gérer l'affichage FR/EN simple sur cette page statique
-        // Vous pourrez l'améliorer ou l'intégrer à votre script.js global plus tard
-        document.addEventListener('DOMContentLoaded', () => {
-            const langToggle = document.querySelector('.lang-toggle');
-            const currentLangSpan = document.querySelector('.current-lang');
-            let currentLanguage = localStorage.getItem('language') || 'fr';
-
-            function updateDisplay(lang) {
-                document.querySelectorAll('.lang-fr').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
-                document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-                if (currentLangSpan) currentLangSpan.textContent = lang.toUpperCase();
-                document.documentElement.lang = lang;
-            }
-
-            if (langToggle) {
-                langToggle.addEventListener('click', () => {
-                    currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
-                    localStorage.setItem('language', currentLanguage);
-                    updateDisplay(currentLanguage);
-                });
-            }
-            // Init
-            updateDisplay(currentLanguage);
-        });
-    </script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../assets/js/project-detail.js"></script>
 </body>
 </html>
