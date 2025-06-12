@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jonathan Gromat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Example primary color */
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #fff;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .page-controls {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .page-controls button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .page-controls button:hover {
+            background-color: #004494;
+        }
+
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm; /* Use min-height, print CSS will handle actual page breaks */
+            margin: 30px auto;
+            padding: 15mm; /* Reduced padding a bit */
+            background: var(--white);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        .cv-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .header-info h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+
+        .header-info .title {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+        }
+        .contact-info li {
+            margin-bottom: 5px;
+        }
+        .contact-info i {
+            margin-right: 8px;
+            color: var(--primary-color);
+            width: 15px; /* Align icons */
+            text-align: center;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .cv-section {
+            margin-bottom: 25px;
+        }
+
+        .cv-section h2 {
+            font-size: 20px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .cv-section h2 i {
+            margin-right: 10px;
+        }
+
+        .cv-section p, .cv-section ul {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .cv-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .cv-section ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px; /* Space for custom bullet */
+        }
+        .cv-section ul li::before {
+            content: "\2022"; /* Bullet character */
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1.2em; /* Adjust to align with text */
+            position: absolute;
+            left: 5px;
+        }
+
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 15px;
+        }
+        .experience-item h3, .education-item h3, .project-item h3 {
+            font-size: 16px;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        .experience-item .company-location, .education-item .institution-location {
+            font-size: 14px;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 3px;
+        }
+        .experience-item .date, .education-item .date {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .experience-item ul, .project-item ul {
+            padding-left: 5px; /* Indent descriptions slightly */
+            margin-top: 5px;
+        }
+        .experience-item ul li, .project-item ul li {
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+        .experience-item ul li::before, .project-item ul li::before {
+            left: 0px; /* Adjust bullet for nested lists */
+        }
+
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .skill-category h4 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .skill-category ul {
+            margin: 0;
+            padding-left: 0; /* No padding for skill lists */
+        }
+        .skill-category ul li {
+            font-size: 13px;
+            margin-bottom: 4px;
+            padding-left: 15px; /* Space for simpler bullet */
+        }
+        .skill-category ul li::before {
+            content: "\25AA"; /* Smaller square bullet */
+            font-size: 10px;
+            width: 10px;
+            margin-left: -15px;
+        }
+
+        .lang-en {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background-color: var(--white);
+                margin: 0;
+                padding: 0;
+            }
+            .page-controls {
+                display: none;
+            }
+            .cv-container {
+                margin: 0;
+                padding: 0; /* Print margins are handled by browser */
+                box-shadow: none;
+                width: 100%;
+                min-height: 0; /* Let content flow naturally */
+                border: none;
+            }
+            /* Ensure sections don't break awkwardly */
+            .cv-section {
+                page-break-inside: avoid;
+            }
+            .experience-item, .education-item, .project-item {
+                page-break-inside: avoid;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            ul, p {
+                orphans: 3;
+                widows: 3;
+            }
+            a {
+                text-decoration: none; /* Optional: remove underlines for print */
+                color: inherit; /* Ensure links are black unless specified */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-controls">
+        <button id="lang-toggle-cv">
+            <i class="fas fa-globe"></i>
+            <span class="current-lang-cv">FR</span>
+        </button>
+        <button id="download-pdf-cv">
+            <i class="fas fa-download"></i>
+            <span class="lang-fr">Télécharger PDF</span>
+            <span class="lang-en">Download PDF</span>
+        </button>
+    </div>
+
+    <div class="cv-container">
+        <header class="cv-header">
+            <img src="assets/img/photo_profil.png" alt="Jonathan Gromat" class="profile-photo">
+            <div class="header-info">
+                <h1>Jonathan Gromat</h1>
+                <p class="title">
+                    <span class="lang-fr">Étudiant en BUT Informatique | Futur Apprenant MSc Epitech</span>
+                    <span class="lang-en">Computer Science Student (BUT) | Future MSc Epitech Apprentice</span>
+                </p>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i><a href="mailto:jonathan.gromat@example.com">jonathan.gromat@example.com</a></li>
+                    <li><i class="fas fa-phone"></i><span class="lang-fr">06 XX XX XX XX (À mettre à jour)</span><span class="lang-en">+33 6 XX XX XX XX (To be updated)</span></li>
+                    <li><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/jonathangromat" target="_blank">linkedin.com/in/jonathangromat</a></li>
+                    <li><i class="fab fa-github"></i><a href="https://github.com/jonag972" target="_blank">github.com/jonag972</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section id="profile" class="cv-section">
+            <h2><i class="fas fa-user"></i><span class="lang-fr">Profil</span><span class="lang-en">Profile</span></h2>
+            <p>
+                <span class="lang-fr">Actuellement en fin de cursus BUT Informatique (parcours Administration, Gestion et Exploitation des Données) et stagiaire au CEA, je suis admis en Master of Science à Epitech pour la rentrée 2025. Je recherche activement une alternance pour mettre en pratique et approfondir mes compétences.</span>
+                <span class="lang-en">Currently completing my BUT in Computer Science (Data Administration, Management and Processing track) and interning at CEA, I have been accepted into the Master of Science program at Epitech for Fall 2025. I am actively seeking an apprenticeship to apply and further develop my skills.</span>
+            </p>
+        </section>
+
+        <section id="experience" class="cv-section">
+            <h2><i class="fas fa-briefcase"></i><span class="lang-fr">Expérience Professionnelle</span><span class="lang-en">Professional Experience</span></h2>
+            <div class="experience-item">
+                <h3>
+                    <span class="lang-fr">Stagiaire Fin d'Études BUT Informatique</span>
+                    <span class="lang-en">End-of-Studies Intern (BUT Computer Science)</span>
+                </h3>
+                <p class="company-location">CEA - <span class="lang-fr">Lieu à préciser</span><span class="lang-en">Location to be specified</span></p>
+                <p class="date">
+                    <span class="lang-fr">Avril 2025 – Présent (Juin 2025)</span>
+                    <span class="lang-en">April 2025 – Present (June 2025)</span>
+                </p>
+                <ul>
+                    <li><span class="lang-fr">Développement et analyse de données dans le cadre du projet [Nom du projet si possible].</span><span class="lang-en">Data development and analysis for the [Project Name if possible] project.</span></li>
+                    <li><span class="lang-fr">Contribution à [Tâche spécifique 1].</span><span class="lang-en">Contribution to [Specific task 1].</span></li>
+                    <li><span class="lang-fr">Utilisation de [Technologies clés].</span><span class="lang-en">Utilized [Key technologies].</span></li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>
+                    <span class="lang-fr">Stagiaire Développeur Web</span>
+                    <span class="lang-en">Web Developer Intern</span>
+                </h3>
+                <p class="company-location">INOVEV - <span class="lang-fr">Lieu à préciser</span><span class="lang-en">Location to be specified</span></p>
+                <p class="date">
+                    <span class="lang-fr">Mai 2024 – Août 2024</span>
+                    <span class="lang-en">May 2024 – August 2024</span>
+                </p>
+                <ul>
+                    <li><span class="lang-fr">Développement et maintenance d'outils internes pour l'analyse de données automobiles.</span><span class="lang-en">Development and maintenance of internal tools for automotive data analysis.</span></li>
+                    <li><span class="lang-fr">Participation à la refonte de [Partie du système].</span><span class="lang-en">Participated in redesigning [Part of the system].</span></li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>
+                    <span class="lang-fr">Opérateur Logistique (Emploi Saisonnier)</span>
+                    <span class="lang-en">Logistics Operator (Seasonal Employment)</span>
+                </h3>
+                <p class="company-location">GXO Logistics - <span class="lang-fr">Lieu à préciser</span><span class="lang-en">Location to be specified</span></p>
+                <p class="date">
+                    <span class="lang-fr">Été 2023</span>
+                    <span class="lang-en">Summer 2023</span>
+                </p>
+                <ul>
+                    <li><span class="lang-fr">Gestion des stocks et préparation de commandes.</span><span class="lang-en">Inventory management and order preparation.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education" class="cv-section">
+            <h2><i class="fas fa-graduation-cap"></i><span class="lang-fr">Formation</span><span class="lang-en">Education</span></h2>
+            <div class="education-item">
+                <h3>
+                    <span class="lang-fr">Master of Science (MSc) en Informatique</span>
+                    <span class="lang-en">Master of Science (MSc) in Computer Science</span>
+                </h3>
+                <p class="institution-location">Epitech - <span class="lang-fr">Ville à préciser</span><span class="lang-en">City to be specified</span></p>
+                <p class="date">
+                    <span class="lang-fr">(Prévu Septembre 2025)</span>
+                    <span class="lang-en">(Expected September 2025)</span>
+                </p>
+            </div>
+            <div class="education-item">
+                <h3>
+                    <span class="lang-fr">Bachelor Universitaire de Technologie (BUT) Informatique</span>
+                    <span class="lang-en">University Bachelor of Technology (BUT) in Computer Science</span>
+                </h3>
+                <p class="institution-location">IUT [Nom de l'IUT] - <span class="lang-fr">Ville à préciser</span><span class="lang-en">City to be specified</span></p>
+                <p class="date">
+                    <span class="lang-fr">2022 – 2025 (En cours d'obtention)</span>
+                    <span class="lang-en">2022 – 2025 (Currently completing)</span>
+                </p>
+                <p><span class="lang-fr">Parcours : Administration, Gestion et Exploitation des Données (AGED).</span><span class="lang-en">Specialization: Data Administration, Management, and Processing (AGED).</span></p>
+            </div>
+            <div class="education-item">
+                <h3>
+                    <span class="lang-fr">Baccalauréat Scientifique</span>
+                    <span class="lang-en">Scientific Baccalaureate</span>
+                </h3>
+                <p class="institution-location">Lycée [Nom du Lycée] - <span class="lang-fr">Ville à préciser</span><span class="lang-en">City to be specified</span></p>
+                <p class="date">
+                    <span class="lang-fr">Obtenu en 2022</span>
+                    <span class="lang-en">Obtained in 2022</span>
+                </p>
+                <p><span class="lang-fr">Option : Informatique et Sciences du Numérique (ISN).</span><span class="lang-en">Option: Computer Science and Digital Sciences (ISN).</span></p>
+            </div>
+        </section>
+
+        <section id="skills" class="cv-section">
+            <h2><i class="fas fa-cogs"></i><span class="lang-fr">Compétences Techniques</span><span class="lang-en">Technical Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4><span class="lang-fr">Langages</span><span class="lang-en">Languages</span></h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4><span class="lang-fr">Bases de Données</span><span class="lang-en">Databases</span></h4>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>MySQL / PostgreSQL</li>
+                        <li>Oracle SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4><span class="lang-fr">Frameworks & Outils</span><span class="lang-en">Frameworks & Tools</span></h4>
+                    <ul>
+                        <li>Flask</li>
+                        <li>Git / GitHub</li>
+                        <li>Docker (Basics)</li>
+                        <li>Node.js (Basics)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4><span class="lang-fr">Autres</span><span class="lang-en">Others</span></h4>
+                    <ul>
+                        <li><span class="lang-fr">Analyse de Données</span><span class="lang-en">Data Analysis</span></li>
+                        <li>Web Scraping</li>
+                        <li><span class="lang-fr">Méthodes Agiles (Scrum)</span><span class="lang-en">Agile Methods (Scrum)</span></li>
+                        <li><span class="lang-fr">API REST</span><span class="lang-en">REST APIs</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="cv-section">
+            <h2><i class="fas fa-project-diagram"></i><span class="lang-fr">Projets Notables</span><span class="lang-en">Notable Projects</span></h2>
+            <div class="project-item">
+                <h3>MedicSearch</h3>
+                <ul>
+                    <li>
+                        <span class="lang-fr">Application d'agrégation et de recherche intelligente de médicaments, exploitant l'IA (Mistral AI) pour l'analyse de données.</span>
+                        <span class="lang-en">AI-powered drug aggregation and intelligent search application, leveraging Mistral AI for data analysis.</span>
+                    </li>
+                    <li>
+                        <span class="lang-fr"><strong>Technologies :</strong> Python, Flask, MongoDB, Mistral AI, Web Scraping.</span>
+                        <span class="lang-en"><strong>Technologies:</strong> Python, Flask, MongoDB, Mistral AI, Web Scraping.</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+
+        <section id="languages" class="cv-section">
+            <h2><i class="fas fa-language"></i><span class="lang-fr">Langues</span><span class="lang-en">Languages</span></h2>
+            <ul>
+                <li><span class="lang-fr"><strong>Français :</strong> Langue Maternelle</span><span class="lang-en"><strong>French:</strong> Native</span></li>
+                <li><span class="lang-fr"><strong>Anglais :</strong> Courant (Niveau C1)</span><span class="lang-en"><strong>English:</strong> Fluent (C1 Level)</span></li>
+            </ul>
+        </section>
+
+        <section id="interests" class="cv-section">
+            <h2><i class="fas fa-heart"></i><span class="lang-fr">Centres d'Intérêt</span><span class="lang-en">Interests</span></h2>
+            <ul>
+                <li><span class="lang-fr">Veille technologique (IA, Big Data, Développement Web)</span><span class="lang-en">Technological watch (AI, Big Data, Web Development)</span></li>
+                <li><span class="lang-fr">Développement de projets personnels</span><span class="lang-en">Personal project development</span></li>
+                <li><span class="lang-fr">Jeux vidéo stratégiques et de simulation</span><span class="lang-en">Strategy and simulation video games</span></li>
+                <li><span class="lang-fr">Randonnée et sports de plein air</span><span class="lang-en">Hiking and outdoor sports</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const langToggleCv = document.getElementById('lang-toggle-cv');
+        const currentLangCv = document.querySelector('.current-lang-cv');
+        const downloadPdfCvBtn = document.getElementById('download-pdf-cv');
+
+        let currentLanguageCv = 'FR';
+
+        function setLanguageCv(lang) {
+            currentLanguageCv = lang;
+            currentLangCv.textContent = lang;
+            document.documentElement.lang = lang.toLowerCase();
+
+            document.querySelectorAll('.lang-fr').forEach(el => {
+                el.style.display = (lang === 'FR') ? '' : 'none';
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.style.display = (lang === 'EN') ? '' : 'none';
+            });
+        }
+
+        langToggleCv.addEventListener('click', () => {
+            const newLang = (currentLanguageCv === 'FR') ? 'EN' : 'FR';
+            setLanguageCv(newLang);
+        });
+
+        downloadPdfCvBtn.addEventListener('click', () => {
+            window.print();
+        });
+
+        // Initialize with French
+        setLanguageCv('FR');
+    </script>
+</body>
+</html>
