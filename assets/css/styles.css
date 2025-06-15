@@ -208,30 +208,12 @@ nav a::after {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-}
-
-.cta-buttons > a,
-.cta-buttons > .cv-dropdown {
-    display: inline-block;
-}
-
-.cv-dropdown button {
-    width: auto;
-    height: 100%;
-    padding: 0.8rem 1.5rem;
-    background-color: transparent;
-    border: 2px solid var(--text-dark);
-    border-radius: 50px;
-    font-weight: 500;
-    color: var(--text-dark);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+}
+
+.cta-buttons > a {
+    display: inline-flex;
+    min-height: 48px;
 }
 
 .btn {
@@ -240,8 +222,16 @@ nav a::after {
     font-weight: 500;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     transition: var(--transition);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .btn.primary {
@@ -269,7 +259,7 @@ nav a::after {
 }
 
 /* Correction du style du bouton CV pour que le texte reste visible au survol */
-.cv-dropdown .btn.secondary:hover {
+.btn.secondary:hover {
     color: var(--text-light);
 }
 
@@ -517,9 +507,9 @@ nav a::after {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
-    line-height: 1.6;
-    display: -webkit-box;
+    line-height: 1.6;    display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -907,70 +897,8 @@ nav a::after {
 
 /* Style spécifique pour les boutons de la section héro */
 .cta-buttons .btn .lang-fr,
-.cta-buttons .btn .lang-en,
-.cv-dropdown-content .lang-fr,
-.cv-dropdown-content .lang-en {
+.cta-buttons .btn .lang-en {
     display: inline-block;
-}
-
-/* Styles pour le dropdown du CV */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    width: auto;
-}
-
-.btn {
-    white-space: nowrap;
-}
-
-/* Styles pour le menu dropdown du CV */
-.cv-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--card-background);
-    min-width: 160px;
-    box-shadow: var(--shadow);
-    z-index: 10;
-    border-radius: 10px;
-    padding: 0.5rem 0;
-    margin-top: 0;
-    top: calc(100% - 1px); /* Chevauchement légèrement avec le bouton */
-    left: 0;
-}
-
-.cv-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.cv-dropdown:hover .cv-dropdown-content {
-    display: block;
-}
-
-/* Ajout d'une zone tampon invisible pour faciliter la navigation */
-.cv-dropdown::after {
-    content: '';
-    position: absolute;
-    height: 20px;  /* Hauteur de la zone tampon */
-    width: 100%;
-    bottom: -20px;
-    left: 0;
-    z-index: 5;
-}
-
-.cv-dropdown-content a {
-    color: var(--text-dark);
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition);
-}
-
-.cv-dropdown-content a:hover {
-    background-color: var(--background-alt);
 }
 
 /* Styles pour le logo et le menu admin caché */
