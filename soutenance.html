@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles spécifiques pour la page de soutenance si nécessaire */
+    <style>        /* Styles spécifiques pour la page de soutenance si nécessaire */
         body {
             padding-top: 80px; /* Pour éviter que le header fixe ne cache le contenu */
         }
@@ -46,6 +45,48 @@
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
+        .competence-section h3 {
+            color: var(--text-dark);
+        }
+        
+        /* Mobile styles for soutenance page */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            .soutenance-container {
+                margin: 1rem auto;
+                padding: 1.5rem;
+            }
+            .soutenance-header h1 {
+                font-size: 2rem;
+            }
+            .soutenance-header p {
+                font-size: 1rem;
+            }
+            .competence-section {
+                margin-bottom: 2rem;
+                padding: 1rem;
+            }
+            .competence-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .soutenance-container {
+                margin: 0.5rem;
+                padding: 1rem;
+            }
+            .soutenance-header h1 {
+                font-size: 1.8rem;
+            }
+            .competence-section {
+                padding: 0.8rem;
+            }
+            .competence-section h2 {
+                font-size: 1.3rem;
+            }        }
         .competence-section h3 {
             color: var(--text-dark);
             margin-top: 1.5rem;
@@ -98,9 +139,13 @@
     <header>
         <div class="logo" id="logo-container">
             <h1>JG</h1>
-        </div>
-        <nav>
-            <ul>
+        </div>        <nav>
+            <div class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul aria-hidden="true">
                 <li><a href="index.html">
                     <span class="lang-fr">Accueil Portfolio</span>
                     <span class="lang-en" style="display:none;">Main Portfolio</span>
