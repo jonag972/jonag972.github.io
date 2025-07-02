@@ -431,6 +431,10 @@ nav a::after {
     padding: 5rem 5%;
 }
 
+.bg-light {
+    background-color: var(--background-alt);
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -1225,4 +1229,591 @@ nav a::after {
         font-size: 0.7rem;
         padding: 0.3rem 0.6rem;
     }
+}
+
+/* Styles pour le portfolio de compétences */
+.introduction-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.competences-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.competence-card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.competence-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+}
+
+.competence-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.competence-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+    transition: var(--transition);
+}
+
+.competence-card:hover .competence-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.competence-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.competence-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.competence-stats .stat {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.competence-detail {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: var(--background-alt);
+    border-radius: 20px;
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.competence-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-light), transparent);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+    opacity: 0.5;
+}
+
+.competence-detail h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.competence-detail h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.proof-main, .proof-complement {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.proof-main {
+    border-left: 4px solid var(--primary-color);
+}
+
+.proof-complement {
+    border-left: 4px solid var(--text-muted);
+}
+
+.proof-main:hover, .proof-complement:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.proof-main h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.proof-complement h4 {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.proof-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.proof-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.proof-images img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.proof-images img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.proof-text {
+    background: var(--background-alt);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.proof-text p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.proof-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.conductor-showcase {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.conductor-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.conductor-header i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.conductor-header h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.conductor-header p {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.conductor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.conductor-item {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.conductor-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+}
+
+.conductor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.conductor-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.conductor-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.conductor-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.conductor-item li {
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+}
+
+.conductor-item li i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.collaboration-synthesis {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.collaboration-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.collaboration-header i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.collaboration-header h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.collaboration-header p {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.collaboration-item {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.collaboration-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+}
+
+.collaboration-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.collaboration-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.collaboration-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.collaboration-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.collaboration-item li {
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.collaboration-item li i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.tech-mastered {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.conclusion-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.synthesis, .value-proposition, .perspectives {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.value-proposition ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive pour le portfolio */
+@media (max-width: 768px) {
+    .proof-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .conductor-grid,
+    .collaboration-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Harmonisation des icônes dans le header */
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--background-alt);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.header-icon:last-child {
+    margin-right: 0;
+}
+
+.header-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+/* Harmonisation des cartes de compétences */
+.ac-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+.ac-card {
+    display: flex;
+    flex-direction: row;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    min-height: 220px;
+}
+.ac-card-img {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-alt);
+    padding: 1.5rem 1rem;
+    min-width: 140px;
+    max-width: 220px;
+}
+.ac-card-img img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    object-fit: contain;
+    background: #fff;
+}
+.ac-card-content {
+    flex: 2 1 60%;
+    padding: 2rem 2rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ac-card-content h3 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    margin-bottom: 0.7rem;
+}
+.ac-card-content p {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+.ac-proofs {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.97rem;
+}
+.ac-proofs li {
+    margin-bottom: 0.3rem;
+    list-style: disc inside;
+}
+@media (max-width: 900px) {
+    .ac-card {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .ac-card-img {
+        flex-direction: row;
+        max-width: 100%;
+        min-width: 0;
+        justify-content: flex-start;
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
+    .ac-card-img img {
+        max-width: 120px;
+    }
+    .ac-card-content {
+        padding: 1rem 1rem 1.5rem 1rem;
+    }
+}
+
+/* Décalage du contenu sous le header fixe */
+main {
+    padding-top: 100px; /* Ajuster selon la hauteur de header */
+}
+
+/* Uniformisation des grilles de présentation pour tous les blocs */
+.ac-cards-grid,
+.conductor-grid,
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Appliquer même style de carte pour AC35 et AC36 si désiré */
+.conductor-item,
+.collaboration-item {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
 }

@@ -3,182 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="lang-content" data-fr="Soutenance Portfolio - Compétences BUT3" data-en="Portfolio Defense - BUT3 Skills">Soutenance Portfolio - Compétences BUT3</title>
+    <title>Portfolio de Compétences - Jonathan GROMAT</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles spécifiques pour la page de soutenance si nécessaire */
-        body {
-            padding-top: 80px; /* Pour éviter que le header fixe ne cache le contenu */
-        }
-        .soutenance-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: var(--background-alt);
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-        .soutenance-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .soutenance-header h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-        }
-        .soutenance-header p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-        .competence-section {
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            background-color: var(--card-background);
-            border-radius: 8px;
-            /* border-left: 5px solid var(--primary-color); */ /* Bordure orange supprimée */
-        }
-        .competence-section h2 {
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        .competence-section h3 {
-            color: var(--text-dark);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-            border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 0.3rem;
-        }
-        .competence-section p, .competence-section ul {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        .competence-section ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-        .placeholder-text {
-            color: #777;
-            font-style: italic;
-        }
-        .criteria-summary {
-            margin-top: 3rem;
-            padding: 1.5rem;
-            background-color: var(--primary-light);
-            border: 1px solid var(--primary-color);
-            border-radius: 8px;
-        }
-        .criteria-summary h2 {
-            color: var(--primary-dark);
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        .btn-nav-home {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-nav-home:hover {
-            background-color: var(--primary-dark);
-        }
-
-    </style>
 </head>
-<body>
+<body>    <!-- Header avec navigation -->
     <header>
-        <div class="logo" id="logo-container">
+        <div class="logo">
             <h1>JG</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">
-                    <span class="lang-fr">Accueil Portfolio</span>
-                    <span class="lang-en" style="display:none;">Main Portfolio</span>
-                </a></li>
-                <!-- Vous pouvez ajouter d'autres liens de navigation spécifiques à la soutenance ici si besoin -->
+                <!-- Introduction gérée à l'oral -->
+                <li><a href="#gerer">Gérer (AC34)</a></li>
+                <li><a href="#conduire">Conduire (AC35)</a></li>
+                <li><a href="#collaborer">Collaborer (AC36)</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
             </ul>
         </nav>
+        
         <div class="toggle-container">
-            <div class="theme-toggle"><i class="fas fa-sun"></i></div>
-            <div class="lang-toggle"><i class="fas fa-globe"></i><span class="current-lang">FR</span></div>
+            <a href="index.html" class="header-icon" title="Accueil">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="assets/resume/CV_Jonathan_Gromat.pdf" class="header-icon" title="CV" target="_blank">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </div>
         </div>
-    </header>
-
-    <main>
-        <div class="soutenance-container">
-            <div class="soutenance-header">
-                <h1 class="lang-content" data-fr="Soutenance Portfolio - Compétences BUT3" data-en="Portfolio Defense - BUT3 Skills">Soutenance Portfolio - Compétences BUT3</h1>
-                <p class="lang-content" data-fr="Présentation synthétique et analyse réflexive des trois compétences clés du parcours BUT3 Informatique. Durée indicative : 10 minutes." data-en="Synthetic presentation and reflexive analysis of the three key skills of the BUT3 Computer Science program. Indicative duration: 10 minutes.">Présentation synthétique et analyse réflexive des trois compétences clés du parcours BUT3 Informatique. Durée indicative : 10 minutes.</p>
+    </header>    <main>
+        <!-- BLOC GÉRER -->
+        <section id="gerer" class="section">
+            <div class="section-header">
+                <h2 class="section-title">AC34 – GÉRER : Évolution de mes compétences techniques en gestion de données</h2>
+                <p class="section-subtitle">Démonstration de la maîtrise des systèmes de gestion de données à travers des projets concrets</p>
+            </div>
+            <div class="ac-cards-grid">
+                <!-- AC34.01 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/Capture d'écran 2025-01-14 à 21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j">
+                        <img src="path-to-image/Capture d'écran 2024-12-08 à 20.44.40.png" alt="Dataset OpenFlights 40k routes">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC34.01 – Capturer et stocker des ensembles volumineux et complexes de données hétérogènes</h3>
+                        <p><strong>Projet principal :</strong> SAE MedicSearch – Architecture multi-bases (MongoDB, PostgreSQL, Neo4j)</p>
+                        <p><strong>Complément technique :</strong> NoSQL (40k routes aériennes, 4 SGBD maîtrisés)</p>
+                        <ul class="ac-proofs">
+                            <li>Modélisation graphique, gestion de données hétérogènes</li>
+                            <li>Preuve : captures d'architecture, datasets volumineux</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- AC34.02 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/update_medicaments.py" alt="Script Python ETL">
+                        <img src="path-to-image/Capture d'écran 2024-11-28 à 12.55.27.png" alt="Champs calculés Power BI">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC34.02 – Préparer et extraire les données pour l'exploitation</h3>
+                        <p><strong>Projet principal :</strong> Pipeline ETL MedicSearch (scraping, transformation, 3 SGBD)</p>
+                        <p><strong>Complément :</strong> Power BI (calculs avancés, filtres temporels/géographiques)</p>
+                        <ul class="ac-proofs">
+                            <li>Scripts Python, interfaces Power BI</li>
+                            <li>Preuve : code, visualisation des transformations</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- AC34.03 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/Capture d'écran 2024-11-26 à 11.22.26.png" alt="Comparaison modèles IA">
+                        <img src="path-to-image/Capture d'écran 2024-10-09 à 10.33.38.png" alt="ACP 3D vins">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC34.03 – Appliquer des méthodes d'exploration et d'exploitation des données</h3>
+                        <p><strong>Projet principal :</strong> Intelligence Artificielle (8 algorithmes, validation croisée, matrices de confusion)</p>
+                        <p><strong>Complément :</strong> ACP sur données massives (1M variables → 2 composantes)</p>
+                        <ul class="ac-proofs">
+                            <li>Comparatif performances, visualisations 3D</li>
+                            <li>Preuve : matrices de confusion, résultats mesurés</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- AC34.04 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/docker-compose.yml" alt="Architecture Docker">
+                        <img src="path-to-image/index-testvolumetrie.sql" alt="Index Oracle 35 Mo">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC34.04 – Mettre en production et optimiser le système de gestion de données</h3>
+                        <p><strong>Projet principal :</strong> MedicSearch déployé (Docker, Flask, authentification)</p>
+                        <p><strong>Complément :</strong> Administration Oracle (1.2M lignes, index 35 Mo, optimisations)</p>
+                        <ul class="ac-proofs">
+                            <li>Architecture système, métriques de performance</li>
+                            <li>Preuve : captures Docker, scripts d'optimisation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- BLOC CONDUIRE -->
+        <section id="conduire" class="section bg-light">
+            <div class="section-header">
+                <h2 class="section-title">AC35 – CONDUIRE : Intégration et adaptation de projets dans les SI</h2>
+                <p class="section-subtitle">Fil conducteur : Projet MedicSearch - Démonstration complète de mes capacités de conduite</p>
             </div>
 
-            <!-- Compétence 1 -->
-            <section class="competence-section" id="competence1">
-                <h2 class="lang-content" data-fr="Compétence 1 : [Nom de la Compétence 1]" data-en="Skill 1: [Name of Skill 1]">Compétence 1 : [Nom de la Compétence 1]</h2>
+            <div class="ac-cards-grid">
+                <!-- AC35.01 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/costs-roi-analysis.png" alt="Analyse coûts ROI">
+                        <img src="path-to-image/performance-metrics.png" alt="Métriques performance">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC35.01 – Impacts Mesurés</h3>
+                        <p><strong>Projet principal :</strong> Calcul ROI technique (cache IA, optimisations, infrastructure cloud)</p>
+                        <p><strong>Complément :</strong> Évaluation bénéfices sociétaux (accès démocratisé information médicale)</p>
+                        <ul class="ac-proofs">
+                            <li>Coûts d'infrastructure cloud calculés et justifiés</li>
+                            <li>Preuve : tableaux de bord performance, métriques</li>
+                        </ul>
+                    </div>
+                </div>
                 
-                <h3 class="lang-content" data-fr="Synthèse de la Compétence" data-en="Skill Synthesis">Synthèse de la Compétence</h3>
-                <p class="placeholder-text lang-content" data-fr="[Décrivez brièvement la compétence et son importance dans votre parcours.]" data-en="[Briefly describe the skill and its importance in your program.]">[Décrivez brièvement la compétence et son importance dans votre parcours.]</p>
-
-                <h3 class="lang-content" data-fr="Analyse Réflexive" data-en="Reflexive Analysis">Analyse Réflexive</h3>
-                <p class="placeholder-text lang-content" data-fr="[Votre analyse personnelle sur l'acquisition de cette compétence, les défis rencontrés, les apprentissages majeurs.]" data-en="[Your personal analysis on acquiring this skill, challenges faced, major learnings.]">[Votre analyse personnelle sur l'acquisition de cette compétence, les défis rencontrés, les apprentissages majeurs.]</p>
+                <!-- AC35.02 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/architecture-microservices.png" alt="Architecture microservices">
+                        <img src="path-to-image/api-documentation.png" alt="Documentation API">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC35.02 – Intégration SI</h3>
+                        <p><strong>Projet principal :</strong> Architecture microservices Flask avec APIs RESTful standardisées</p>
+                        <p><strong>Complément :</strong> Gestion centralisée utilisateurs/permissions, intégration systèmes</p>
+                        <ul class="ac-proofs">
+                            <li>Documentation API, schémas d'architecture</li>
+                            <li>Preuve : code Flask, endpoints REST documentés</li>
+                        </ul>
+                    </div>
+                </div>
                 
-                <h3 class="lang-content" data-fr="Apprentissages Critiques et Acquisition" data-en="Critical Learning and Acquisition">Apprentissages Critiques et Acquisition</h3>
-                <p class="placeholder-text lang-content" data-fr="[Comment avez-vous acquis cette compétence ? Quels ont été les apprentissages critiques (projets, cours, stage) ?]" data-en="[How did you acquire this skill? What were the critical learnings (projects, courses, internship)?]">[Comment avez-vous acquis cette compétence ? Quels ont été les apprentissages critiques (projets, cours, stage) ?]</p>
-
-                <h3 class="lang-content" data-fr="Traces et Preuves" data-en="Traces and Proofs">Traces et Preuves</h3>
-                <p class="placeholder-text lang-content" data-fr="[Listez ici les preuves concrètes de l'acquisition de cette compétence : liens vers des projets, extraits de code, rapports, certifications, exemples de réalisations en stage, etc. Soyez pertinent et variez les types de traces.]" data-en="[List concrete proofs of acquiring this skill here: links to projects, code snippets, reports, certifications, examples of internship achievements, etc. Be relevant and vary the types of traces.]">[Listez ici les preuves concrètes de l'acquisition de cette compétence : liens vers des projets, extraits de code, rapports, certifications, exemples de réalisations en stage, etc. Soyez pertinent et variez les types de traces.]</p>
-                <ul>
-                    <li class="placeholder-text lang-content" data-fr="Exemple de trace : Projet X (lien vers la page projet ou GitHub)" data-en="Example trace: Project X (link to project page or GitHub)">Exemple de trace : Projet X (lien vers la page projet ou GitHub)</li>
-                    <li class="placeholder-text lang-content" data-fr="Exemple de trace : Tâche Y réalisée en stage (description, résultat)" data-en="Example trace: Task Y completed during internship (description, result)">Exemple de trace : Tâche Y réalisée en stage (description, résultat)</li>
-                </ul>
-
-                <h3 class="lang-content" data-fr="Argumentaire des Preuves" data-en="Argumentation of Proofs">Argumentaire des Preuves</h3>
-                <p class="placeholder-text lang-content" data-fr="[Expliquez en quoi ces traces démontrent l'acquisition de la compétence.]" data-en="[Explain how these traces demonstrate the acquisition of the skill.]">[Expliquez en quoi ces traces démontrent l'acquisition de la compétence.]</p>
-
-                <h3 class="lang-content" data-fr="Corrélation Apprentissages Critiques et Composantes Essentielles" data-en="Correlation between Critical Learning and Essential Components">Corrélation Apprentissages Critiques et Composantes Essentielles</h3>
-                <p class="placeholder-text lang-content" data-fr="[Montrez comment vos apprentissages critiques pour cette compétence se rattachent aux composantes essentielles du programme BUT.]" data-en="[Show how your critical learnings for this skill relate to the essential components of the BUT program.]">[Montrez comment vos apprentissages critiques pour cette compétence se rattachent aux composantes essentielles du programme BUT.]</p>
-                
-                <h3 class="lang-content" data-fr="Qualité de l'Analyse Globale pour cette Compétence" data-en="Quality of Overall Analysis for this Skill">Qualité de l'Analyse Globale pour cette Compétence</h3>
-                <p class="placeholder-text lang-content" data-fr="[Votre analyse globale sur la maîtrise de cette compétence, son apport à votre profil professionnel.]" data-en="[Your overall analysis of mastering this skill, its contribution to your professional profile.]">[Votre analyse globale sur la maîtrise de cette compétence, son apport à votre profil professionnel.]</p>
-            </section>
-
-            <!-- Compétence 2 -->
-            <section class="competence-section" id="competence2">
-                <h2 class="lang-content" data-fr="Compétence 2 : [Nom de la Compétence 2]" data-en="Skill 2: [Name of Skill 2]">Compétence 2 : [Nom de la Compétence 2]</h2>
-                <p class="placeholder-text lang-content" data-fr="[Contenu similaire à la Compétence 1, à remplir pour la deuxième compétence.]" data-en="[Similar content to Skill 1, to be filled in for the second skill.]">[Contenu similaire à la Compétence 1, à remplir pour la deuxième compétence.]</p>
-                <!-- Répétez la structure des h3 et p pour la compétence 2 -->
-            </section>
-
-            <!-- Compétence 3 -->
-            <section class="competence-section" id="competence3">
-                <h2 class="lang-content" data-fr="Compétence 3 : [Nom de la Compétence 3]" data-en="Skill 3: [Name of Skill 3]">Compétence 3 : [Nom de la Compétence 3]</h2>
-                <p class="placeholder-text lang-content" data-fr="[Contenu similaire à la Compétence 1, à remplir pour la troisième compétence.]" data-en="[Similar content to Skill 1, to be filled in for the third skill.]">[Contenu similaire à la Compétence 1, à remplir pour la troisième compétence.]</p>
-                <!-- Répétez la structure des h3 et p pour la compétence 3 -->
-            </section>
-            
-            <div class="criteria-summary">
-                <h2 class="lang-content" data-fr="Rappel des Critères d'Évaluation du Portfolio" data-en="Reminder of Portfolio Evaluation Criteria">Rappel des Critères d'Évaluation du Portfolio</h2>
-                <ul>
-                    <li class="lang-content" data-fr="Pertinence et variété des traces" data-en="Relevance and variety of traces">Pertinence et variété des traces</li>
-                    <li class="lang-content" data-fr="Argumentaire des preuves" data-en="Argumentation of proofs">Argumentaire des preuves</li>
-                    <li class="lang-content" data-fr="Corrélation entre les apprentissages critiques et les composantes essentielles" data-en="Correlation between critical learning and essential components">Corrélation entre les apprentissages critiques et les composantes essentielles</li>
-                    <li class="lang-content" data-fr="Qualité de l’analyse" data-en="Quality of analysis">Qualité de l’analyse</li>
-                </ul>
+                <!-- AC35.03 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/evolution-s5-s6.png" alt="Évolution S5→S6">
+                        <img src="path-to-image/modular-architecture.png" alt="Architecture modulaire">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC35.03 – Adaptabilité</h3>
+                        <p><strong>Projet principal :</strong> Évolution majeure S5→S6 (Pharmaguide→MedicSearch)</p>
+                        <p><strong>Complément :</strong> Ajout IA générative sans refonte, scraping adaptable</p>
+                        <ul class="ac-proofs">
+                            <li>Architecture modulaire extensible Flask</li>
+                            <li>Preuve : comparatif versions, code modulaire</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-             <a href="index.html" class="btn-nav-home lang-content" data-fr="Retour au Portfolio Principal" data-en="Back to Main Portfolio">Retour au Portfolio Principal</a>
-        </div>
+        </section>        <!-- BLOC COLLABORER -->
+        <section id="collaborer" class="section">
+            <div class="section-header">
+                <h2 class="section-title">AC36 – COLLABORER : Management et innovation technologique</h2>
+                <p class="section-subtitle">Maîtrise des enjeux économiques et conduite du changement</p>
+            </div>
+
+            <div class="ac-cards-grid">
+                <!-- AC36.01 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/tech-stack.png" alt="Stack technologique">
+                        <img src="path-to-image/architecture-choices.png" alt="Choix architecturaux">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC36.01 – Veille Technologique</h3>
+                        <p><strong>Projet principal :</strong> Maîtrise technologies émergentes (Neo4j, IA Générative, Docker)</p>
+                        <p><strong>Complément :</strong> Documentation technique complète, choix architecturaux justifiés</p>
+                        <ul class="ac-proofs">
+                            <li>Stack : Neo4j, IA Générative, Docker, Flask, MongoDB, Cassandra</li>
+                            <li>Preuve : documentation architecture, comparatifs techniques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AC36.02 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/business-model.png" alt="Modèles économiques">
+                        <img src="path-to-image/market-analysis.png" alt="Analyse marché">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC36.02 – Enjeux Économiques</h3>
+                        <p><strong>Projet principal :</strong> Transformation numérique secteur santé, modèles SaaS/API</p>
+                        <p><strong>Complément :</strong> Avantages concurrentiels architecture multi-bases, valeur IA</p>
+                        <ul class="ac-proofs">
+                            <li>Modèles économiques IA, partenariats stratégiques</li>
+                            <li>Preuve : analyse marché, propositions de valeur</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AC36.03 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/migration-strategy.png" alt="Stratégie migration">
+                        <img src="path-to-image/user-training.png" alt="Formation utilisateurs">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC36.03 – Conduite du Changement</h3>
+                        <p><strong>Projet principal :</strong> Migration progressive MongoDB→PostgreSQL→Neo4j</p>
+                        <p><strong>Complément :</strong> Documentation complète, formation équipe, interfaces intuitives</p>
+                        <ul class="ac-proofs">
+                            <li>Accompagnement utilisateur, fonctionnalités progressives</li>
+                            <li>Preuve : guides migration, documentation formation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AC36.04 -->
+                <div class="ac-card">
+                    <div class="ac-card-img">
+                        <img src="path-to-image/project-planning.png" alt="Planification projet">
+                        <img src="path-to-image/dashboard-metrics.png" alt="Tableaux de bord">
+                    </div>
+                    <div class="ac-card-content">
+                        <h3>AC36.04 – Management Projet</h3>
+                        <p><strong>Projet principal :</strong> 10 user stories définies et priorisées, évolution S5→S6</p>
+                        <p><strong>Complément :</strong> Tableaux de bord administration, métriques de suivi</p>
+                        <ul class="ac-proofs">
+                            <li>Planification structurée, documentation projet complète</li>
+                            <li>Preuve : backlog user stories, métriques projet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Conclusion et Perspectives</h2>
+            </div>
+              <div class="conclusion-content">
+                <div class="synthesis">
+                    <h3>Synthèse</h3>
+                    <p>Maîtrise complète du cycle de développement : conception → développement → production</p>
+                </div>
+                
+                <div class="value-proposition">
+                    <h3>Valeur Ajoutée</h3>
+                    <ul>
+                        <li><strong>Expertise technique :</strong> Technologies modernes (Docker, IA, NoSQL, Cloud)</li>
+                        <li><strong>Vision business :</strong> Compréhension enjeux économiques et sociétaux</li>
+                        <li><strong>Capacité d'évolution :</strong> Adaptabilité prouvée (S5→S6, migrations)</li>
+                        <li><strong>Management opérationnel :</strong> Pilotage projets, documentation, changement</li>
+                    </ul>
+                </div>
+                
+                <div class="perspectives">
+                    <h3>Perspectives</h3>
+                    <p>Prêt pour des responsabilités techniques et managériales en entreprise</p>
+                </div>
+            </div></section>
     </main>
 
-    <script src="assets/js/script.js"></script>
-    <!-- Si vous avez un script spécifique pour la soutenance, ajoutez-le ici -->
+    <script>
+        // Gestion du toggle de thème
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.querySelector('.theme-toggle');
+            const body = document.body;
+            
+            // Charger le thème sauvegardé
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.toggle('dark-mode', savedTheme === 'dark');
+                updateThemeIcon();
+            }
+            
+            // Événement du toggle
+            themeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+                updateThemeIcon();
+            });
+            
+            function updateThemeIcon() {
+                const icon = themeToggle.querySelector('i');
+                if (body.classList.contains('dark-mode')) {
+                    icon.className = 'fas fa-moon';
+                } else {
+                    icon.className = 'fas fa-sun';
+                }
+            }
+            
+            // Navigation active avec scroll
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+            
+            function updateActiveNavigation() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNavigation);
+        });
+    </script>
 </body>
 </html>
