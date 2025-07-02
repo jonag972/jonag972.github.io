@@ -13,7 +13,12 @@
         <div class="logo" id="logo-container">
             <h1>JG</h1>
         </div>        <nav>
-            <ul>
+            <div class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul aria-hidden="true">
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="index.html#projects">Projets</a></li>
                 <li><a href="index.html#parcours"><span class="lang-fr">Parcours</span><span class="lang-en" style="display:none;">Journey</span></a></li>
@@ -33,8 +38,7 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero">
+    <main>        <section class="hero">
             <div class="hero-content">
                 <span class="tag">
                     <span class="lang-fr">FIN D'ÉTUDES BUT INFORMATIQUE | FUTUR MSC EPITECH (ALTERNANCE) | STAGIAIRE CEA</span>
@@ -48,13 +52,13 @@
                     <span class="lang-fr">Actuellement en fin de cursus BUT Informatique (parcours Administration, Gestion et Exploitation des Données) et stagiaire au CEA, je suis admis en Master of Science à Epitech pour la rentrée 2025. Je recherche activement une alternance pour mettre en pratique et approfondir mes compétences.</span>
                     <span class="lang-en">Currently completing my BUT in Computer Science (Data Administration, Management and Processing track) and interning at CEA, I have been accepted into the Master of Science program at Epitech for Fall 2025. I am actively seeking an apprenticeship to apply and further develop my skills.</span>
                 </p>
-                
                 <div class="cta-buttons">
                     <a href="#contact" class="btn primary">
                         <span class="lang-fr">Me contacter</span>
                         <span class="lang-en">Contact Me</span>
                         <i class="fas fa-paper-plane"></i>
                     </a>
+<<<<<<< HEAD
                     <div class="cv-dropdown">
                         <button class="btn secondary">
                             <span class="lang-fr">Télécharger CV</span>
@@ -69,6 +73,13 @@
                             </a>
                         </div>
                     </div>
+=======
+                    <a href="assets/resume/CV Jonathan GROMAT.pdf" download class="btn secondary">
+                        <span class="lang-fr">Télécharger CV</span>
+                        <span class="lang-en">Download CV</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+>>>>>>> 700a941a064ed03213cd80c0f22ffdc68f0e1fe0
                 </div>
             </div>
             
@@ -77,6 +88,7 @@
                     <!-- L'image sera ajoutée via CSS -->
                 </div>
                 
+                <!-- Stats cards for desktop -->
                 <div class="stats">
                     <div class="stat-card" style="top: 10%; left: 0; transform: translateX(-30%);">
                         <i class="fas fa-database"></i>
@@ -88,7 +100,7 @@
                     
                     <div class="stat-card" style="top: 20%; right: 0; transform: translateX(30%);">
                         <i class="fas fa-code"></i>
-                        <div class="s"tat-content">
+                        <div class="stat-content">
                             <span class="stat-label lang-fr"><strong>Dev</strong><br><small>Python, Java, HTML, CSS, JS, PHP</small></span>
                             <span class="stat-label lang-en"><strong>Dev</strong><br><small>Python, Java, HTML, CSS, JS, PHP</small></span>
                         </div>
@@ -102,7 +114,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                
+                <!-- Stats cards for mobile - simplified version -->
+                <div class="mobile-stats">
+                    <div class="mobile-stat-item">
+                        <i class="fas fa-database"></i>
+                        <span>DATA</span>
+                    </div>
+                    <div class="mobile-stat-item">
+                        <i class="fas fa-code"></i>
+                        <span>DEV</span>
+                    </div>
+                    <div class="mobile-stat-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>MSc 2025</span>
+                    </div>
+                </div>            </div>
         </section>
         <section id="projects" class="section bg-light">
             <div class="section-header">
@@ -119,7 +146,7 @@
             <div class="projects-grid">
                 <!-- Projet MedicSearch -->
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/EEE/31343C?text=MedicSearch+Dashboard" alt="MedicSearch Dashboard" class="project-image" onerror="this.src='assets/img/default_project_image.png'; this.onerror=null;">
+                    <img src="https://placehold.co/600x400/EEE/31343C?text=MedicSearch+Dashboard" alt="MedicSearch Dashboard" class="project-image" loading="lazy" onerror="this.src='assets/img/default_project_image.png'; this.onerror=null;">
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
