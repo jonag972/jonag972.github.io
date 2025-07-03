@@ -721,12 +721,15 @@ nav a::after {
 
 .contact-details {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-details h4 {
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
     color: var(--text-dark);
 }
 
@@ -1239,52 +1242,7 @@ nav a::after {
         color: var(--text-dark);
     }
     
-    /* Contact section */
-    .contact-methods {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .contact-method {
-        display: flex;
-        align-items: center;
-        padding: 1.2rem;
-        background: var(--card-background);
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-    }
-    
-    .contact-method:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        background: var(--primary-light);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1rem;
-        color: var(--primary-color);
-        font-size: 1.2rem;
-    }
-    
-    .contact-details h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.2rem;
-        color: var(--text-dark);
-    }
-    
-    .contact-details p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-    }
+
     
     /* Parcours section simplified */
     .parcours-grid {
