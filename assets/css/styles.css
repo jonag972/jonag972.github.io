@@ -1825,7 +1825,6 @@ nav a::after {
     }
 }
 
-<<<<<<< HEAD
 /* Styles pour le portfolio de compétences */
 .introduction-content {
     max-width: 1200px;
@@ -2412,7 +2411,7 @@ main {
     box-shadow: var(--shadow);
     padding: 1.5rem;
 }
-=======
+
 /* Tags autour de la photo de profil - Mobile layout fix */
 @media (max-width: 768px) {
     .stats {
@@ -2593,4 +2592,3 @@ html {
         font-size: 1rem;
     }
 }
->>>>>>> 700a941a064ed03213cd80c0f22ffdc68f0e1fe0
