@@ -58,6 +58,40 @@ class NavbarLoader {
         if (navParcours) navParcours.href = `${basePrefix}index.html#parcours`;
         if (navContact) navContact.href = `${basePrefix}index.html#contact`;
         if (navSoutenance) navSoutenance.href = `${basePrefix}soutenance.html`;
+        
+        // Hide non-home navigation items on specific pages
+        this.hideNavItemsOnNonHomePage();
+    }
+
+    // Hide navigation items on non-home pages
+    hideNavItemsOnNonHomePage() {
+        const path = window.location.pathname;
+        const isNonHomePage = path.includes('soutenance.html') || path.includes('/projets/');
+        
+        if (isNonHomePage) {
+            const navProjects = document.querySelector('.nav-projects');
+            const navParcours = document.querySelector('.nav-parcours');
+            const navContact = document.querySelector('.nav-contact');
+            const navSoutenance = document.querySelector('.nav-soutenance');
+            
+            // Hide all navigation items except "Accueil"
+            if (navProjects) {
+                navProjects.parentElement.style.display = 'none';
+                navProjects.parentElement.setAttribute('data-hidden', 'true');
+            }
+            if (navParcours) {
+                navParcours.parentElement.style.display = 'none';
+                navParcours.parentElement.setAttribute('data-hidden', 'true');
+            }
+            if (navContact) {
+                navContact.parentElement.style.display = 'none';
+                navContact.parentElement.setAttribute('data-hidden', 'true');
+            }
+            if (navSoutenance) {
+                navSoutenance.parentElement.style.display = 'none';
+                navSoutenance.parentElement.setAttribute('data-hidden', 'true');
+            }
+        }
     }
 
     // Determine current page based on URL
