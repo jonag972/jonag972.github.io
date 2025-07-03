@@ -61,15 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Boutons CTA
         const ctaPrimary = document.querySelector('.cta-buttons .btn.primary');
         if (ctaPrimary) ctaPrimary.innerHTML = 'Me contacter <i class="fas fa-paper-plane"></i>';
-        const ctaSecondary = document.querySelector('.cv-dropdown .btn.secondary'); // Corrected selector
+        const ctaSecondary = document.querySelector('.cta-buttons .btn.secondary');
         if (ctaSecondary) ctaSecondary.innerHTML = 'Télécharger CV <i class="fas fa-download"></i>';
-        
-        // Options du menu déroulant CV
-        const dropdownLinks = document.querySelectorAll('.cv-dropdown-content a'); // Corrected selector
-        if (dropdownLinks.length >= 2) {
-            dropdownLinks[0].innerHTML = '<i class="fas fa-file-pdf"></i> Anglais';
-            dropdownLinks[1].innerHTML = '<i class="fas fa-file-pdf"></i> Français';
-        }
     }
     
     // Fonction pour passer à l'anglais
@@ -92,15 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Boutons CTA
         const ctaPrimary = document.querySelector('.cta-buttons .btn.primary');
         if (ctaPrimary) ctaPrimary.innerHTML = 'Contact Me <i class="fas fa-paper-plane"></i>';
-        const ctaSecondary = document.querySelector('.cv-dropdown .btn.secondary'); // Corrected selector
+        const ctaSecondary = document.querySelector('.cta-buttons .btn.secondary');
         if (ctaSecondary) ctaSecondary.innerHTML = 'Download CV <i class="fas fa-download"></i>';
-        
-        // Options du menu déroulant CV
-        const dropdownLinks = document.querySelectorAll('.cv-dropdown-content a'); // Corrected selector
-        if (dropdownLinks.length >= 2) {
-            dropdownLinks[0].innerHTML = '<i class="fas fa-file-pdf"></i> English';
-            dropdownLinks[1].innerHTML = '<i class="fas fa-file-pdf"></i> French';
-        }
     }
     
     // Récupérer les préférences de langue et de thème depuis localStorage
@@ -166,40 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.hero').classList.add('loaded');
     }, 300);
     
-    // Gestion améliorée du menu déroulant
-    const dropdown = document.querySelector('.dropdown');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    let timeoutId;
-    
-    // Fonction pour afficher le menu déroulant
-    function showDropdown() {
-        clearTimeout(timeoutId);
-        dropdownContent.style.display = 'block';
-        setTimeout(() => {
-            dropdownContent.style.opacity = '1';
-            dropdownContent.style.transform = 'translateY(0)';
-        }, 10);
-    }
-    
-    // Fonction pour masquer le menu déroulant avec délai
-    function hideDropdown() {
-        timeoutId = setTimeout(() => {
-            dropdownContent.style.opacity = '0';
-            dropdownContent.style.transform = 'translateY(-10px)';
-            setTimeout(() => {
-                dropdownContent.style.display = 'none';
-            }, 300);
-        }, 300); // Délai avant fermeture
-    }
-    
-    // Événements pour le bouton dropdown
-    dropdown.addEventListener('mouseenter', showDropdown);
-    dropdown.addEventListener('mouseleave', hideDropdown);
-    
-    // Événements pour le contenu du dropdown
-    dropdownContent.addEventListener('mouseenter', showDropdown);
-    dropdownContent.addEventListener('mouseleave', hideDropdown);
-      // Gestion du menu burger
+    // Gestion du menu burger
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav ul');
 
