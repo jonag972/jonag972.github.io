@@ -1,0 +1,295 @@
+/* ==================== NAVBAR STYLES ==================== */
+
+/* Default desktop navbar styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--background-header);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a.active, nav a:hover {
+    color: var(--primary-color);
+    background-color: rgba(216, 28, 28, 0.1);
+}
+
+nav a.active::after, nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Hide icons on desktop */
+.nav-icon {
+    display: none;
+}
+
+.toggle-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.theme-toggle, .lang-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover, .lang-toggle:hover {
+    background-color: rgba(216, 28, 28, 0.1);
+    color: var(--primary-color);
+}
+
+.current-lang {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ==================== MOBILE STYLES ==================== */
+
+/* Mobile navbar - bottom positioned */
+@media (max-width: 768px) {
+    /* Reset header positioning for mobile */
+    header {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 0.5rem 1rem !important;
+        background-color: var(--background-header) !important;
+        backdrop-filter: blur(15px) !important;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+        border-top: 1px solid rgba(216, 28, 28, 0.1) !important;
+        z-index: 1000 !important;
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .logo {
+        display: none !important;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    nav {
+        flex: 1 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        list-style: none !important;
+    }
+
+    nav li {
+        flex: 1 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    nav a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.5rem 0.25rem !important;
+        min-height: 50px !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        font-size: 0.75rem !important;
+        color: var(--text-muted) !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+        text-decoration: none !important;
+    }
+
+    nav a:hover, nav a.active {
+        color: var(--primary-color) !important;
+        background-color: rgba(216, 28, 28, 0.1) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    nav a::after {
+        display: none !important;
+    }
+
+    nav a.active::after {
+        display: none !important;
+    }
+
+    /* Show icons on mobile, hide text */
+    .nav-icon {
+        display: block !important;
+        font-size: 1.2rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .nav-text {
+        display: block !important;
+        font-size: 0.7rem !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 60px !important;
+    }
+
+    .toggle-container {
+        display: none !important;
+    }
+
+    /* Add padding to body to account for bottom navbar */
+    body {
+        padding-bottom: 70px !important;
+        padding-top: 0 !important;
+    }
+
+    /* Ensure main content doesn't get hidden */
+    main {
+        padding-bottom: 70px !important;
+    }
+}
+
+/* ==================== TABLET STYLES ==================== */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==================== HAMBURGER MENU ANIMATION ==================== */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ==================== DARK MODE ADJUSTMENTS ==================== */
+
+.dark-mode header {
+    background-color: var(--background-header);
+    border-top-color: rgba(216, 28, 28, 0.2);
+}
+
+.dark-mode .menu-toggle span {
+    background-color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .dark-mode header {
+        border-top: 1px solid rgba(216, 28, 28, 0.2);
+    }
+}
