@@ -80,6 +80,7 @@ class NavbarLoader {
             if (hash.includes('#projects')) return 'projects';
             if (hash.includes('#parcours')) return 'parcours';
             if (hash.includes('#contact')) return 'contact';
+            if (hash.includes('#skills')) return 'index'; // Skills section is part of index
             return 'index';
         }
         
@@ -104,6 +105,7 @@ class NavbarLoader {
         this.initLanguageToggle();
         this.initMobileMenu();
         this.initScrollActiveNav();
+        this.initNavigationListeners();
     }
 
     // Theme toggle functionality
@@ -209,6 +211,36 @@ class NavbarLoader {
         });
     }
 
+    // Initialize navigation listeners for URL changes
+    initNavigationListeners() {
+        // Listen for hash changes (for section navigation)
+        window.addEventListener('hashchange', () => {
+            this.updateActiveNavigation();
+        });
+        
+        // Listen for popstate events (for back/forward navigation)
+        window.addEventListener('popstate', () => {
+            this.updateActiveNavigation();
+        });
+        
+        // Listen for manual navigation clicks
+        const navLinks = document.querySelectorAll('nav a[data-page]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Small delay to allow URL change to complete
+                setTimeout(() => {
+                    this.updateActiveNavigation();
+                }, 50);
+            });
+        });
+    }
+
+    // Update active navigation based on current URL
+    updateActiveNavigation() {
+        this.currentPage = this.getCurrentPage();
+        this.setActiveNavItem();
+    }
+
     // Close mobile menu
     closeMenu() {
         const menuToggle = document.querySelector('.menu-toggle');
@@ -232,7 +264,23 @@ class NavbarLoader {
         
         if (sections.length === 0) return;
         
+        let isScrollingFromClick = false;
+        
+        // Track when user clicks on navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isScrollingFromClick = true;
+                // Reset flag after animation completes
+                setTimeout(() => {
+                    isScrollingFromClick = false;
+                }, 1000);
+            });
+        });
+        
         const observer = new IntersectionObserver((entries) => {
+            // Don't update active state if user just clicked a nav link
+            if (isScrollingFromClick) return;
+            
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.getAttribute('id');
@@ -241,6 +289,8 @@ class NavbarLoader {
                         if (link.getAttribute('href') === `#${sectionId}` || 
                             link.getAttribute('href') === `index.html#${sectionId}`) {
                             link.classList.add('active');
+                            // Update the current page to match the section
+                            this.currentPage = link.getAttribute('data-page') || 'index';
                         }
                     });
                 }
