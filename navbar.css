@@ -94,9 +94,11 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-/* Hide icons on desktop */
+/* Show icons on desktop */
 .nav-icon {
-    display: none;
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1rem;
 }
 
 .toggle-container {
@@ -144,11 +146,14 @@ nav a::after {
         backdrop-filter: blur(15px) !important;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
         border-top: 1px solid rgba(216, 28, 28, 0.1) !important;
-        z-index: 1000 !important;
+        z-index: 9999 !important;
         height: auto !important;
+        min-height: 70px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .logo {
@@ -175,6 +180,8 @@ nav a::after {
         padding: 0 !important;
         gap: 0 !important;
         list-style: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     nav li {
