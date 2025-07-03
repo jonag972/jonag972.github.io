@@ -133,6 +133,116 @@
         .btn-nav-home:hover {
             background-color: var(--primary-dark);
         }
+        
+        /* Styles pour la section Preuves */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .preuves-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .preuve-section {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preuve-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .preuve-competence {
+            margin-bottom: 2rem;
+        }
+        
+        .preuve-competence h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .preuve-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .preuve-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .preuve-image img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .preuve-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        .preuve-image p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+        
+        .preuve-justification {
+            font-style: italic;
+            color: var(--text-muted);
+            background-color: rgba(var(--primary-rgb, 255, 165, 0), 0.1);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .preuve-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .preuve-image img {
+                max-height: 180px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
 
     </style>
 </head>
@@ -140,6 +250,402 @@
     <div id="navbar-placeholder"></div>
 
     <main>
+        <!-- SECTION PREUVES -->
+        <section id="preuves" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Preuves d'acquisition de compétences</h2>
+                <p class="section-subtitle">Documentation des preuves pour chaque compétence acquise</p>
+            </div>
+            
+            <div class="preuves-container">
+                <!-- AC34.01 - Capturer et stocker des ensembles volumineux et complexes de données hétérogènes -->
+                <div class="preuve-section">
+                    <h3>AC34.01 - Capturer et stocker des ensembles volumineux et complexes de données hétérogènes</h3>
+                    
+                    <!-- R5 Admin 06 - Exploitation de la base de données -->
+                    <div class="preuve-competence">
+                        <h4>R5 Admin 06 - Modélisation multidimensionnelle</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/IMG_0325.jpeg" alt="Schéma en étoile dessiné à la main pour le cas autoroutes">
+                                <p>Schéma en étoile dessiné à la main pour le cas autoroutes avec fact "consultation" au centre</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- R5 C 04 - Web (Analyse de données avec décisions) -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 04 - Web (Analyse de données avec décisions)</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 09.23.38.png" alt="Relations multiples entre fichiers CSV">
+                                <p>Relations multiples entre fichiers CSV (départements, régions, population)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-11 à 15.21.07.png" alt="Modèle de données complexe">
+                                <p>Modèle de données complexe avec 4+ sources (forêts, incendies, géographiques)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-10 à 16.11.27.png" alt="Connexions entre données médicales hétérogènes">
+                                <p>Connexions entre données médicales hétérogènes</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"Lors des projets d'analyse avec Tableau (R5 C 04), j'ai intégré des ensembles de données hétérogènes : démographiques, géographiques, médicales et environnementales, avec création de relations complexes entre multiples sources CSV."</p>
+                    </div>
+                    
+                    <!-- R5 C 05-BD -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 05-BD - Bases de données NoSQL</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-08 à 20.44.40.png" alt="Dataset OpenFlights avec 40,000 routes">
+                                <p>Dataset OpenFlights avec 40,000 routes, 3,400 aéroports, 600 compagnies aériennes</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-08 à 20.35.52.png" alt="Import de fichiers CSV hétérogènes">
+                                <p>Import de fichiers CSV hétérogènes (airports.csv, airlines.csv, routes.csv)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-16 à 15.00.54.png" alt="Installation MongoDB">
+                                <p>Installation MongoDB pour données documentaires JSON</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 15.30.47.png" alt="Configuration Redis">
+                                <p>Configuration Redis pour données clé-valeur</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 21.40.27.png" alt="Import de datasets restaurants NYC">
+                                <p>Import de datasets restaurants NYC volumineux</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"Lors des TP NoSQL (R5 C 05), j'ai manipulé des ensembles de données volumineux et hétérogènes : 40,000 routes aériennes avec Neo4J, données documentaires JSON avec MongoDB, sessions utilisateurs avec Redis, et datasets restaurants avec Cassandra."</p>
+                    </div>
+                    
+                    <!-- R5 C 07 - Données massives -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 07 - Données massives</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.08.00.png" alt="Courbe de décroissance des valeurs propres">
+                                <p>Courbe de décroissance des valeurs propres (dataset Leaf)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.31.19.png" alt="Analyse de variance expliquée">
+                                <p>Analyse de variance expliquée (dataset Wine)</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"Lors des TP de données massives (R5 C 07), j'ai manipulé des ensembles de données volumineux et hétérogènes : datasets génomiques avec 1 million de marqueurs, caractéristiques botaniques multi-dimensionnelles, et propriétés chimiques de vins avec différents types de variables (continues, discrètes)."</p>
+                    </div>
+                    
+                    <!-- R5 C 08 - Techniques d'intelligence artificielle -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 08 - Techniques d'intelligence artificielle</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 10.56.47.png" alt="Dataset Iris téléchargé">
+                                <p>Dataset Iris téléchargé (150 observations, 4 caractéristiques botaniques, 3 espèces)</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"Lors des TP d'intelligence artificielle (R5 C 08), j'ai manipulé des ensembles de données complexes : dataset Iris avec 150 échantillons botaniques multi-dimensionnels, et étudié des cas théoriques de données génomiques volumineuses (1M de marqueurs)."</p>
+                    </div>
+                </div>
+                
+                <!-- AC34.02 - Préparer et extraire les données pour l'exploitation -->
+                <div class="preuve-section">
+                    <h3>AC34.02 - Préparer et extraire les données pour l'exploitation</h3>
+                    
+                    <!-- R5 Admin 06 - Exploitation de la base de données -->
+                    <div class="preuve-competence">
+                        <h4>R5 Admin 06 - Exploitation de la base de données</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.37.54.png" alt="Interface de requêtes MDX opérationnelle">
+                                <p>Interface de requêtes MDX opérationnelle</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.38.39.png" alt="Résultat de requête MDX avec données extraites">
+                                <p>Résultat de requête MDX avec données extraites</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.48.41.png" alt="Extraction complète des mesures par magasin">
+                                <p>Extraction complète des mesures par magasin</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.51.17.png" alt="Données filtrées par états (CA, WA)">
+                                <p>Données filtrées par états (CA, WA)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- R5 C 04 - Web (Analyse de données avec décisions) -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 04 - Web (Analyse de données avec décisions)</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-28 à 12.55.27.png" alt="Création de champs calculés">
+                                <p>Création de champs calculés (Effectif Femmes = AVG([Part Femmes]) * SUM([Effectif]))</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 10.46.14.png" alt="Filtrage temporel et géographique">
+                                <p>Filtrage temporel (année 2021) et géographique</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 09.41.59.png" alt="Configuration des rôles géographiques">
+                                <p>Configuration des rôles géographiques et nettoyage des données NULL</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai préparé et transformé les données brutes : calculs d'effectifs réels à partir de proportions, filtrage temporel et géographique, gestion des valeurs manquantes."</p>
+                    </div>
+                    
+                    <!-- R5 C 05-BD -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 05-BD - Bases de données NoSQL</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 17.06.47.png" alt="Fonctions Python d'extraction et transformation">
+                                <p>Fonctions Python d'extraction et transformation (create_user, get_user)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 17.16.23.png" alt="Interface CRUD fonctionnelle">
+                                <p>Interface CRUD fonctionnelle avec validation des données</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 21.40.27.png" alt="Import CSV optimisé">
+                                <p>Import CSV optimisé avec COPY dans Cassandra</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-16 à 15.34.45.png" alt="Requêtes MongoDB">
+                                <p>Requêtes MongoDB avec db.restaurants.find()</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai développé des systèmes complets d'extraction et de préparation : fonctions Python pour Redis avec validation des entrées, requêtes MongoDB pour l'extraction documentaire, et import optimisé CSV vers Cassandra."</p>
+                    </div>
+                    
+                    <!-- R5 C 07 - Données massives -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 07 - Données massives</h4>
+                        <p class="preuve-justification">"J'ai maîtrisé les étapes complètes de préparation : extraction des labels et features, normalisation par centrage-réduction (StandardScaler), et transformation des données brutes en format exploitable pour l'analyse multidimensionnelle."</p>
+                    </div>
+                    
+                    <!-- R5 C 08 - Techniques d'intelligence artificielle -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 08 - Techniques d'intelligence artificielle</h4>
+                        <p class="preuve-justification">"J'ai maîtrisé toutes les étapes de préparation : extraction de features et labels, normalisation StandardScaler pour égaliser les échelles, division stratifiée des données (70% entraînement, 30% test), et transformation des variables catégorielles en format numérique exploitable."</p>
+                    </div>
+                </div>
+                
+                <!-- AC34.03 - Appliquer des méthodes d'exploration et d'exploitation des données -->
+                <div class="preuve-section">
+                    <h3>AC34.03 - Appliquer des méthodes d'exploration et d'exploitation des données</h3>
+                    
+                    <!-- R5 Admin 06 - Exploitation de la base de données -->
+                    <div class="preuve-competence">
+                        <h4>R5 Admin 06 - Exploitation de la base de données</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 10.22.37.png" alt="Opération drill-down sur les produits boisson">
+                                <p>Opération drill-down sur les produits boisson</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 10.58.11.png" alt="Analyse comparative des catégories de produits">
+                                <p>Analyse comparative des catégories de produits</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.09.02.png" alt="Analyse croisée produits/genre avec Crossjoin">
+                                <p>Analyse croisée produits/genre avec Crossjoin</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.24.03.png" alt="Analyse saisonnière mensuelle">
+                                <p>Analyse saisonnière mensuelle</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- R5 C 04 - Web (Analyse de données avec décisions) -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 04 - Web (Analyse de données avec décisions)</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-10 à 17.05.21.png" alt="Analyse de corrélation">
+                                <p>Analyse de corrélation âge moyen vs pourcentage +60ans</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 11.06.58.png" alt="Analyse comparative hommes/femmes">
+                                <p>Analyse comparative hommes/femmes par département</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-10 à 16.32.09.png" alt="Carte choroplèthe">
+                                <p>Carte choroplèthe avec analyse géospatiale</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-28 à 12.53.49.png" alt="Visualisation des effectifs calculés">
+                                <p>Visualisation des effectifs calculés par profession médicale</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai appliqué des méthodes d'exploration avancées : analyses géospatiales, corrélations statistiques, comparaisons multidimensionnelles, avec visualisations interactives."</p>
+                    </div>
+                    
+                    <!-- R5 C 05-BD -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 05-BD - Bases de données NoSQL</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-12-08 à 20.33.09.png" alt="Interface Neo4J Browser opérationnelle">
+                                <p>Interface Neo4J Browser opérationnelle</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-11 à 10.50.54.png" alt="Gestion des sessions avec TTL">
+                                <p>Gestion des sessions avec TTL (Time To Live)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-11 à 10.34.46.png" alt="Exploration des utilisateurs stockés">
+                                <p>Exploration des utilisateurs stockés</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai appliqué des méthodes d'exploration avancées : requêtes Cypher pour l'analyse de graphes (top compagnies, répartition géographique), gestion de sessions temporelles avec Redis, et requêtes CQL pour l'analyse relationnelle avec Cassandra."</p>
+                    </div>
+                    
+                    <!-- R5 C 07 - Données massives -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 07 - Données massives</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.17.53.png" alt="Projection ACP 2D des feuilles">
+                                <p>Projection ACP 2D des feuilles avec clustering</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.33.38.png" alt="Projection ACP 2D des vins">
+                                <p>Projection ACP 2D des vins avec 3 clusters distincts</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.18.22.png" alt="Visualisation ACP 3D des feuilles">
+                                <p>Visualisation ACP 3D des feuilles</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.34.56.png" alt="Visualisation ACP 3D des vins">
+                                <p>Visualisation ACP 3D des vins</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-26 à 14.41.44.png" alt="Comparaison 2D/3D sur dataset Iris">
+                                <p>Comparaison 2D/3D sur dataset Iris</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai appliqué des méthodes avancées d'exploration de données massives : ACP pour réduire 1 million de variables génomiques à 2 composantes principales, analyse de clustering sur datasets botaniques et vinicoles, calculs de variance expliquée, et création de visualisations interactives 2D/3D pour identifier des patterns cachés."</p>
+                    </div>
+                    
+                    <!-- R5 C 08 - Techniques d'intelligence artificielle -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 08 - Techniques d'intelligence artificielle</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.17.33.png" alt="k-NN avec validation croisée">
+                                <p>k-NN avec validation croisée (accuracy: 96.67%)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.18.10.png" alt="Naïve Bayes">
+                                <p>Naïve Bayes (accuracy: 95.33%)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.18.20.png" alt="LDA">
+                                <p>LDA (accuracy: 98.00%)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.18.33.png" alt="QDA">
+                                <p>QDA (accuracy: 98.00%)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.18.41.png" alt="SVM linéaire">
+                                <p>SVM linéaire (accuracy: 97.33%)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.22.26.png" alt="Comparaison complète 5 modèles">
+                                <p>Comparaison complète 5 modèles (accuracy, precision, recall, f1-score)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.28.16.png" alt="Analyse des temps d'exécution">
+                                <p>Analyse des temps d'exécution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AC34.04 - Mettre en production et optimiser le système de gestion de données -->
+                <div class="preuve-section">
+                    <h3>AC34.04 - Mettre en production et optimiser le système de gestion de données</h3>
+                    
+                    <!-- R5 Admin 06 - Exploitation de la base de données -->
+                    <div class="preuve-competence">
+                        <h4>R5 Admin 06 - Exploitation de la base de données</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Page d'accueil Tomcat fonctionnelle sur port 8080">
+                                <p>Page d'accueil Tomcat fonctionnelle sur port 8080</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Interface mondrian-embedded déployée et opérationnelle">
+                                <p>Interface mondrian-embedded déployée et opérationnelle</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.34.11.png" alt="Interface JPivot chargée avec données FoodMart">
+                                <p>Interface JPivot chargée avec données FoodMart</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"Lors du TD2-TP2 (R5 Admin 06), j'ai mis en production un système décisionnel complet Mondrian/Tomcat, comme le prouvent les captures d'écran du serveur opérationnel et des interfaces fonctionnelles."</p>
+                    </div>
+                    
+                    <!-- R5 C 04 - Web (Analyse de données avec décisions) -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 04 - Web (Analyse de données avec décisions)</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 10.16.08.png" alt="Tableau de bord interactif déployé">
+                                <p>Tableau de bord interactif déployé avec filtres fonctionnels</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 11.07.39.png" alt="Interface utilisateur optimisée">
+                                <p>Interface utilisateur optimisée avec navigation par clic</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 10.12.13.png" alt="Système de visualisation opérationnel">
+                                <p>Système de visualisation opérationnel</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai mis en production des tableaux de bord Tableau fonctionnels et optimisés, avec interfaces utilisateur interactives et navigation intuitive."</p>
+                    </div>
+                    
+                    <!-- R5 C 05-BD -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 05-BD - Bases de données NoSQL</h4>
+                        <div class="preuve-images">
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 20.44.21.png" alt="Cluster Cassandra opérationnel">
+                                <p>Cluster Cassandra opérationnel avec vérification version</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 21.45.04.png" alt="Cluster multi-nœuds Cassandra">
+                                <p>Cluster multi-nœuds Cassandra (Paris, Lyon) avec Docker</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 16.55.12.png" alt="Redis en production">
+                                <p>Redis en production avec connexion réseau (192.168.64.3:6379)</p>
+                            </div>
+                            <div class="preuve-image">
+                                <img src="assets/img/preuves/Capture d'écran 2024-09-16 à 15.08.21.png" alt="Service MongoDB actif">
+                                <p>Service MongoDB actif et optimisé</p>
+                            </div>
+                        </div>
+                        <p class="preuve-justification">"J'ai mis en production des systèmes NoSQL complets : cluster Cassandra multi-nœuds avec Docker, Redis configuré en réseau avec persistance, MongoDB optimisé avec index, et Neo4J avec résolution de conflits de ports."</p>
+                    </div>
+                    
+                    <!-- R5 C 07 - Données massives -->
+                    <div class="preuve-competence">
+                        <h4>R5 C 07 - Données massives</h4>
+                        <p class="preuve-justification">"J'ai optimisé les calculs sur données massives : choix adaptatif du nombre de composantes principales selon les contraintes de variance expliquée, algorithmes de réduction de complexité (O(N²) → O(N log N)), et implémentation efficace avec bibliothèques scientifiques optimisées."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- BLOC GÉRER -->
         <section id="gerer" class="section">
             <div class="section-header">
