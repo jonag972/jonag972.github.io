@@ -33,72 +33,55 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">Pour ce projet, j'ai conçu une architecture multi-bases pour gérer la complexité des données médicamenteuses. Comme le montrent les preuves, j'ai utilisé Neo4j pour la modélisation des relations graphiques, et PostgreSQL pour les données relationnelles structurées, traitant ainsi des informations hétérogènes.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-14 à 21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-25 à 23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (medicaments, manufacturer, effets_indesirables, etc.)">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-26 à 13.02.56.png" alt="Données complexes dans PostgreSQL (relationships)">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-14_a_21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j">
+                                    <figcaption>Modélisation graphique dans Neo4j</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-25_a_23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (medicaments, manufacturer, effets_indesirables, etc.)">
+                                    <figcaption>Architecture relationnelle sous PostgreSQL</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">Lors de la SAE Pharmaguide/MedicSearch (S5-S6), j'ai conçu et géré une architecture multi-bases pour capturer des données médicamenteuses complexes : MongoDB pour les documents JSON semi-structurés, PostgreSQL pour les données relationnelles normalisées, et Neo4j pour les relations graphiques, traitant des milliers de médicaments avec leurs propriétés hétérogènes.</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R5 C 05 - BD NoSQL</strong></span>
+                            <span class="ac-justification">Lors de ces TP, j'ai manipulé des datasets volumineux. La preuve en est l'import et la modélisation de 40 000 routes aériennes dans Neo4J et le traitement d'un dataset conséquent de restaurants, démontrant ma capacité à ingérer des données à grande échelle.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-08 à 20.44.40.png" alt="Dataset OpenFlights avec 40,000 routes, 3,400 aéroports, 600 compagnies aériennes">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-08 à 20.35.52.png" alt="Import de fichiers CSV hétérogènes (airports.csv, airlines.csv, routes.csv)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-16 à 15.00.54.png" alt="Installation MongoDB pour données documentaires JSON">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 15.30.47.png" alt="Configuration Redis pour données clé-valeur">
-                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 21.40.27.png" alt="Import de datasets restaurants NYC volumineux">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Capture_decran_2024-12-08_a_20.44.40.png" alt="Dataset OpenFlights avec 40,000 routes, 3,400 aéroports, 600 compagnies aériennes">
+                                    <figcaption>Dataset OpenFlights : 40 000 routes</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Screenshot_2025-01-12_at_21.40.27.png" alt="Import de datasets restaurants NYC volumineux">
+                                    <figcaption>Import d'un dataset volumineux (Restaurants NYC)</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">Lors des TP NoSQL (R5 C 05), j'ai manipulé des ensembles de données volumineux et hétérogènes : 40,000 routes aériennes avec Neo4J, données documentaires JSON avec MongoDB, sessions utilisateurs avec Redis, et datasets restaurants avec Cassandra.</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
+                            <span class="ac-justification">Pour prouver ma capacité à gérer la volumétrie, j'ai créé une table de test de plus de 1,2 million de lignes par produit cartésien sur une base de données Oracle, comme l'atteste la capture d'écran du comptage des lignes.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Schéma HR (107 employés, 27 départements, etc.)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Création table testVolumetrie avec 1 262 493 lignes (produit cartésien)">
+                                <figure>
+                                    <img src="assets/img/preuves/R6 C 05 - Administration des bases de données/image_4.png" alt="Création table testVolumetrie avec 1 262 493 lignes (produit cartésien)">
+                                    <figcaption>Table de test avec 1 262 493 lignes</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">Lors des TP d'administration BD (R6 C 05), j'ai analysé et géré des ensembles de données complexes : rétroconception complète du schéma HR avec 7 tables relationnelles, création d'une table de test volumineuse (1.2M lignes), et maîtrise de l'architecture Oracle avec gestion des tablespaces et allocation de blocs.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 04 - Web (Analyse de données avec décisions)</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 09.23.38.png" alt="Relations multiples entre fichiers CSV (départements, régions, population)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-11 à 15.21.07.png" alt="Modèle de données complexe avec 4+ sources (forêts, incendies, géographiques)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-10 à 16.11.27.png" alt="Connexions entre données médicales hétérogènes">
-                            </div>
-                            <span class="ac-justification">Lors des projets d'analyse avec Tableau (R5 C 04), j'ai intégré des ensembles de données hétérogènes : démographiques, géographiques, médicales et environnementales, avec création de relations complexes entre multiples sources CSV.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 07 - Données massives</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.08.00.png" alt="Courbe de décroissance des valeurs propres (dataset Leaf)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.31.19.png" alt="Analyse de variance expliquée (dataset Wine)">
-                            </div>
-                            <span class="ac-justification">Lors des TP de données massives (R5 C 07), j'ai manipulé des ensembles de données volumineux et hétérogènes : datasets génomiques avec 1 million de marqueurs, caractéristiques botaniques multi-dimensionnelles (40 espèces, 16 caractéristiques), et propriétés chimiques de vins avec différents types de variables (continues, discrètes).</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 08 - Techniques d'intelligence artificielle</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 10.56.47.png" alt="Dataset Iris téléchargé (150 observations, 4 caractéristiques botaniques, 3 espèces)">
-                            </div>
-                            <span class="ac-justification">Lors des TP d'intelligence artificielle (R5 C 08), j'ai manipulé des ensembles de données complexes : dataset Iris avec 150 échantillons botaniques multi-dimensionnels, et étudié des cas théoriques de données génomiques volumineuses (1M de marqueurs).</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R5 C 11 - Optimisation des données et des systèmes</strong></span>
+                            <span class="ac-justification">J'ai conçu des modèles de données complexes pour des systèmes décisionnels. Les schémas en étoile et en flocon ci-dessous montrent ma capacité à structurer des données hétérogènes (pollution, géographie, temps) pour l'analyse.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Activité 2 18698c932bba80848db8f84b55c94250_image.png" alt="Filtres interactifs régions et années">
-                                <img src="assets/img/preuves/Activité 2 18698c932bba80848db8f84b55c94250_image 2.png" alt="Carte choroplèthe avec analyse géospatiale des concentrations">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-17 à 17.12.47.png" alt="Modèle en étoile pour données de pollution atmosphérique">
-                                <img src="assets/img/preuves/Screenshot 2024-12-24 at 20.29.33.png" alt="Modèle en flocon avec normalisation des dimensions">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 11 - Optimisation des données et des systèmes/Capture_decran_2024-12-17_a_17.12.47.png" alt="Modèle en étoile pour données de pollution atmosphérique">
+                                    <figcaption>Conception d'un modèle en étoile</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 11 - Optimisation des données et des systèmes/Screenshot_2024-12-24_at_20.29.33.png" alt="Modèle en flocon avec normalisation des dimensions">
+                                    <figcaption>Conception d'un modèle en flocon</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">Lors du module d'optimisation des systèmes décisionnels (R5 C 11), j'ai conçu des architectures de données complexes : modélisation dimensionnelle pour données de pollution, intégration de sources géographiques et temporelles multiples, avec optimisation des performances d'interrogation.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 Admin 06 - Exploitation de la base de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/IMG_0325.jpeg" alt="Schéma en étoile dessiné à la main pour le cas autoroutes avec fact 'consultation' au centre">
-                            </div>
-                            <span class="ac-justification">Lors des TD d'exploitation de bases de données (R5 Admin 06), j'ai modélisé des schémas multidimensionnels complexes avec conception d'architectures en étoile adaptées aux besoins décisionnels.</span>
                         </li>
                     </ul>
                 </div>
@@ -108,44 +91,37 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">J'ai extrait des informations ciblées d'une base de données graphe à l'aide de requêtes spécifiques. La requête Cypher ci-dessous en est la preuve : elle permet d'extraire les relations entre médicaments et effets indésirables.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-26 à 13.02.29.png" alt="Associations médicaments-effets via fichiers Excel">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-14_a_22.11.50.png" alt="Utilisation de code cypher sur Neo4J pour extraire les relations entre médicaments et effets indésirables">
+                                    <figcaption>Requête d'extraction Cypher sur Neo4j</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai développé un pipeline ETL complet : extraction de données web par scraping, transformation via scripts Python (pandas, psycopg2), chargement dans 3 SGBD différents, et association de données via fichiers Excel pour créer des relations complexes médicaments-effets indésirables.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.34.11.png" alt="Procédure volumétrie dynamique avec COUNT(*)">
-                            </div>
-                            <span class="ac-justification">J'ai développé des systèmes complets d'extraction automatisée : procédures PL/SQL pour rétroconception de schéma, extraction de métadonnées Oracle via vues système, scripts de volumétrie dynamique vs statique, et requêtes SQL complexes sur le dictionnaire de données.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 05 - BD NoSQL</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 17.06.47.png" alt="Fonctions Python d'extraction et transformation (create_user, get_user)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-10 à 17.16.23.png" alt="Interface CRUD fonctionnelle avec validation des données">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-16 à 15.34.45.png" alt="Requêtes MongoDB avec db.restaurants.find()">
-                            </div>
-                            <span class="ac-justification">J'ai développé des systèmes d'extraction et de préparation : fonctions Python pour Redis avec validation des entrées, requêtes MongoDB pour l'extraction documentaire, et import optimisé CSV vers Cassandra.</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R5 C 04 - Web (Analyse de données avec décisions)</strong></span>
+                            <span class="ac-justification">Pour préparer les données à l'analyse, j'ai créé des champs calculés pour transformer les données brutes. L'image montre la formule utilisée pour calculer un effectif à partir d'une proportion, une étape clé de la préparation.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-28 à 12.55.27.png" alt="Création de champs calculés (Effectif Femmes = AVG([Part Femmes]) * SUM([Effectif]))">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 10.46.14.png" alt="Filtrage temporel (année 2021) et géographique">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 09.41.59.png" alt="Configuration des rôles géographiques et nettoyage des données NULL">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 04 - Web (Analyse de données avec décisions)/Capture_decran_2024-11-28_a_12.55.27.png" alt="Création de champs calculés (Effectif Femmes = AVG([Part Femmes]) * SUM([Effectif]))">
+                                    <figcaption>Création d'un champ calculé dans Tableau</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai préparé et transformé les données brutes : calculs d'effectifs réels à partir de proportions, filtrage temporel et géographique, gestion des valeurs manquantes.</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R5 Admin 06 - Exploitation de la base de données</strong></span>
+                            <span class="ac-justification">J'ai utilisé le langage MDX pour extraire des données d'un cube décisionnel. Les captures d'écran prouvent ma capacité à écrire des requêtes MDX et à obtenir des résultats agrégés prêts pour l'analyse.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.37.54.png" alt="Interface de requêtes MDX opérationnelle">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.38.39.png" alt="Résultat de requête MDX avec données extraites">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.48.41.png" alt="Extraction complète des mesures par magasin">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-13_a_09.37.54.png" alt="Interface de requêtes MDX opérationnelle">
+                                    <figcaption>Interface de requêtage MDX</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-15_a_10.48.41.png" alt="Extraction complète des mesures par magasin">
+                                    <figcaption>Résultat d'une extraction de mesures</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai maîtrisé l'extraction de données décisionnelles : requêtes MDX pour l'analyse multidimensionnelle, extraction de mesures par dimensions, et filtrage de données selon critères métier.</span>
                         </li>
                     </ul>
                 </div>
@@ -155,68 +131,53 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>R5 C 08 - Techniques d'intelligence artificielle</strong> – Projet principal</span>
+                            <span class="ac-justification">J'ai appliqué et comparé plusieurs algorithmes d'IA supervisée. Les preuves visuelles montrent le résultat d'un k-NN avec validation croisée (accuracy de 96.67%), une matrice de confusion illustrant les performances du modèle LDA, et un tableau comparatif complet des métriques (accuracy, precision, recall) pour 5 modèles.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.17.33.png" alt="k-NN avec validation croisée (accuracy: 96.67%)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 11.22.26.png" alt="Comparaison complète 5 modèles (accuracy, precision, recall, f1-score)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 12.26.07.png" alt="Matrice LDA (3 erreurs - meilleur)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 12.26.56.png" alt="K-means clustering">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-26 à 12.14.44.png" alt="Classification hiérarchique ascendante">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 08 - Techniques d'intelligence artificielle/Capture_decran_2024-11-26_a_11.17.33.png" alt="k-NN avec validation croisée (accuracy: 96.67%)">
+                                    <figcaption>k-NN avec validation croisée (accuracy: 96.67%)</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 08 - Techniques d'intelligence artificielle/Capture_decran_2024-11-26_a_12.26.07.png" alt="Matrice LDA (3 erreurs - meilleur)">
+                                    <figcaption>Matrice de confusion du modèle LDA</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 08 - Techniques d'intelligence artificielle/Capture_decran_2024-11-26_a_11.22.26.png" alt="Comparaison complète 5 modèles (accuracy, precision, recall, f1-score)">
+                                    <figcaption>Comparaison des performances de 5 modèles</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai appliqué un large éventail de méthodes d'exploration : 5 algorithmes supervisés (k-NN, Naïve Bayes, LDA, QDA, SVM) avec validation croisée 10-fold, 3 algorithmes non supervisés (k-means, CHA, GMM), analyse comparative des performances avec métriques multiples, et évaluation détaillée via matrices de confusion.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-26 à 14.52.59.png" alt="Visualisation graphique médicaments-effets indésirables">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-26 à 14.53.23.png" alt="Analyse médicaments-fabricants en graphe">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-26 à 14.58.57.png" alt="Requête Cypher ciblée sur médicament spécifique">
-                            </div>
-                            <span class="ac-justification">J'ai appliqué des méthodes avancées d'exploration : requêtes Cypher pour l'analyse de graphes médicamenteux, recherche approximative avec algorithmes de similarité, visualisations interactives Neo4j, et interface web avec filtres dynamiques.</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R5 C 07 - Données massives</strong></span>
+                            <span class="ac-justification">J'ai appliqué l'Analyse en Composantes Principales (ACP) pour explorer des données multi-dimensionnelles. Les graphiques montrent la projection des données sur 2 et 3 dimensions pour identifier des clusters (groupes) distincts au sein des datasets 'Leaf' et 'Wine'.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.17.53.png" alt="Projection ACP 2D des feuilles avec clustering">
-                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.33.38.png" alt="Projection ACP 2D des vins avec 3 clusters distincts">
-                                <img src="assets/img/preuves/Capture d'écran 2024-10-09 à 10.18.22.png" alt="Visualisation ACP 3D des feuilles">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-26 à 14.41.44.png" alt="Comparaison 2D/3D sur dataset Iris">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 07 - Données massives/Capture_decran_2024-10-09_a_10.17.53.png" alt="Projection ACP 2D des feuilles avec clustering">
+                                    <figcaption>Projection ACP 2D avec clustering (dataset Leaf)</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 07 - Données massives/Capture_decran_2024-10-09_a_10.33.38.png" alt="Projection ACP 2D des vins avec 3 clusters distincts">
+                                    <figcaption>Projection ACP 2D avec clustering (dataset Wine)</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 07 - Données massives/Capture_decran_2024-10-09_a_10.18.22.png" alt="Visualisation ACP 3D des feuilles">
+                                    <figcaption>Visualisation ACP en 3D</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai appliqué des méthodes d'exploration de données massives : ACP pour réduire 1 million de variables génomiques à 2 composantes principales, clustering sur datasets botaniques et vinicoles, calculs de variance expliquée, et visualisations interactives 2D/3D.</span>
                         </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 11 - Optimisation des données et des systèmes</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Activité 2 18698c932bba80848db8f84b55c94250_image 3.png" alt="KPI automatisés (61 prélèvements hors norme, 30 stations distinctes)">
-                                <img src="assets/img/preuves/Activité 2 18698c932bba80848db8f84b55c94250_image 7.png" alt="Carte interactive stations avec bulles proportionnelles">
-                                <img src="assets/img/preuves/Activité 2 18698c932bba80848db8f84b55c94250_image 8.png" alt="TOP 5 familles et fonctions pesticides">
-                            </div>
-                            <span class="ac-justification">J'ai appliqué des méthodes d'exploration avancées : analyses géospatiales des concentrations de pesticides, KPI automatisés avec filtres interactifs, tableaux de bord multi-niveaux (national/régional), et visualisations dynamiques avec interactions configurées.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 04 - Web (Analyse de données avec décisions)</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-10 à 17.05.21.png" alt="Analyse de corrélation âge moyen vs pourcentage +60ans">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 11.06.58.png" alt="Analyse comparative hommes/femmes par département">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-10 à 16.32.09.png" alt="Carte choroplèthe avec analyse géospatiale">
-                            </div>
-                            <span class="ac-justification">J'ai appliqué des méthodes d'exploration avancées : analyses géospatiales, corrélations statistiques, comparaisons multidimensionnelles, avec visualisations interactives.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 05 - BD NoSQL</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-12-08 à 20.33.09.png" alt="Interface Neo4J Browser opérationnelle">
-                                <img src="assets/img/preuves/Capture d'écran 2024-09-11 à 10.50.54.png" alt="Gestion des sessions avec TTL (Time To Live)">
-                            </div>
-                            <span class="ac-justification">J'ai appliqué des méthodes d'exploration avancées : requêtes Cypher pour l'analyse de graphes (top compagnies aériennes, répartition géographique), gestion de sessions temporelles avec Redis, et analyses relationnelles avec Cassandra.</span>
-                        </li>
-                        <li>
+                         <li>
                             <span class="ac-theme"><strong>R5 Admin 06 - Exploitation de la base de données</strong></span>
+                            <span class="ac-justification">J'ai appliqué des méthodes d'exploration décisionnelle. Les images démontrent des opérations de 'drill-down' pour affiner l'analyse (passer des boissons à leurs sous-catégories) et des analyses croisées (produits par genre de client).</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 10.22.37.png" alt="Opération drill-down sur les produits boisson">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.09.02.png" alt="Analyse croisée produits/genre avec Crossjoin">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-15 à 10.24.03.png" alt="Analyse saisonnière mensuelle">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-13_a_10.22.37.png" alt="Opération drill-down sur les produits boisson">
+                                    <figcaption>Opération de 'drill-down'</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-15_a_10.09.02.png" alt="Analyse croisée produits/genre avec Crossjoin">
+                                    <figcaption>Analyse croisée multi-dimensionnelle</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai appliqué des méthodes d'exploration décisionnelles : opérations drill-down/drill-up, analyses croisées multi-dimensionnelles, analyses temporelles saisonnières, et génération de graphiques automatisés.</span>
                         </li>
                     </ul>
                 </div>
@@ -225,42 +186,32 @@
                     <h3 class="ac-title">AC34.04 – Mettre en production et optimiser le système de gestion de données</h3>
                     <ul class="ac-ressources">
                         <li>
-                            <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production">
-                            </div>
-                            <span class="ac-justification">J'ai mis en production un système complet d'information médicamenteuse : déploiement Docker multi-conteneurs, application Flask avec authentification et autorisation, interface d'administration, système de recherche optimisé avec cache, et architecture scalable préparée pour le cloud (Azure/AWS).</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Index composé créé sur testVolumetrie (35 Mo)">
-                            </div>
-                            <span class="ac-justification">J'ai optimisé des systèmes Oracle en production : création d'index composés performants (35 Mo pour 1.2M lignes), configuration optimale des paramètres de stockage (pctfree/pctused), calculs de performance disque avec latence et débit, et choix d'architecture mémoire selon contraintes système.</span>
-                        </li>
-                        <li>
                             <span class="ac-theme"><strong>R5 C 05 - BD NoSQL</strong></span>
+                            <span class="ac-justification">J'ai mis en place un environnement distribué en déployant un cluster Cassandra multi-nœuds avec Docker. Les captures d'écran montrent le statut opérationnel du cluster, prouvant ma capacité à déployer une infrastructure NoSQL tolérante aux pannes.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 20.44.21.png" alt="Cluster Cassandra opérationnel avec vérification version">
-                                <img src="assets/img/preuves/Screenshot 2025-01-12 at 21.45.04.png" alt="Cluster multi-nœuds Cassandra (Paris, Lyon) avec Docker">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Screenshot_2025-01-12_at_20.44.21.png" alt="Cluster Cassandra opérationnel avec vérification version">
+                                    <figcaption>Vérification du statut du cluster Cassandra</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Screenshot_2025-01-12_at_21.45.04.png" alt="Cluster multi-nœuds Cassandra (Paris, Lyon) avec Docker">
+                                    <figcaption>Déploiement d'un cluster multi-nœuds</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai mis en production des systèmes NoSQL complets : cluster Cassandra multi-nœuds avec Docker, Redis configuré en réseau avec persistance, MongoDB optimisé avec index, et Neo4J avec résolution de conflits de ports.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R5 C 04 - Web (Analyse de données avec décisions)</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 10.16.08.png" alt="Tableau de bord interactif déployé avec filtres fonctionnels">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-14 à 11.07.39.png" alt="Interface utilisateur optimisée avec navigation par clic">
-                            </div>
-                            <span class="ac-justification">J'ai mis en production des tableaux de bord Tableau fonctionnels et optimisés, avec interfaces utilisateur interactives et navigation intuitive.</span>
                         </li>
                         <li>
                             <span class="ac-theme"><strong>R5 Admin 06 - Exploitation de la base de données</strong></span>
+                            <span class="ac-justification">J'ai déployé un système décisionnel complet. Les images prouvent le bon fonctionnement du serveur web Tomcat et de l'interface d'analyse JPivot/Mondrian, rendant le système accessible et opérationnel pour les utilisateurs finaux.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Page d'accueil Tomcat fonctionnelle sur port 8080">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Interface mondrian-embedded déployée et opérationnelle">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-13_a_09.04.05.png" alt="Page d'accueil Tomcat fonctionnelle sur port 8080">
+                                    <figcaption>Serveur Tomcat opérationnel</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-13_a_09.32.23.png" alt="Interface mondrian-embedded déployée et opérationnelle">
+                                    <figcaption>Interface d'analyse Mondrian déployée</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai mis en production un système décisionnel complet Mondrian/Tomcat, avec interfaces JPivot fonctionnelles et serveur opérationnel.</span>
                         </li>
                     </ul>
                 </div>
@@ -278,21 +229,7 @@
                 <div class="ac-block">
                     <h3 class="ac-title">AC35.01 – Mesurer les impacts économiques, sociétaux et technologiques</h3>
                     <ul class="ac-ressources">
-                        <li>
-                            <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-25 à 23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (medicaments, manufacturer, effets_indesirables, etc.)">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production">
-                            </div>
-                            <span class="ac-justification">J'ai analysé les impacts du projet MedicSearch : coûts d'infrastructure cloud estimés, bénéfices sociétaux (accès démocratisé à l'information médicamenteuse), choix technologiques justifiés par les performances (Neo4j pour les relations vs PostgreSQL pour les requêtes), et optimisations économiques (cache Mistral AI, architecture managée).</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Création table testVolumetrie avec 1 262 493 lignes (produit cartésien)">
-                            </div>
-                            <span class="ac-justification">J'ai mesuré les impacts techniques et économiques : calculs précis des coûts de stockage (volumes de données + index), évaluation quantifiée des performances selon stratégies (tri fusion, indexation), analyse ROI des optimisations, et mesure des temps d'accès disque pour dimensionnement infrastructure.</span>
-                        </li>
+                        <!-- Section laissée vide, comme dans l'original. Ajouter des preuves si disponibles -->
                     </ul>
                 </div>
                 <!-- AC35.02 -->
@@ -301,18 +238,17 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">J'ai conçu une architecture multi-technologies (graphe et relationnel), comme le montrent les schémas ci-dessous. Cette approche prouve ma réflexion sur l'intégration dans un SI complexe, où différentes technologies cohabitent pour répondre à des besoins variés et assurer l'interopérabilité.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-14 à 21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-25 à 23.17.45.png" alt="Architecture PostgreSQL avec tables multiples">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-14_a_21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j">
+                                    <figcaption>Intégration d'une base graphe</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-25_a_23.17.45.png" alt="Architecture PostgreSQL avec tables multiples">
+                                    <figcaption>Intégration d'une base relationnelle</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai conçu MedicSearch pour s'intégrer dans un écosystème SI : architecture microservices avec Flask, APIs standardisées pour l'interopérabilité, gestion centralisée des utilisateurs et permissions, et préparation pour l'intégration avec systèmes existants (SSO, bases métier, services tiers).</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Schéma HR (107 employés, 27 départements, etc.)">
-                            </div>
-                            <span class="ac-justification">J'ai intégré des projets dans des SI complexes : modélisation relationnelle complète avec contraintes métier, architecture Oracle multi-couches (instance/SGA/processus), gestion des accès utilisateurs par rôles, et création de vues métier pour interfaces applicatives.</span>
                         </li>
                     </ul>
                 </div>
@@ -322,19 +258,14 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">J'ai fait évoluer le système en fonction des besoins utilisateurs. La preuve en est la liste des 'user stories' implémentées pour la version finale. Cela démontre une adaptation fonctionnelle du SI, guidée par les retours et les priorités du projet.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-14 à 21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j (preuve d'évolution technique)">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production (preuve d'évolution fonctionnelle)">
+                                <figure>
+                                    <!-- NOTE: Assurez-vous que le chemin de cette image pointe vers une capture d'écran de vos user stories (Trello, Jira, etc.) -->
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/docker-compose.png" alt="10 user stories implémentées pour la production (preuve d'évolution fonctionnelle)">
+                                    <figcaption>Exemple de 'user stories' pilotant l'évolution</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai démontré l'adaptabilité du système : évolution majeure entre S5 (base de données simple) et S6 (plateforme complète), ajout de fonctionnalités IA sans refonte, adaptation du scraping à différentes sources, et architecture modulaire permettant l'intégration de nouveaux composants.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Procédure PL/SQL de rétroconception automatisée">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.34.11.png" alt="Procédure volumétrie dynamique avec COUNT(*)">
-                            </div>
-                            <span class="ac-justification">J'ai démontré l'adaptabilité de systèmes : développement de procédures PL/SQL génériques réutilisables, configuration dynamique d'index selon contextes, architecture Oracle évolutive (tablespaces, extensions), et techniques de rétroconception pour migration/évolution de schémas.</span>
                         </li>
                     </ul>
                 </div>
@@ -354,41 +285,29 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">Ma veille technologique m'a conduit à sélectionner et maîtriser des technologies pertinentes comme Neo4j pour les graphes. Le schéma de données ci-dessous est le résultat concret de cette veille, montrant l'application d'une technologie spécialisée pour résoudre un problème complexe.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-14 à 21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j (preuve de veille sur technologies graphes)">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-25 à 23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (intégration technologies relationnelles)">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production (documentation technique partagée)">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-14_a_21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j (preuve de veille sur technologies graphes)">
+                                    <figcaption>Application de la technologie Neo4j issue de la veille</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai organisé une veille technologique active : sélection et maîtrise de technologies émergentes (Neo4j, IA générative Mistral), documentation des bonnes pratiques, choix d'architecture cloud-native, et partage des connaissances via documentation technique détaillée du projet.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Schéma HR (107 employés, 27 départements, etc.)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.34.11.png" alt="Procédure volumétrie dynamique avec COUNT(*)">
-                            </div>
-                            <span class="ac-justification">J'ai organisé une veille technologique sur l'administration BD : maîtrise des technologies Oracle avancées (PL/SQL, métadonnées), algorithmes de performance (tri fusion, hachage), bonnes pratiques d'optimisation, et documentation technique complète des réalisations.</span>
                         </li>
                     </ul>
                 </div>
                 <!-- AC36.02 -->
                 <div class="ac-block">
                     <h3 class="ac-title">AC36.02 – Identifier les enjeux de l'économie de l'innovation numérique</h3>
-                    <ul class="ac-ressources">
-                        <li>
-                            <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-25 à 23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (innovation architecture multi-bases)">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production (modèle économique plateforme)">
-                            </div>
-                            <span class="ac-justification">J'ai identifié les enjeux économiques de MedicSearch : opportunités de la transformation numérique en santé, valeur ajoutée de l'IA pour la synthèse d'information, modèles de revenus possibles (SaaS, API, partenariats), et positionnement concurrentiel sur le marché de l'information médicamenteuse.</span>
-                        </li>
+                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
+                            <span class="ac-justification">J'ai analysé l'impact économique de la gestion de données en travaillant sur la volumétrie. La création d'une table de test de plus de 1,2 million de lignes (prouvée ci-dessous) a été un exercice pratique pour évaluer les coûts en stockage et les enjeux de performance liés à la croissance des données (Big Data).</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Création table testVolumetrie avec 1 262 493 lignes (calculs coûts infrastructure)">
+                                <figure>
+                                    <img src="assets/img/preuves/R6 C 05 - Administration des bases de données/image_4.png" alt="Création table testVolumetrie avec 1 262 493 lignes (calculs coûts infrastructure)">
+                                    <figcaption>Analyse de la volumétrie (1.2M lignes) et de ses impacts</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai identifié les enjeux économiques de l'innovation BD : calculs de coûts infrastructure (stockage/mémoire), ROI des optimisations techniques, architectures scalables pour croissance des volumes, et adoption d'algorithmes innovants pour traitement de big data.</span>
                         </li>
                     </ul>
                     <h5 class="ac-note">Aidé par R6 02 - Droit numérique : compréhension des enjeux juridiques de l'innovation (propriété intellectuelle, souveraineté technologique).</h5>
@@ -399,19 +318,13 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">J'ai accompagné le changement en faisant évoluer le projet d'une base unique vers une architecture multi-technologies. La modélisation graphe ci-dessous illustre l'introduction d'une nouvelle technologie (Neo4j) dans le projet, ce qui représente une migration technique majeure que j'ai menée.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-14 à 21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j (preuve de migration technique)">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production (gestion changement utilisateur)">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-14_a_21.31.31.png" alt="Modélisation graphique MongoDB vers Neo4j (preuve de migration technique)">
+                                    <figcaption>Preuve d'une migration technique vers Neo4j</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai guidé la conduite du changement : migration technique progressive entre 3 technologies, formation via documentation complète, gestion du changement utilisateur (interfaces intuitives, fonctionnalités progressives), et préparation du déploiement avec stratégies d'adoption.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.04.05.png" alt="Procédure PL/SQL de rétroconception automatisée (scripts de migration)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.34.11.png" alt="Procédure volumétrie dynamique avec COUNT(*) (accompagnement technique)">
-                            </div>
-                            <span class="ac-justification">J'ai guidé la conduite du changement : développement de scripts de migration automatisés, formation via documentation technique détaillée, optimisation progressive avec mesures de performance, et accompagnement utilisateur avec vues métier adaptées.</span>
                         </li>
                     </ul>
                 </div>
@@ -421,19 +334,14 @@
                     <ul class="ac-ressources">
                         <li>
                             <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">J'ai accompagné le management du projet en traduisant les besoins en fonctionnalités concrètes. La liste de 'user stories' ci-dessous a servi d'outil de planification et de priorisation, permettant un suivi clair de l'avancement et alignant l'équipe technique sur les objectifs du projet.</span>
                             <div class="ac-preuves">
-                                <img src="assets/img/preuves/docker-compose.png" alt="10 user stories implémentées pour la production (planification et priorisation)">
-                                <img src="assets/img/preuves/Capture d'écran 2025-01-25 à 23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (suivi technique projet)">
+                                <figure>
+                                    <!-- NOTE: Assurez-vous que le chemin de cette image pointe vers une capture d'écran de vos user stories (Trello, Jira, etc.) -->
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/docker-compose.png" alt="10 user stories implémentées pour la production (planification et priorisation)">
+                                    <figcaption>Utilisation des 'user stories' pour le pilotage</figcaption>
+                                </figure>
                             </div>
-                            <span class="ac-justification">J'ai accompagné le management projet : définition et priorisation de 10 user stories, planification de l'évolution entre semestres, création de tableaux de bord pour le suivi technique, documentation complète pour la maintenance, et préparation de la stratégie de déploiement cloud.</span>
-                        </li>
-                        <li>
-                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
-                            <div class="ac-preuves">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.32.23.png" alt="Création table testVolumetrie avec 1 262 493 lignes (indicateurs de performance)">
-                                <img src="assets/img/preuves/Capture d'écran 2024-11-13 à 09.34.11.png" alt="Procédure volumétrie dynamique avec COUNT(*) (tableaux de bord automatisés)">
-                            </div>
-                            <span class="ac-justification">J'ai accompagné le management projet : planification d'optimisations techniques avec priorisation ROI, création d'indicateurs de performance quantifiés, documentation complète d'architecture et procédures, et tableaux de bord automatisés pour suivi opérationnel.</span>
                         </li>
                     </ul>
                 </div>
