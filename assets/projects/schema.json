@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project Schema",
+  "description": "Schema for portfolio project JSON files",
+  "type": "object",
+  "required": ["id", "title", "shortDescription", "tags", "images", "metadata", "links"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the project"
+    },
+    "title": {
+      "type": "string",
+      "description": "Project title in French"
+    },
+    "titleEn": {
+      "type": "string",
+      "description": "Project title in English (optional)"
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Brief project description in French"
+    },
+    "shortDescriptionEn": {
+      "type": "string",
+      "description": "Brief project description in English (optional)"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of technology/skill tags"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["src", "alt"],
+        "properties": {
+          "src": {
+            "type": "string",
+            "description": "Image URL or path"
+          },
+          "alt": {
+            "type": "string",
+            "description": "Alt text in French"
+          },
+          "altEn": {
+            "type": "string",
+            "description": "Alt text in English (optional)"
+          }
+        }
+      },
+      "description": "Array of project images"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["period", "duration", "location"],
+      "properties": {
+        "period": {
+          "type": "string",
+          "description": "Project period in French"
+        },
+        "periodEn": {
+          "type": "string",
+          "description": "Project period in English (optional)"
+        },
+        "duration": {
+          "type": "string",
+          "description": "Project duration in French"
+        },
+        "durationEn": {
+          "type": "string",
+          "description": "Project duration in English (optional)"
+        },
+        "location": {
+          "type": "string",
+          "description": "Project location in French"
+        },
+        "locationEn": {
+          "type": "string",
+          "description": "Project location in English (optional)"
+        }
+      },
+      "description": "Project metadata"
+    },
+    "links": {
+      "type": "object",
+      "required": ["detail"],
+      "properties": {
+        "detail": {
+          "type": "string",
+          "description": "Link to detailed project page"
+        },
+        "github": {
+          "type": ["string", "null"],
+          "description": "GitHub repository URL (optional)"
+        },
+        "demo": {
+          "type": ["string", "null"],
+          "description": "Live demo URL (optional)"
+        }
+      },
+      "description": "Project links"
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "content"],
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "Section title in French"
+              },
+              "titleEn": {
+                "type": "string",
+                "description": "Section title in English (optional)"
+              },
+              "content": {
+                "type": "string",
+                "description": "Section content HTML in French"
+              },
+              "contentEn": {
+                "type": "string",
+                "description": "Section content HTML in English (optional)"
+              }
+            }
+          }
+        }
+      },
+      "description": "Detailed project content (optional)"
+    }
+  }
+}

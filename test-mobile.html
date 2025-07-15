@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mobile - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile-clean.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Test styles pour voir la différence */
+        .test-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 10000;
+        }
+        
+        @media (max-width: 767px) {
+            .test-info::after {
+                content: " - MOBILE CSS ACTIF";
+                color: #00ff00;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .test-info::after {
+                content: " - DESKTOP CSS ACTIF";
+                color: #0099ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">CSS Test</div>
+    
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="tag">
+                    <span class="lang-fr">TEST MOBILE - DESIGN OPTIMISÉ</span>
+                    <span class="lang-en">MOBILE TEST - OPTIMIZED DESIGN</span>
+                </span>
+                <h2>
+                    <span class="lang-fr">Test du Design Mobile</span>
+                    <span class="lang-en">Mobile Design Test</span>
+                </h2>
+                <p>
+                    <span class="lang-fr">Ce design mobile a été spécialement créé pour offrir une expérience utilisateur optimale sur les appareils mobiles. Espacements généreux, typographie adaptée, et navigation intuitive.</span>
+                    <span class="lang-en">This mobile design has been specially created to provide an optimal user experience on mobile devices. Generous spacing, adapted typography, and intuitive navigation.</span>
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn primary">
+                        <span class="lang-fr">Bouton Principal</span>
+                        <span class="lang-en">Primary Button</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                    <a href="#" class="btn secondary">
+                        <span class="lang-fr">Bouton Secondaire</span>
+                        <span class="lang-en">Secondary Button</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="profile-circle">
+                    <!-- Test image -->
+                </div>
+
+                <!-- Stats cards for desktop -->
+                <div class="stats">
+                    <div class="stat-card" style="top: 10%; left: 0; transform: translateX(-30%);">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">DESKTOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats cards for mobile -->
+                <div class="mobile-stats">
+                    <div class="mobile-stat-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>MOBILE</span>
+                    </div>
+                    <div class="mobile-stat-item">
+                        <i class="fas fa-check"></i>
+                        <span>OPTIMISÉ</span>
+                    </div>
+                    <div class="mobile-stat-item">
+                        <i class="fas fa-heart"></i>
+                        <span>ÉLÉGANT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section bg-light">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-fr">Test des Sections</span>
+                    <span class="lang-en">Section Test</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-fr">Vérification de l'espacement et de la lisibilité</span>
+                    <span class="lang-en">Checking spacing and readability</span>
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div style="height: 200px; background: linear-gradient(45deg, #d81c1c, #f8d7d7); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                        IMAGE TEST
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Mobile</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">Test</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">Projet Test Mobile</span>
+                            <span class="lang-en">Mobile Test Project</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Ce projet teste l'affichage mobile avec des espacements généreux et une typographie adaptée pour une meilleure lisibilité.</span>
+                            <span class="lang-en">This project tests mobile display with generous spacing and adapted typography for better readability.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-eye"></i> 
+                                <span class="lang-fr">Voir le projet</span>
+                                <span class="lang-en">View project</span>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> 
+                                <span class="lang-fr">Code source</span>
+                                <span class="lang-en">Source code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="navbar-loader.js"></script>
+    <script>
+        // Test script pour vérifier le responsive
+        function checkScreenSize() {
+            const info = document.querySelector('.test-info');
+            const width = window.innerWidth;
+            info.innerHTML = `Largeur: ${width}px`;
+        }
+        
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
+    </script>
+</body>
+</html>

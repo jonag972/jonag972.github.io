@@ -1,0 +1,60 @@
+{
+  "id": "portfolio-website",
+  "title": "Site Portfolio Personnel",
+  "titleEn": "Personal Portfolio Website",
+  "shortDescription": "Site web portfolio responsive avec système de projets dynamique, support multilingue et thème sombre/clair.",
+  "shortDescriptionEn": "Responsive portfolio website with dynamic project system, multilingual support and dark/light theme.",
+  "tags": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "JSON", "Git"],
+  "images": [
+    {
+      "src": "https://placehold.co/600x400/9013FE/FFFFFF?text=Portfolio+Home",
+      "alt": "Page d'accueil du portfolio",
+      "altEn": "Portfolio homepage"
+    },
+    {
+      "src": "https://placehold.co/600x400/50E3C2/FFFFFF?text=Projects+Grid",
+      "alt": "Grille des projets",
+      "altEn": "Projects grid"
+    },
+    {
+      "src": "https://placehold.co/600x400/BD10E0/FFFFFF?text=Mobile+View",
+      "alt": "Vue mobile",
+      "altEn": "Mobile view"
+    }
+  ],
+  "metadata": {
+    "period": "Décembre 2024 - Janvier 2025",
+    "periodEn": "December 2024 - January 2025",
+    "duration": "2 mois",
+    "durationEn": "2 months",
+    "location": "Projet Personnel, Île-de-France, France",
+    "locationEn": "Personal Project, Île-de-France, France"
+  },
+  "links": {
+    "detail": "project-detail.html?project=portfolio-website",
+    "github": "https://github.com/jonag972/jonag972.github.io",
+    "demo": "https://jonag972.github.io"
+  },
+  "content": {
+    "sections": [
+      {
+        "title": "Objectifs du Projet",
+        "titleEn": "Project Objectives",
+        "content": "<p>Créer un site portfolio professionnel pour présenter mes compétences, projets et parcours. L'objectif était de développer une plateforme moderne, responsive et facilement maintenable pour attirer les recruteurs et partenaires potentiels.</p>",
+        "contentEn": "<p>Create a professional portfolio website to showcase my skills, projects and background. The objective was to develop a modern, responsive and easily maintainable platform to attract potential recruiters and partners.</p>"
+      },
+      {
+        "title": "Architecture Technique",
+        "titleEn": "Technical Architecture",
+        "content": "<p>Le site utilise une architecture <strong>statique moderne</strong> avec HTML5, CSS3 et JavaScript vanilla. Un <strong>système de projets dynamique</strong> basé sur JSON permet d'ajouter facilement de nouveaux projets sans modifier le code. Le support <strong>multilingue</strong> (français/anglais) et les <strong>thèmes</strong> (clair/sombre) améliorent l'expérience utilisateur.</p>",
+        "contentEn": "<p>The site uses a <strong>modern static architecture</strong> with HTML5, CSS3 and vanilla JavaScript. A <strong>dynamic project system</strong> based on JSON allows easy addition of new projects without modifying the code. <strong>Multilingual</strong> support (French/English) and <strong>themes</strong> (light/dark) enhance the user experience.</p>"
+      },
+      {
+        "title": "Fonctionnalités Clés",
+        "titleEn": "Key Features",
+        "content": "<p>Le portfolio intègre plusieurs fonctionnalités avancées : <strong>design responsive</strong> optimisé pour tous les appareils, <strong>navigation fluide</strong> avec animations CSS, <strong>système de projets JSON</strong> pour une gestion facile du contenu, <strong>carrousel d'images</strong> avec lightbox, et <strong>optimisations SEO</strong> pour un meilleur référencement.</p>",
+        "contentEn": "<p>The portfolio integrates several advanced features: <strong>responsive design</strong> optimized for all devices, <strong>smooth navigation</strong> with CSS animations, <strong>JSON project system</strong> for easy content management, <strong>image carousel</strong> with lightbox, and <strong>SEO optimizations</strong> for better search engine ranking.</p>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "medicsearch",
+  "title": "MedicSearch",
+  "titleEn": "MedicSearch",
+  "shortDescription": "Application d'agrégation et recherche de médicaments avec IA. Centralisation et simplification de l'accès aux données pharmaceutiques.",
+  "shortDescriptionEn": "AI-powered drug aggregation and search application. Centralizing and simplifying access to pharmaceutical data.",
+  "tags": ["Python", "Flask", "MongoDB", "Mistral AI", "Web Scraping"],
+  "images": [
+    {
+      "src": "https://placehold.co/600x400/EEE/31343C?text=MedicSearch+Dashboard",
+      "alt": "MedicSearch Dashboard",
+      "altEn": "MedicSearch Dashboard"
+    },
+    {
+      "src": "https://placehold.co/600x400/DDD/31343C?text=MedicSearch+Search",
+      "alt": "MedicSearch Recherche",
+      "altEn": "MedicSearch Search"
+    },
+    {
+      "src": "https://placehold.co/600x400/CCC/31343C?text=MedicSearch+Admin",
+      "alt": "MedicSearch Admin Panel",
+      "altEn": "MedicSearch Admin Panel"
+    },
+    {
+      "src": "https://placehold.co/600x400/BBB/31343C?text=MedicSearch+Scraper",
+      "alt": "MedicSearch Scraper",
+      "altEn": "MedicSearch Scraper"
+    },
+    {
+      "src": "https://placehold.co/600x400/AAA/31343C?text=MedicSearch+API",
+      "alt": "MedicSearch API",
+      "altEn": "MedicSearch API"
+    }
+  ],
+  "metadata": {
+    "period": "Janvier 2025 - Mars 2025",
+    "periodEn": "January 2025 - March 2025",
+    "duration": "3 mois",
+    "durationEn": "3 months",
+    "location": "IUT Créteil-Vitry, Ile-de-France, France",
+    "locationEn": "IUT Créteil-Vitry, Ile-de-France, France"
+  },
+  "links": {
+    "detail": "projets/medicsearch.html",
+    "github": null,
+    "demo": null
+  },
+  "content": {
+    "sections": [
+      {
+        "title": "Synthèse Exécutive",
+        "titleEn": "Executive Summary",
+        "content": "<p>MedicSearch est une plateforme web complète, fruit d'un travail d'équipe, conçue pour centraliser, traiter et diffuser des informations relatives aux médicaments et à leurs effets indésirables. Ce projet ambitieux vise à simplifier l'accès à des données pharmaceutiques souvent complexes et dispersées. Le système intègre un module robuste d'acquisition de données par scraping web et PDF, une base de données NoSQL flexible (MongoDB) choisie pour sa capacité à gérer des données semi-structurées, et une application web interactive développée avec le framework Python Flask.</p>",
+        "contentEn": "<p>MedicSearch is a comprehensive web platform, the result of team work, designed to centralize, process and disseminate information relating to medicines and their adverse effects. This ambitious project aims to simplify access to often complex and scattered pharmaceutical data. The system integrates a robust data acquisition module through web and PDF scraping, a flexible NoSQL database (MongoDB) chosen for its ability to manage semi-structured data, and an interactive web application developed with the Python Flask framework.</p>"
+      },
+      {
+        "title": "Architecture Technique",
+        "titleEn": "Technical Architecture",
+        "content": "<p>L'architecture de MedicSearch a été conçue pour être modulaire, scalable et maintenable, en s'appuyant sur un ensemble de technologies modernes et éprouvées, principalement dans l'écosystème Python. Le socle backend repose sur <strong>Flask</strong>, un microframework web Python choisi pour sa simplicité et sa flexibilité. La persistance des données est assurée par <strong>MongoDB</strong>, une base de données NoSQL orientée document.</p>",
+        "contentEn": "<p>The MedicSearch architecture has been designed to be modular, scalable and maintainable, relying on a set of modern and proven technologies, mainly in the Python ecosystem. The backend foundation is based on <strong>Flask</strong>, a Python web microframework chosen for its simplicity and flexibility. Data persistence is ensured by <strong>MongoDB</strong>, a document-oriented NoSQL database.</p>"
+      },
+      {
+        "title": "Fonctionnalités Principales",
+        "titleEn": "Main Features",
+        "content": "<p>La plateforme MedicSearch met à disposition un ensemble riche de fonctionnalités, adaptées aux besoins des différents types d'utilisateurs. Les utilisateurs peuvent effectuer des <strong>recherches</strong> dans la base de données via une barre de recherche simple ou utiliser des <strong>filtres avancés</strong>. Une fonctionnalité clé est l'affichage d'un <strong>résumé généré par intelligence artificielle</strong>, offrant une synthèse rapide des points essentiels.</p>",
+        "contentEn": "<p>The MedicSearch platform provides a rich set of features, adapted to the needs of different types of users. Users can perform <strong>searches</strong> in the database via a simple search bar or use <strong>advanced filters</strong>. A key feature is the display of an <strong>artificial intelligence generated summary</strong>, offering a quick synthesis of essential points.</p>"
+      }
+    ]
+  }
+}

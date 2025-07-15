@@ -1,0 +1,60 @@
+{
+  "id": "data-migration-tool",
+  "title": "Outil de Migration de Données",
+  "titleEn": "Data Migration Tool",
+  "shortDescription": "Outil Python pour la migration de bases de données Oracle vers PostgreSQL avec validation automatique des données.",
+  "shortDescriptionEn": "Python tool for migrating Oracle databases to PostgreSQL with automatic data validation.",
+  "tags": ["Python", "Oracle", "PostgreSQL", "Ora2PG", "Data Migration", "SQL"],
+  "images": [
+    {
+      "src": "https://placehold.co/600x400/4A90E2/FFFFFF?text=Migration+Dashboard",
+      "alt": "Interface de migration des données",
+      "altEn": "Data migration interface"
+    },
+    {
+      "src": "https://placehold.co/600x400/7ED321/FFFFFF?text=Validation+Report",
+      "alt": "Rapport de validation",
+      "altEn": "Validation report"
+    },
+    {
+      "src": "https://placehold.co/600x400/F5A623/FFFFFF?text=Progress+Monitor",
+      "alt": "Moniteur de progression",
+      "altEn": "Progress monitor"
+    }
+  ],
+  "metadata": {
+    "period": "Avril - Juillet 2025",
+    "periodEn": "April - July 2025",
+    "duration": "4 mois",
+    "durationEn": "4 months",
+    "location": "CEA, Île-de-France, France",
+    "locationEn": "CEA, Île-de-France, France"
+  },
+  "links": {
+    "detail": "project-detail.html?project=data-migration-tool",
+    "github": null,
+    "demo": null
+  },
+  "content": {
+    "sections": [
+      {
+        "title": "Contexte du Projet",
+        "titleEn": "Project Context",
+        "content": "<p>Dans le cadre de mon stage au CEA, j'ai développé un outil complet de migration de bases de données Oracle 11g vers PostgreSQL 17.4. Ce projet s'inscrit dans une démarche de modernisation de l'infrastructure informatique et de réduction des coûts de licence.</p>",
+        "contentEn": "<p>As part of my internship at CEA, I developed a comprehensive tool for migrating Oracle 11g databases to PostgreSQL 17.4. This project is part of an IT infrastructure modernization initiative and license cost reduction strategy.</p>"
+      },
+      {
+        "title": "Fonctionnalités Principales",
+        "titleEn": "Main Features",
+        "content": "<p>L'outil intègre plusieurs fonctionnalités clés : <strong>migration automatisée</strong> des schémas et données, <strong>validation d'intégrité</strong> avec comparaison des données source et cible, <strong>conversion des objets</strong> de base (tables, vues, fonctions, triggers), et <strong>génération de rapports</strong> détaillés sur le processus de migration.</p>",
+        "contentEn": "<p>The tool integrates several key features: <strong>automated migration</strong> of schemas and data, <strong>integrity validation</strong> with source and target data comparison, <strong>database object conversion</strong> (tables, views, functions, triggers), and <strong>detailed reporting</strong> on the migration process.</p>"
+      },
+      {
+        "title": "Technologies Utilisées",
+        "titleEn": "Technologies Used",
+        "content": "<p>Le développement s'appuie sur <strong>Python</strong> comme langage principal, <strong>Ora2PG</strong> pour la conversion initiale, <strong>psycopg2</strong> et <strong>cx_Oracle</strong> pour les connexions aux bases de données, et <strong>pandas</strong> pour l'analyse et la validation des données.</p>",
+        "contentEn": "<p>Development is based on <strong>Python</strong> as the main language, <strong>Ora2PG</strong> for initial conversion, <strong>psycopg2</strong> and <strong>cx_Oracle</strong> for database connections, and <strong>pandas</strong> for data analysis and validation.</p>"
+      }
+    ]
+  }
+}

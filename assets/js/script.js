@@ -140,12 +140,29 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Animation de l'indicateur de défilement
     const scrollIndicator = document.querySelector('.scroll-indicator');
-    scrollIndicator.addEventListener('click', () => {
-        window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth'
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            // Scroll vers la section suivante
+            const nextSection = document.querySelector('#projects');
+            if (nextSection) {
+                nextSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
-    });
+        
+        // Masquer la flèche quand on scroll
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > window.innerHeight * 0.5) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
+        });
+    }
     
     // Ajouter une classe pour déclencher les animations d'entrée
     setTimeout(() => {

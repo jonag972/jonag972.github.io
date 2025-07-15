@@ -187,6 +187,11 @@ class NavbarLoader {
                 this.switchToFrench();
                 localStorage.setItem('language', 'fr');
             }
+            
+            // Dispatch custom event for language change
+            document.dispatchEvent(new CustomEvent('languageChanged', {
+                detail: { language: localStorage.getItem('language') }
+            }));
         });
     }
 
