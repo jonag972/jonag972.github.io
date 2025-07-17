@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Compétences - Jonathan GROMAT</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .ac-justification ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+        }
+        .ac-justification li {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <main>
+        <!-- INTRODUCTION -->
+        <section class="section">
+            <div class="section-header">
+                <h1 class="section-title">Présentation de Compétences</h1>
+                <p>Parcours BUT Informatique – Spécialisation Gestion et Exploitation des Données<br>Objectif : Démontrer l’acquisition des compétences AC34, AC35, AC36 à travers des projets concrets</p>
+                <p><em>Cette page sera supprimée prochainement pour des raisons de confidentialité.</em></p>
+            </div>
+        </section>
+
+        <!-- BLOC GÉRER -->
+        <section id="ac34" class="section bg-light">
+            <div class="section-header">
+                <h2 class="section-title">Gérer</h2>
+                <h4 class="section-subtitle">Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes les informations pour un bon pilotage de l’entreprise</h4>
+            </div>
+            <div class="ac-list">
+                <!-- AC34.01 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC34.01 – Capturer et stocker des ensembles volumineux et complexes de données hétérogènes</h3>
+                    <ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                            <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Défi:</strong> Gérer des données médicales hétérogènes (JSON).</li>
+                                    <li><strong>Action:</strong> Conception d'une architecture multi-bases.</li>
+                                    <li><strong>Techno:</strong> Neo4j (graphe) + PostgreSQL (relationnel).</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/image.png" alt="Modélisation composite MongoDB vers Neo4j">
+                                    <figcaption>Modélisation composite MongoDB/Neo4j</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-25_a_23.17.45.png" alt="Architecture PostgreSQL avec tables multiples (medicaments, manufacturer, effets_indesirables, etc.)">
+                                    <figcaption>Architecture relationnelle sous PostgreSQL</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R5 C 05 - BD NoSQL</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Manipulation de datasets volumineux.</li>
+                                    <li><strong>Preuve 1:</strong> Import de 40,000 routes aériennes (Neo4j).</li>
+                                    <li><strong>Preuve 2:</strong> Ingestion d'un large dataset de restaurants.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Capture_decran_2024-12-08_a_20.44.40.png" alt="Dataset OpenFlights avec 40,000 routes, 3,400 aéroports, 600 compagnies aériennes">
+                                    <figcaption>Dataset OpenFlights : 40 000 routes</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Screenshot_2025-01-12_at_21.40.27.png" alt="Import de datasets restaurants NYC volumineux">
+                                    <figcaption>Import d'un dataset volumineux (Restaurants NYC)</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Test de volumétrie sur Oracle.</li>
+                                    <li><strong>Résultat:</strong> Création d'une table de test de 1,26 million de lignes.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R6 C 05 - Administration des bases de données/image_4.png" alt="Création table testVolumetrie avec 1 262 493 lignes (produit cartésien)">
+                                    <figcaption>Table de test avec 1 262 493 lignes</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R5 C 11 - Optimisation des données et des systèmes</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Conception de Data Warehouse.</li>
+                                    <li><strong>Preuve 1:</strong> Modèle en étoile (données de pollution).</li>
+                                    <li><strong>Preuve 2:</strong> Modèle en flocon (avec normalisation).</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 11 - Optimisation des données et des systèmes/Capture_decran_2024-12-17_a_17.12.47.png" alt="Modèle en étoile pour données de pollution atmosphérique">
+                                    <figcaption>Conception d'un modèle en étoile</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 11 - Optimisation des données et des systèmes/Screenshot_2024-12-24_at_20.29.33.png" alt="Modèle en flocon avec normalisation des dimensions">
+                                    <figcaption>Conception d'un modèle en flocon</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- AC34.02 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC34.02 – Préparer et extraire les données pour l'exploitation</h3>
+                    <ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>Stage S6 – Validation des données</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Contexte:</strong> Stage S6 - Migration de données.</li>
+                                    <li><strong>Objectif:</strong> Garantir 0% de perte de données.</li>
+                                    <li><strong>Action:</strong> Développement d'un script de validation.</li>
+                                    <li><strong>Techno:</strong> Python, Hachage MD5.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/StageS6/scriptvalidationdonnees.png" alt="Sortie du script Python de validation MD5">
+                                    <figcaption>Validation de l'intégrité des données par script Python</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Projet principal</span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Extraction de relations spécifiques.</li>
+                                    <li><strong>Techno:</strong> Neo4j.</li>
+                                    <li><strong>Méthode:</strong> Requête Cypher.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/Capture_decran_2025-01-14_a_22.11.50.png" alt="Utilisation de code cypher sur Neo4J pour extraire les relations entre médicaments et effets indésirables">
+                                    <figcaption>Requête d'extraction Cypher sur Neo4j</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R6 C 05 - Administration des bases de données</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Automatisation de l'extraction de schéma.</li>
+                                    <li><strong>Techno:</strong> Oracle.</li>
+                                    <li><strong>Méthode:</strong> Procédure PL/SQL (RETROCONCEVOIR).</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R6 C 05 - Administration des bases de données/image_2.png" alt="Code de la procédure PL/SQL RETROCONCEVOIR">
+                                    <figcaption>Procédure PL/SQL RETROCONCEVOIR</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- AC34.03 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC34.03 – Appliquer des méthodes d'exploration et d'exploitation des données</h3>
+                    <ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>R5 C 08 - Techniques d'intelligence artificielle</strong> – Projet principal</span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Application et évaluation de modèles d'IA.</li>
+                                    <li><strong>Preuve 1:</strong> Validation croisée (k-NN, accuracy 96.67%).</li>
+                                    <li><strong>Preuve 2:</strong> Matrice de confusion (LDA).</li>
+                                    <li><strong>Preuve 3:</strong> Tableau comparatif de 5 modèles.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 08 - Techniques d'intelligence artificielle/Capture_decran_2024-11-26_a_11.17.33.png" alt="k-NN avec validation croisée (accuracy: 96.67%)">
+                                    <figcaption>k-NN avec validation croisée (accuracy: 96.67%)</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 08 - Techniques d'intelligence artificielle/Capture_decran_2024-11-26_a_12.26.07.png" alt="Matrice LDA (3 erreurs - meilleur)">
+                                    <figcaption>Matrice de confusion du modèle LDA</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 08 - Techniques d'intelligence artificielle/Capture_decran_2024-11-26_a_11.22.26.png" alt="Comparaison complète 5 modèles (accuracy, precision, recall, f1-score)">
+                                    <figcaption>Comparaison des performances de 5 modèles</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R5 C 07 - Données massives</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Exploration de données multi-dimensionnelles.</li>
+                                    <li><strong>Méthode:</strong> Analyse en Composantes Principales (ACP).</li>
+                                    <li><strong>Objectif:</strong> Identification de clusters.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 07 - Données massives/Capture_decran_2024-10-09_a_10.17.53.png" alt="Projection ACP 2D des feuilles avec clustering">
+                                    <figcaption>Projection ACP 2D avec clustering (dataset Leaf)</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 07 - Données massives/Capture_decran_2024-10-09_a_10.33.38.png" alt="Projection ACP 2D des vins avec 3 clusters distincts">
+                                    <figcaption>Projection ACP 2D avec clustering (dataset Wine)</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 07 - Données massives/Capture_decran_2024-10-09_a_10.18.22.png" alt="Visualisation ACP 3D des feuilles">
+                                    <figcaption>Visualisation ACP en 3D</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R5 Admin 06 - Exploitation de la base de données</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Exploration de cube OLAP (BI).</li>
+                                    <li><strong>Méthode 1:</strong> 'Drill-down' pour affiner l'analyse.</li>
+                                    <li><strong>Méthode 2:</strong> Analyse croisée multi-dimensionnelle.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-13_a_10.22.37.png" alt="Opération drill-down sur les produits boisson">
+                                    <figcaption>Opération de 'drill-down'</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 Admin 06 - Exploitation de la base de données/Capture_decran_2024-11-15_a_10.09.02.png" alt="Analyse croisée produits/genre avec Crossjoin">
+                                    <figcaption>Analyse croisée multi-dimensionnelle</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- AC34.04 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC34.04 – Mettre en production et optimiser le système de gestion de données</h3>
+                    <ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>Stage S6 – Optimisation de performance</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Contexte:</strong> Stage S6, post-migration.</li>
+                                    <li><strong>Action:</strong> Tuning de performance du serveur.</li>
+                                    <li><strong>Techno:</strong> PostgreSQL.</li>
+                                    <li><strong>Paramètres clés:</strong> `shared_buffers`, `work_mem`.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/StageS6/extrait_dex_optimisation.png" alt="Tuning PostgreSQL - ALTER SYSTEM">
+                                    <figcaption>Optimisation PostgreSQL (ALTER SYSTEM)</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ac-theme"><strong>R5 C 05 - BD NoSQL</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Déploiement d'un système distribué.</li>
+                                    <li><strong>Techno:</strong> Cassandra, Docker.</li>
+                                    <li><strong>Résultat:</strong> Cluster multi-nœuds opérationnel.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Screenshot_2025-01-12_at_20.44.21.png" alt="Cluster Cassandra opérationnel avec vérification version">
+                                    <figcaption>Vérification du statut du cluster Cassandra</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/img/preuves/R5 C 05 - BD NoSQL/Screenshot_2025-01-12_at_21.45.04.png" alt="Cluster multi-nœuds Cassandra (Paris, Lyon) avec Docker">
+                                    <figcaption>Déploiement d'un cluster multi-nœuds</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOC CONDUIRE -->
+        <section id="ac35" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Conduire</h2>
+                <h4 class="section-subtitle">Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles</h4>
+            </div>
+            <div class="ac-list">
+                <!-- AC35.01 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC35.01 – Mesurer les impacts économiques, sociétaux et technologiques</h3>
+                    <ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>Stage S6 – Analyse des impacts</strong></span>
+                            <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Évaluation des impacts du projet de migration.</li>
+                                    <li><strong>Impact économique:</strong> Réduction des coûts de licence (Oracle -> PostgreSQL).</li>
+                                    <li><strong>Chiffre:</strong> Économie potentielle de 80 000 €/an.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/StageS6/slide_powerpoint_enjeux.png" alt="Slide PowerPoint présentant les enjeux économiques du projet de migration">
+                                    <figcaption>Présentation des enjeux économiques</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- AC35.02 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC35.02 – Savoir intégrer un projet informatique dans le système d'information</h3>
+                    <ul class="ac-ressources">
+                         <li>
+                            <span class="ac-theme"><strong>Stage S6 – Intégration SI</strong></span>
+                             <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Défi:</strong> Maintenir la connectivité avec le SI existant.</li>
+                                    <li><strong>Action:</strong> Analyse de l'architecture réseau et SI.</li>
+                                    <li><strong>Solution:</strong> Mise en place de `oracle_fdw` pour les DBLINKs.</li>
+                                </ul>
+                             </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/StageS6/reseau_et_si.png" alt="Slide PowerPoint du réseau et SI">
+                                    <figcaption>Schéma du réseau et Système d'Information</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- AC35.03 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC35.03 – Adapter un système d'information</h3>
+                    <ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>Stage S6 – Migration de la base BASIL</strong></span>
+                            <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Remplacer le moteur de base de données (Oracle → PostgreSQL)</li>
+                                    <li><strong>Interventions techniques:</strong> Conversion des objets, des données, adaptation des requêtes.</li>
+                                    <li><strong>Objectif:</strong> Un système d'information fonctionnel et modernisé sur une technologie open-source.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/StageS6/schema_technique_plan_suivi.png" alt="Schéma technique du plan suivi (rapport de stage)">
+                                    <figcaption>Schéma technique du plan de projet</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOC COLLABORER -->
+        <section id="ac36" class="section bg-light">
+            <div class="section-header">
+                <h2 class="section-title">Collaborer</h2>
+                <h4 class="section-subtitle">Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique</h4>
+            </div>
+            <div class="ac-list">
+                <!-- AC36.03 -->
+                <div class="ac-block">
+                    <h3 class="ac-title">AC36.03 – Guider la conduite du changement informatique</h3>
+<ul class="ac-ressources">
+                        <li>
+                            <span class="ac-theme"><strong>Stage S6 – Plan de projet</strong></span>
+                            <span class="ac-justification">
+                                <ul>
+                                    <li><strong>Action:</strong> Guider le changement et assurer la passation aux équipes internes.</li>
+                                    <li><strong>Livrable:</strong> Rédaction d'une documentation technique complète (34 pages).</li>
+                                    <li><strong>Objectif:</strong> Assurer une transition fluide et documentée.</li>
+                                </ul>
+                            </span>
+                            <div class="ac-preuves">
+                                <figure>
+                                    <img src="assets/img/preuves/StageS6/dex_page_de_garde.png" alt="Page de garde du document de projet">
+                                    <figcaption>Page de garde du document de projet</figcaption>
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            <!-- AC36.04 – Accompagner le management de projet -->
+            <div class="ac-block">
+                <h3 class="ac-title">AC36.04 – Accompagner le management de projet</h3>
+                <ul class="ac-ressources">
+                    <!-- Preuve #1 : Stage -->
+                    <li>
+                        <span class="ac-theme"><strong>Stage S6</strong> – Reporting et suivi</span>
+                        <span class="ac-justification">
+                            <ul>
+                                <li><strong>Action:</strong> Assurer la visibilité et la communication avec le management.</li>
+                                <li><strong>Méthode:</strong> Suivi des tâches via un plan de projet détaillé.</li>
+                                <li><strong>Preuve visuelle:</strong> Le diagramme de Gantt ci-dessous est une <strong>représentation synthétique</strong> du document de suivi que j'ai tenu durant le stage.</li>
+                            </ul>
+                        </span>
+                        <div class="ac-preuves">
+                            <figure>
+                                <!-- Remplace par le chemin de ton image de Gantt -->
+                                <img src="assets/img/preuves/StageS6/gantt_migration.png" alt="Diagramme de Gantt représentatif du plan de suivi">
+                                <figcaption>Diagramme de Gantt illustrant la planification du projet</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                    <!-- Preuve #2 : SAE avec GitHub -->
+                    <li>
+                        <span class="ac-theme"><strong>SAE Pharmaguide/MedicSearch (S5-S6)</strong> – Pilotage Agile avec GitHub</span>
+                        <span class="ac-justification">
+                            <ul>
+                                <li><strong>Action:</strong> Animer la collaboration et le suivi du projet en équipe.</li>
+                                <li><strong>Outil:</strong> Plateforme GitHub.</li>
+                                <li><strong>Méthode:</strong> Gestion des tâches, assignations et suivi de l'avancement.</li>
+                            </ul>
+                        </span>
+                        <div class="ac-preuves">
+                            <figure>
+                                <img src="assets/img/preuves/SAE Pharmaguide-MedicSearch (S5-S6)/github_issues.png" alt="Suivi des tâches du projet sur GitHub">
+                                <figcaption>Page Github Issues pour le suivi des tâches</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section id="conclusion" class="section">
+            <div class="section-header" style="text-align: center;">
+                <h2 class="section-title">Conclusion & Perspectives</h2>
+            </div>
+            <div class="ac-conclusion" style="text-align: center;">
+                <p>
+                    À travers mes projets académiques et mon stage de migration de base de données, j'ai développé une expertise complète, de la conception technique à la conduite de projet. J'ai démontré ma capacité à relever des défis concrets, à optimiser des systèmes et à accompagner le changement dans un cadre professionnel. Je suis prêt à continuer mon évolution dans des environnements exigeants et innovants.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script src="navbar-loader.js"></script>
+</body>
+</html>

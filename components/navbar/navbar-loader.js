@@ -1,7 +1,7 @@
-// Navbar loader and functionality
-class NavbarLoader {
+// Morphing Navbar functionality
+class MorphingNavbar {
     constructor() {
-        this.currentPage = this.getCurrentPage();
+        this.currentSection = this.getCurrentSection();
         this.init();
     }
 
@@ -9,8 +9,8 @@ class NavbarLoader {
     async init() {
         try {
             await this.loadNavbar();
-            this.setupNavLinks();
-            this.setActiveNavItem();
+            this.setupNavigation();
+            this.setActiveSection();
             this.initializeEventListeners();
             this.loadPreferences();
         } catch (error) {
@@ -20,15 +20,15 @@ class NavbarLoader {
 
     // Load navbar HTML
     async loadNavbar() {
-        const navbarPlaceholder = document.getElementById('navbar-placeholder');
+        const navbarPlaceholder = document.getElementById('navbar');
         if (!navbarPlaceholder) {
             console.error('Navbar placeholder not found');
             return;
         }
 
         try {
-            // Adjust path for project pages
-            const navbarPath = window.location.pathname.includes('/projets/') ? '../navbar.html' : 'navbar.html';
+            // Adjust path for different folder structures
+            const navbarPath = window.location.pathname.includes('/projets/') ? '../components/navbar/navbar.html' : 'components/navbar/navbar.html';
             const response = await fetch(navbarPath);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -37,109 +37,107 @@ class NavbarLoader {
             navbarPlaceholder.innerHTML = navbarHTML;
         } catch (error) {
             console.error('Error loading navbar:', error);
-            // Fallback: keep existing navbar if loading fails
         }
     }
 
-    // Setup navigation links with correct URLs
-    setupNavLinks() {
-        const isInProjectFolder = window.location.pathname.includes('/projets/');
-        const basePrefix = isInProjectFolder ? '../' : '';
+    // Setup navigation functionality
+    setupNavigation() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const navbarContainer = document.querySelector('.navbar-container');
         
-        // Update navigation links
-        const navHome = document.querySelector('.nav-home');
-        const navProjects = document.querySelector('.nav-projects');
-        const navParcours = document.querySelector('.nav-parcours');
-        const navContact = document.querySelector('.nav-contact');
-        const navSoutenance = document.querySelector('.nav-soutenance');
-        
-        if (navHome) navHome.href = `${basePrefix}index.html`;
-        if (navProjects) navProjects.href = `${basePrefix}index.html#projects`;
-        if (navParcours) navParcours.href = `${basePrefix}index.html#parcours`;
-        if (navContact) navContact.href = `${basePrefix}index.html#contact`;
-        if (navSoutenance) navSoutenance.href = `${basePrefix}soutenance.html`;
-        
-        // Hide non-home navigation items on specific pages
-        this.hideNavItemsOnNonHomePage();
-    }
-
-    // Hide navigation items on non-home pages
-    hideNavItemsOnNonHomePage() {
-        const path = window.location.pathname;
-        const isNonHomePage = path.includes('soutenance.html') || path.includes('/projets/');
-        
-        if (isNonHomePage) {
-            const navProjects = document.querySelector('.nav-projects');
-            const navParcours = document.querySelector('.nav-parcours');
-            const navContact = document.querySelector('.nav-contact');
-            const navSoutenance = document.querySelector('.nav-soutenance');
-            
-            // Hide all navigation items except "Accueil"
-            if (navProjects) {
-                navProjects.parentElement.style.display = 'none';
-                navProjects.parentElement.setAttribute('data-hidden', 'true');
-            }
-            if (navParcours) {
-                navParcours.parentElement.style.display = 'none';
-                navParcours.parentElement.setAttribute('data-hidden', 'true');
-            }
-            if (navContact) {
-                navContact.parentElement.style.display = 'none';
-                navContact.parentElement.setAttribute('data-hidden', 'true');
-            }
-            if (navSoutenance) {
-                navSoutenance.parentElement.style.display = 'none';
-                navSoutenance.parentElement.setAttribute('data-hidden', 'true');
-            }
-        }
-    }
-
-    // Determine current page based on URL
-    getCurrentPage() {
-        const path = window.location.pathname;
-        const hash = window.location.hash;
-        
-        // Handle project pages
-        if (path.includes('/projets/')) {
-            return 'projects';
-        }
-        
-        // Handle soutenance page
-        if (path.includes('soutenance.html')) {
-            return 'soutenance';
-        }
-        
-        // Handle index page sections
-        if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
-            if (hash.includes('#projects')) return 'projects';
-            if (hash.includes('#parcours')) return 'parcours';
-            if (hash.includes('#contact')) return 'contact';
-            if (hash.includes('#skills')) return 'index'; // Skills section is part of index
-            return 'index';
-        }
-        
-        return 'index';
-    }
-
-    // Set active navigation item
-    setActiveNavItem() {
-        const navLinks = document.querySelectorAll('nav a[data-page]');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            const linkPage = link.getAttribute('data-page');
-            if (linkPage === this.currentPage) {
-                link.classList.add('active');
-            }
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = item.getAttribute('data-section');
+                this.navigateToSection(section);
+            });
         });
+        
+        // Set initial state
+        if (navbarContainer) {
+            navbarContainer.setAttribute('data-active', this.currentSection);
+        }
+    }
+
+    // Navigate to different sections
+    navigateToSection(section) {
+        if (section === 'portfolio') {
+            // Navigate to portfolio (index.html)
+            window.location.href = 'index.html';
+        } else if (section === 'apps') {
+            // Navigate to apps page (projets.html)
+            window.location.href = 'projets.html';
+        }
+    }
+
+    // Determine current section based on URL
+    getCurrentSection() {
+        const path = window.location.pathname;
+        
+        // Check if we're on apps/projects page
+        if (path.includes('projets.html') || path.includes('/projets/')) {
+            return 'apps';
+        }
+        
+        // Default to portfolio for index and other pages
+        return 'portfolio';
+    }
+
+    // Set active section and morphing state
+    setActiveSection() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const navbarContainer = document.querySelector('.navbar-container');
+        
+        // Remove active class from all items
+        navItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to current section
+        const activeItem = document.querySelector(`[data-section="${this.currentSection}"]`);
+        if (activeItem) {
+            activeItem.classList.add('active');
+        }
+        
+        // Set morphing background position
+        if (navbarContainer) {
+            navbarContainer.setAttribute('data-active', this.currentSection);
+        }
     }
 
     // Initialize event listeners
     initializeEventListeners() {
+        this.initSettingsMenu();
         this.initThemeToggle();
         this.initLanguageToggle();
-        this.initMobileMenu();
-        this.initScrollActiveNav();
-        this.initNavigationListeners();
+    }
+
+    // Settings menu functionality
+    initSettingsMenu() {
+        const settingsToggle = document.querySelector('.settings-toggle');
+        const settingsMenu = document.querySelector('.settings-menu');
+        
+        if (!settingsToggle || !settingsMenu) return;
+        
+        // Toggle settings menu
+        settingsToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            settingsMenu.classList.toggle('show');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!settingsToggle.contains(e.target) && !settingsMenu.contains(e.target)) {
+                settingsMenu.classList.remove('show');
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && settingsMenu.classList.contains('show')) {
+                settingsMenu.classList.remove('show');
+                settingsToggle.focus();
+            }
+        });
     }
 
     // Theme toggle functionality
@@ -326,7 +324,7 @@ class NavbarLoader {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('href') === `#${sectionId}` || 
-                            link.getAttribute('href') === `index.html#${sectionId}`) {
+                            link.getAttribute('href') === `portfolio.html#${sectionId}`) {
                             link.classList.add('active');
                             // Update the current page to match the section
                             this.currentPage = link.getAttribute('data-page') || 'index';
@@ -400,5 +398,5 @@ class NavbarLoader {
 
 // Initialize navbar when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new NavbarLoader();
+    new MorphingNavbar();
 });

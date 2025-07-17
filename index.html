@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="lang-content" data-fr="Mon Portfolio" data-en="My Portfolio">Mon Portfolio</title>
+    <title class="lang-content" data-fr="Portfolio - Jonathan Gromat" data-en="Portfolio - Jonathan Gromat">Portfolio -
+        Jonathan Gromat</title>
+    <link rel="stylesheet" href="components/navbar/navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/mobile-clean.css">
-    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
-    <div id="navbar-placeholder"></div>
+<body data-page="home">
+    <!-- Navbar will be loaded here dynamically -->
+    <div id="navbar"></div>
 
-    <main>
+    <main style="padding-top: 70px;">
         <section class="hero">
             <div class="hero-content">
                 <span class="tag">
@@ -121,14 +123,182 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Projects will be loaded dynamically by projects-loader.js -->
-                <div class="loading-projects">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>
-                        <span class="lang-fr">Chargement des projets...</span>
-                        <span class="lang-en">Loading projects...</span>
-                    </p>
-                </div>
+                <!-- MedicSearch Project -->
+                <article class="project-card">
+                    <img src="assets/img/default_project_image.png" alt="MedicSearch Dashboard" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Mistral AI</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">MedicSearch</span>
+                            <span class="lang-en">MedicSearch</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Application d'agrégation et recherche de médicaments avec IA. Centralisation et simplification de l'accès aux données pharmaceutiques.</span>
+                            <span class="lang-en">AI-powered drug aggregation and search application. Centralizing and simplifying access to pharmaceutical data.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/medicsearch.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="lang-fr">Voir le projet</span>
+                                <span class="lang-en">View project</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Data Migration Tool Project -->
+                <article class="project-card">
+                    <img src="assets/img/default_project_image.png" alt="Data Migration Tool" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Oracle</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Ora2PG</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">Outil de Migration de Données</span>
+                            <span class="lang-en">Data Migration Tool</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Outil Python pour la migration de bases de données Oracle vers PostgreSQL avec validation automatique des données.</span>
+                            <span class="lang-en">Python tool for migrating Oracle databases to PostgreSQL with automatic data validation.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/data-migration-tool.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="lang-fr">Voir le projet</span>
+                                <span class="lang-en">View project</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Portfolio Website Project -->
+                <article class="project-card">
+                    <img src="assets/img/default_project_image.png" alt="Portfolio Website" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Responsive</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">Site Portfolio Personnel</span>
+                            <span class="lang-en">Personal Portfolio Website</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Site web portfolio responsive avec système de projets dynamique, support multilingue et thème sombre/clair.</span>
+                            <span class="lang-en">Responsive portfolio website with dynamic project system, multilingual support and dark/light theme.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/portfolio-website.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="lang-fr">Voir le projet</span>
+                                <span class="lang-en">View project</span>
+                            </a>
+                            <a href="https://github.com/jonag972/jonag972.github.io" target="_blank" class="project-link" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                <span class="lang-fr">Code source</span>
+                                <span class="lang-en">Source code</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Link to see all projects -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="projets.html" class="btn primary">
+                    <span class="lang-fr">Voir tous les projets</span>
+                    <span class="lang-en">View all projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Apps Preview Section -->
+        <section id="apps" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-fr">Mes Applications</span>
+                    <span class="lang-en">My Applications</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-fr">Testez mes applications interactives en ligne</span>
+                    <span class="lang-en">Test my interactive applications online</span>
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- MedicSearch App Preview -->
+                <article class="project-card app-card">
+                    <img src="assets/img/default_project_image.png" alt="MedicSearch App" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Live Demo</span>
+                            <span class="project-tag">IA</span>
+                            <span class="project-tag">Flask</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">MedicSearch Live</span>
+                            <span class="lang-en">MedicSearch Live</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Application de recherche de médicaments avec intelligence artificielle. Testez la recherche avancée et les résumés IA.</span>
+                            <span class="lang-en">Drug search application with artificial intelligence. Test advanced search and AI summaries.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link btn primary" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="lang-fr">Tester</span>
+                                <span class="lang-en">Test</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Portfolio Interactive -->
+                <article class="project-card app-card">
+                    <img src="assets/img/default_project_image.png" alt="Portfolio Interactif" class="project-image" loading="lazy">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Live Site</span>
+                            <span class="project-tag">Responsive</span>
+                            <span class="project-tag">Multilingue</span>
+                        </div>
+                        <h3 class="project-title">
+                            <span class="lang-fr">Portfolio Interactif</span>
+                            <span class="lang-en">Interactive Portfolio</span>
+                        </h3>
+                        <p class="project-description">
+                            <span class="lang-fr">Vous y êtes ! Navigation morphing, thèmes dynamiques et design responsive. Explorez toutes les fonctionnalités.</span>
+                            <span class="lang-en">You're here! Morphing navigation, dynamic themes and responsive design. Explore all features.</span>
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link btn primary" onclick="document.querySelector('.settings-toggle').click(); return false;">
+                                <i class="fas fa-cog"></i>
+                                <span class="lang-fr">Tester</span>
+                                <span class="lang-en">Test</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Link to see all apps -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="apps.html" class="btn secondary">
+                    <span class="lang-fr">Découvrir toutes les apps</span>
+                    <span class="lang-en">Discover all apps</span>
+                    <i class="fas fa-rocket"></i>
+                </a>
             </div>
         </section>
 
@@ -529,9 +699,7 @@
         <i class="fas fa-chevron-down"></i>
     </div>
 
-    <script src="navbar-loader.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/projects-loader.js"></script>
 </body>
 
 </html>

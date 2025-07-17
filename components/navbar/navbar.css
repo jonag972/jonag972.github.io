@@ -1,0 +1,289 @@
+/* ==================== MORPHING NAVBAR - PURE CSS ==================== */
+
+.morphing-navbar {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: fit-content;
+    max-width: calc(100vw - 40px);
+    margin: 0 auto !important;
+    /* Annuler les styles header globaux */
+    display: block !important;
+    justify-content: unset !important;
+}
+
+.navbar-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 12px 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode .navbar-container {
+    background: rgba(18, 18, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== MORPHING BACKGROUND - REMOVED ==================== */
+/* Morphing background removed for cleaner design */
+
+/* ==================== NAVIGATION ITEMS ==================== */
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-item {
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    background: rgba(216, 28, 28, 0.1);
+}
+
+
+
+/* ==================== SPECIAL STYLING FOR NAME ==================== */
+
+.nav-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    position: relative;
+}
+
+
+
+#nav-home {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: var(--primary-color);
+}
+
+#nav-home:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+#nav-home.active {
+    background: var(--primary-color);
+}
+
+/* ==================== SETTINGS ==================== */
+
+/* Settings checkbox removed - using JavaScript instead */
+
+.settings-toggle {
+    padding: 10px 10px;
+    border-radius: 25px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.settings-toggle:hover {
+    background: rgba(216, 28, 28, 0.1);
+    transform: rotate(30deg);
+}
+
+
+
+.settings-toggle.active {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(180deg);
+}
+
+
+
+/* ==================== SETTINGS MENU ==================== */
+
+.settings-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode .settings-menu {
+    background: rgba(18, 18, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings-toggle.active~.settings-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.settings-item {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.settings-item:hover {
+    background: rgba(216, 28, 28, 0.1);
+    color: var(--primary-color);
+    transform: translateX(2px);
+}
+
+.settings-item i {
+    width: 16px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* ==================== MOBILE MENU - REMOVED FOR DESKTOP FOCUS ==================== */
+/* Mobile menu will be implemented later */
+
+
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* ==================== RESPONSIVE DESIGN - REMOVED FOR DESKTOP FOCUS ==================== */
+/* Mobile responsive design will be implemented later */
+
+/* ==================== LANGUAGE VISIBILITY ==================== */
+
+.lang-en {
+    display: none;
+}
+
+.lang-fr {
+    display: block;
+}
+
+/* When English is active */
+body[data-lang="en"] .lang-fr {
+    display: none;
+}
+
+body[data-lang="en"] .lang-en {
+    display: block;
+}
+
+/* ==================== ACTIVE STATE MANAGEMENT ==================== */
+
+/* Home page active state */
+body[data-page="home"] #nav-home {
+    background: rgba(216, 28, 28, 0.1);
+}
+
+
+
+/* Projets page active state */
+body[data-page="projets"] #nav-projets {
+    color: var(--primary-color);
+    background: rgba(216, 28, 28, 0.1);
+}
+
+
+
+/* Apps page active state */
+body[data-page="apps"] #nav-apps {
+    color: var(--primary-color);
+    background: rgba(216, 28, 28, 0.1);
+}
+
+
+
+/* ==================== ACCESSIBILITY ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar-container,
+    .nav-item,
+    .settings-toggle,
+    .settings-menu {
+        transition: none;
+    }
+
+    .settings-toggle:hover {
+        transform: none;
+    }
+}
+
+/* Focus states for keyboard navigation */
+.nav-item:focus,
+.settings-toggle:focus,
+.settings-item:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .navbar-container {
+        border: 2px solid var(--text-dark);
+    }
+
+    .nav-item,
+    .settings-item {
+        border: 1px solid transparent;
+    }
+
+    .nav-item:hover,
+    .settings-item:hover {
+        border-color: var(--primary-color);
+    }
+}
