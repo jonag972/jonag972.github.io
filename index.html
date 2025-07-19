@@ -19,7 +19,116 @@
     <div id="navbar"></div>
 
     <main style="padding-top: 70px;">
-        <section class="hero">
+        
+        <!-- Mobile Views (visible only on mobile) -->
+        <div class="mobile-view active" id="mobile-home">
+            <div class="mobile-hero">
+                <div class="mobile-profile">
+                    <div class="profile-circle-mobile"></div>
+                    <h1 class="mobile-name">
+                        <span class="lang-fr">Jonathan Gromat</span>
+                        <span class="lang-en">Jonathan Gromat</span>
+                    </h1>
+                    <p class="mobile-title">
+                        <span class="lang-fr">Développeur Data & IA</span>
+                        <span class="lang-en">Data & AI Developer</span>
+                    </p>
+                    <div class="mobile-stats-quick">
+                        <div class="mobile-stat-quick">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="lang-fr">MSc 2025</span>
+                            <span class="lang-en">MSc 2025</span>
+                        </div>
+                        <div class="mobile-stat-quick">
+                            <i class="fas fa-briefcase"></i>
+                            <span class="lang-fr">CEA</span>
+                            <span class="lang-en">CEA</span>
+                        </div>
+                        <div class="mobile-stat-quick">
+                            <i class="fas fa-search"></i>
+                            <span class="lang-fr">Alternance</span>
+                            <span class="lang-en">Apprenticeship</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-cta">
+                    <a href="#contact" class="btn primary mobile-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="lang-fr">Me contacter</span>
+                        <span class="lang-en">Contact me</span>
+                    </a>
+                    <a href="assets/resume/CV Jonathan GROMAT.pdf" download class="btn secondary mobile-btn">
+                        <i class="fas fa-download"></i>
+                        <span class="lang-fr">CV</span>
+                        <span class="lang-en">Resume</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-view" id="mobile-projets">
+            <div class="mobile-section-header">
+                <h2>
+                    <span class="lang-fr">Mes Projets</span>
+                    <span class="lang-en">My Projects</span>
+                </h2>
+            </div>
+            <div class="mobile-projects-list">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+
+        <div class="mobile-view" id="mobile-apps">
+            <div class="mobile-section-header">
+                <h2>
+                    <span class="lang-fr">Mes Apps</span>
+                    <span class="lang-en">My Apps</span>
+                </h2>
+            </div>
+            <div class="mobile-apps-list">
+                <!-- Apps will be loaded here -->
+            </div>
+        </div>
+
+        <div class="mobile-view" id="mobile-plus">
+            <div class="mobile-section-header">
+                <h2>
+                    <span class="lang-fr">Plus</span>
+                    <span class="lang-en">More</span>
+                </h2>
+            </div>
+            <div class="mobile-more-content">
+                <div class="mobile-contact-quick">
+                    <a href="mailto:jonathan.gromat@outlook.com" class="mobile-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://linkedin.com/in/jonathan-gromat" class="mobile-contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/jonag972" class="mobile-contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <div class="mobile-settings">
+                    <button class="mobile-setting-item" id="mobile-theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <span class="lang-fr">Mode sombre</span>
+                        <span class="lang-en">Dark mode</span>
+                    </button>
+                    <button class="mobile-setting-item" id="mobile-lang-toggle">
+                        <i class="fas fa-language"></i>
+                        <span class="lang-fr">English</span>
+                        <span class="lang-en">Français</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Content (hidden on mobile) -->
+        <section class="hero desktop-only">
             <div class="hero-content">
                 <span class="tag">
                     <span class="lang-fr">FIN D'ÉTUDES BUT INFORMATIQUE | FUTUR MSC EPITECH (ALTERNANCE) | STAGIAIRE
@@ -42,12 +151,12 @@
                         further develop my skills.</span>
                 </p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn primary">
+                    <a href="#contact" class="btn primary" aria-label="Contacter Jonathan Gromat">
                         <span class="lang-fr">Me contacter</span>
                         <span class="lang-en">Contact Me</span>
                         <i class="fas fa-paper-plane"></i>
                     </a>
-                    <a href="assets/resume/CV Jonathan GROMAT.pdf" download class="btn secondary">
+                    <a href="assets/resume/CV Jonathan GROMAT.pdf" download class="btn secondary" aria-label="Télécharger le CV de Jonathan Gromat">
                         <span class="lang-fr">Télécharger CV</span>
                         <span class="lang-en">Download CV</span>
                         <i class="fas fa-download"></i>
@@ -255,7 +364,7 @@
                             <span class="lang-en">Drug search application with artificial intelligence. Test advanced search and AI summaries.</span>
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link btn primary" target="_blank" rel="noopener noreferrer">
+                            <a href="#" class="project-link btn primary coming-soon-badge" onclick="return false;">
                                 <i class="fas fa-external-link-alt"></i>
                                 <span class="lang-fr">Tester</span>
                                 <span class="lang-en">Test</span>
@@ -698,6 +807,30 @@
     <div class="scroll-indicator">
         <i class="fas fa-chevron-down"></i>
     </div>
+
+    <!-- Mobile Tab Navigation (visible only on mobile) -->
+    <nav class="mobile-tab-nav">
+        <a href="#home" class="mobile-tab active" data-view="home">
+            <i class="fas fa-home"></i>
+            <span class="lang-fr">Accueil</span>
+            <span class="lang-en">Home</span>
+        </a>
+        <a href="#projets" class="mobile-tab" data-view="projets">
+            <i class="fas fa-folder"></i>
+            <span class="lang-fr">Projets</span>
+            <span class="lang-en">Projects</span>
+        </a>
+        <a href="#apps" class="mobile-tab" data-view="apps">
+            <i class="fas fa-mobile-alt"></i>
+            <span class="lang-fr">Apps</span>
+            <span class="lang-en">Apps</span>
+        </a>
+        <a href="#plus" class="mobile-tab" data-view="plus">
+            <i class="fas fa-ellipsis-h"></i>
+            <span class="lang-fr">Plus</span>
+            <span class="lang-en">More</span>
+        </a>
+    </nav>
 
     <script src="assets/js/script.js"></script>
 </body>

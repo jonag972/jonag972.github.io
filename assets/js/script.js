@@ -34,6 +34,12 @@ class PortfolioApp {
             });
         }
 
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => this.toggleMobileMenu());
+        }
+
         // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
@@ -93,6 +99,14 @@ class PortfolioApp {
         this.savePreferences();
     }
 
+    // Toggle mobile menu
+    toggleMobileMenu() {
+        const navItems = document.getElementById('nav-items');
+        if (navItems) {
+            navItems.classList.toggle('active');
+        }
+    }
+
     // Apply language to the page
     applyLanguage() {
         const body = document.body;
@@ -137,9 +151,11 @@ class PortfolioApp {
         const path = window.location.pathname;
         
         if (path.includes('projets.html') || path.includes('/projets/')) {
+            body.setAttribute('data-page', 'projets');
+        } else if (path.includes('apps.html')) {
             body.setAttribute('data-page', 'apps');
         } else {
-            body.setAttribute('data-page', 'portfolio');
+            body.setAttribute('data-page', 'home');
         }
     }
 
@@ -198,7 +214,7 @@ class PortfolioApp {
         // Hide/show based on scroll position
         let ticking = false;
         const updateScrollIndicator = () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
             const threshold = window.innerHeight * 0.5;
             
             if (scrollTop > threshold) {
@@ -256,7 +272,211 @@ class NavbarLoader {
     }
 }
 
+// Mobile Tab Navigation Class
+class MobileTabNavigation {
+    constructor() {
+        this.currentView = 'home';
+        this.init();
+    }
+
+    init() {
+        this.setupMobileTabListeners();
+        this.loadMobileContent();
+        this.setInitialView();
+    }
+
+    setInitialView() {
+        // Ensure home view is active by default
+        document.querySelectorAll('.mobile-view').forEach(view => {
+            view.classList.remove('active');
+        });
+        document.getElementById('mobile-home').classList.add('active');
+        
+        // Ensure home tab is active
+        document.querySelectorAll('.mobile-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.querySelector('[data-view="home"]').classList.add('active');
+    }
+
+    setupMobileTabListeners() {
+        const mobileTabs = document.querySelectorAll('.mobile-tab');
+        mobileTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const viewName = tab.getAttribute('data-view');
+                this.switchView(viewName);
+            });
+        });
+
+        // Mobile theme and language toggles
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+        
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', () => {
+                if (window.portfolioApp) {
+                    window.portfolioApp.toggleTheme();
+                }
+            });
+        }
+
+        if (mobileLangToggle) {
+            mobileLangToggle.addEventListener('click', () => {
+                if (window.portfolioApp) {
+                    window.portfolioApp.toggleLanguage();
+                }
+            });
+        }
+    }
+
+    switchView(viewName) {
+        // Update active tab
+        document.querySelectorAll('.mobile-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.querySelector(`[data-view="${viewName}"]`).classList.add('active');
+
+        // Update active view
+        document.querySelectorAll('.mobile-view').forEach(view => {
+            view.classList.remove('active');
+        });
+        document.getElementById(`mobile-${viewName}`).classList.add('active');
+
+        this.currentView = viewName;
+        
+        // Load content for the view
+        this.loadViewContent(viewName);
+    }
+
+    loadViewContent(viewName) {
+        switch(viewName) {
+            case 'projets':
+                this.loadProjectsContent();
+                break;
+            case 'apps':
+                this.loadAppsContent();
+                break;
+        }
+    }
+
+    loadProjectsContent() {
+        const projectsList = document.querySelector('.mobile-projects-list');
+        if (!projectsList || projectsList.children.length > 0) return;
+
+        const projects = [
+            {
+                title: 'MedicSearch',
+                description: 'Application d\'agrégation et recherche de médicaments avec IA',
+                tags: ['Python', 'Flask', 'MongoDB', 'Mistral AI'],
+                link: 'projets/medicsearch.html'
+            },
+            {
+                title: 'Outil de Migration de Données',
+                description: 'Outil Python pour la migration Oracle vers PostgreSQL',
+                tags: ['Python', 'Oracle', 'PostgreSQL', 'Ora2PG'],
+                link: 'projets/data-migration-tool.html'
+            },
+            {
+                title: 'Site Portfolio Personnel',
+                description: 'Site web portfolio responsive avec navigation morphing',
+                tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
+                link: 'projets/portfolio-website.html'
+            }
+        ];
+
+        projects.forEach(project => {
+            const projectCard = this.createMobileProjectCard(project);
+            projectsList.appendChild(projectCard);
+        });
+    }
+
+    loadAppsContent() {
+        const appsList = document.querySelector('.mobile-apps-list');
+        if (!appsList || appsList.children.length > 0) return;
+
+        const apps = [
+            {
+                title: 'MedicSearch Live',
+                description: 'Application de recherche de médicaments avec IA',
+                tags: ['Live Demo', 'IA', 'Flask'],
+                comingSoon: true
+            },
+            {
+                title: 'Portfolio Interactif',
+                description: 'Vous y êtes ! Explorez les fonctionnalités',
+                tags: ['Live Site', 'Responsive', 'Multilingue'],
+                link: 'index.html'
+            }
+        ];
+
+        apps.forEach(app => {
+            const appCard = this.createMobileAppCard(app);
+            appsList.appendChild(appCard);
+        });
+    }
+
+    createMobileProjectCard(project) {
+        const card = document.createElement('div');
+        card.className = 'mobile-project-card';
+        card.innerHTML = `
+            <div class="mobile-card-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="mobile-card-tags">
+                    ${project.tags.map(tag => `<span class="mobile-tag">${tag}</span>`).join('')}
+                </div>
+                <a href="${project.link}" class="mobile-card-link">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="lang-fr">Voir le projet</span>
+                    <span class="lang-en">View project</span>
+                </a>
+            </div>
+        `;
+        return card;
+    }
+
+    createMobileAppCard(app) {
+        const card = document.createElement('div');
+        card.className = 'mobile-app-card';
+        const linkContent = app.comingSoon 
+            ? `<span class="mobile-coming-soon">
+                <i class="fas fa-clock"></i>
+                <span class="lang-fr">Bientôt disponible</span>
+                <span class="lang-en">Coming Soon</span>
+               </span>`
+            : `<a href="${app.link}" class="mobile-card-link">
+                <i class="fas fa-external-link-alt"></i>
+                <span class="lang-fr">Tester</span>
+                <span class="lang-en">Test</span>
+               </a>`;
+        
+        card.innerHTML = `
+            <div class="mobile-card-content">
+                <h3>${app.title}</h3>
+                <p>${app.description}</p>
+                <div class="mobile-card-tags">
+                    ${app.tags.map(tag => `<span class="mobile-tag">${tag}</span>`).join('')}
+                </div>
+                ${linkContent}
+            </div>
+        `;
+        return card;
+    }
+
+    loadMobileContent() {
+        // Load initial content
+        this.loadProjectsContent();
+        this.loadAppsContent();
+    }
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new NavbarLoader();
+    
+    // Initialize mobile navigation if on mobile
+    if (window.innerWidth <= 768) {
+        new MobileTabNavigation();
+    }
 });
